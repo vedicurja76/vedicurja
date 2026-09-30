@@ -1,161 +1,126 @@
-#!/usr/bin/env bash
-#
-# setup.sh — complete, guarded, idempotent push-to-origin helper
-# for the AstroVastu Expert (vedicurjavastu-dome) static-export repo.
-#
-# What it does, in order:
-#   1. Preflight: verify we are inside a git work tree on a real branch,
-#      that an `origin` remote exists and is reachable, and that the
-#      toolchain (git, node, npm) is present.
-#   2. Secret guard: refuse to stage/commit files that look like
-#      credentials (.env, *.pem, private keys, etc.).
-#   3. Commit: if the working tree is dirty, stage tracked changes and
-#      create one commit (skipped when clean — idempotent).
-#   4. Sync-check: fetch origin and refuse a non-fast-forward push
-#      (never force-pushes behind your back).
-#   5. Push: push the current branch and set upstream tracking.
-#   6. Verify: confirm local HEAD == origin/<branch> after push.
-#
-# Usage:
-#   ./setup.sh                      # commit any changes + push to origin
-#   ./setup.sh -m "my message"      # custom commit message
-#   ./setup.sh --no-commit          # push existing commits only
-#   ./setup.sh --dry-run            # show what would happen, change nothing
-#
-set -euo pipefail
+#!/bin/bash
+set -e
 
-# ── Pretty output (disabled when not a TTY) ───────────────────────────────
-if [[ -t 1 ]]; then
-  BOLD=$'\033[1m'; GREEN=$'\033[0;32m'; RED=$'\033[0;31m'
-  YELLOW=$'\033[1;33m'; BLUE=$'\033[0;34m'; NC=$'\033[0m'
-else
-  BOLD=''; GREEN=''; RED=''; YELLOW=''; BLUE=''; NC=''
-fi
-step() { printf '%s\n' "${BLUE}▶${NC} ${BOLD}$1${NC}"; }
-ok()   { printf '   %s✓%s %s\n' "$GREEN" "$NC" "$1"; }
-warn() { printf '   %s!%s %s\n' "$YELLOW" "$NC" "$1"; }
-die()  { printf '   %s✗ %s%s\n' "$RED" "$1" "$NC" >&2; exit 1; }
+# Colors
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
 
-# ── Flags ─────────────────────────────────────────────────────────────────
-COMMIT=1; DRY=0; COMMIT_MSG=""
-while [[ $# -gt 0 ]]; do
-  case "$1" in
-    -m|--message)   COMMIT_MSG="${2:-}"; [[ -n "$COMMIT_MSG" ]] || die "--message needs a value"; shift 2 ;;
-    --no-commit)    COMMIT=0; shift ;;
-    --dry-run)      DRY=1; shift ;;
-    -h|--help)      sed -n '2,30p' "$0"; exit 0 ;;
-    *)              die "Unknown option: $1 (see --help)" ;;
-  esac
-done
+echo -e "${BLUE}🔧 Git Push Fix Utility${NC}"
+echo ""
 
-# ── 1. Preflight ──────────────────────────────────────────────────────────
-step "Preflight checks"
-command -v git  >/dev/null 2>&1 || die "git not found on PATH"
-git rev-parse --is-inside-work-tree >/dev/null 2>&1 || die "not inside a git work tree"
-cd "$(git rev-parse --show-toplevel)"
+# ------------------------------------------------------------
+# 1. Show current status
+# ------------------------------------------------------------
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "no-remote")
+CURRENT_USER=$(git config user.name || echo "unknown")
+CURRENT_EMAIL=$(git config user.email || echo "unknown")
 
-BRANCH="$(git symbolic-ref --quiet --short HEAD || true)"
-[[ -n "$BRANCH" ]] || die "detached HEAD — checkout a branch first"
+echo -e "${BLUE}📌 Current Branch:${NC} $BRANCH"
+echo -e "${BLUE}📌 Remote URL:${NC} $REMOTE_URL"
+echo -e "${BLUE}📌 Git User:${NC} $CURRENT_USER <$CURRENT_EMAIL>"
+echo ""
 
-# toolchain (warn only — not needed for the push itself)
-command -v node >/dev/null 2>&1 && ok "node $(node -v)" || warn "node not found (fine for push, needed for build)"
-command -v npm  >/dev/null 2>&1 || warn "npm not found (fine for push, needed for install/build)"
+# ------------------------------------------------------------
+# 2. Show authentication status
+# ------------------------------------------------------------
+echo -e "${BLUE}🔐 Checking authentication...${NC}"
+AUTH_USER=$(git ls-remote origin HEAD 2>&1 | head -1 || echo "auth-failed")
+echo "   Remote response: $AUTH_USER"
+echo ""
 
-git remote get-url origin >/dev/null 2>&1 || die "no 'origin' remote configured"
+# ------------------------------------------------------------
+# 3. Prompt for action
+# ------------------------------------------------------------
+echo -e "${YELLOW}Choose an action:${NC}"
+echo "  1) Change remote URL to your own repo"
+echo "  2) Set Git user.name and user.email for this repo"
+echo "  3) Force push with credentials (as current user)"
+echo "  4) Pull → Stage → Commit → Push (auto)"
+echo "  5) Exit"
+read -p "Enter choice [1-5]: " CHOICE
 
-# Print the remote URL with any embedded credentials masked.
-REMOTE_DISPLAY="$(git remote get-url origin | sed -E 's#(https?://)[^/@]+@#\1***@#')"
-ok "branch: $BRANCH"
-ok "origin: $REMOTE_DISPLAY"
-if [[ "$(git remote get-url origin)" =~ :[^/@]+@ ]]; then
-  warn "remote URL contains an embedded credential — rotate it & use a credential helper/SSH:"
-  warn "  https://github.com/settings/tokens"
-fi
+case $CHOICE in
+  # ----------------------------------------------------------
+  1)
+    echo ""
+    read -p "Enter new remote URL (e.g., https://github.com/your-username/repo.git): " NEW_URL
+    git remote set-url origin "$NEW_URL"
+    echo -e "${GREEN}✅ Remote URL updated to: $NEW_URL${NC}"
+    ;;
 
-# ── Helper: does a path look like a secret? ───────────────────────────────
-looks_secret() {
-  grep -qiE '(^|/)\.env($|\.)|\.pem$|\.key$|id_rsa|credentials|secret|token\.(json|ya?ml)$|\.p12$|\.pfx$' <<<"$1"
-}
+  # ----------------------------------------------------------
+  2)
+    echo ""
+    read -p "Enter Git user.name: " GIT_NAME
+    read -p "Enter Git user.email: " GIT_EMAIL
+    git config user.name "$GIT_NAME"
+    git config user.email "$GIT_EMAIL"
+    echo -e "${GREEN}✅ Git user updated: $GIT_NAME <$GIT_EMAIL>${NC}"
+    ;;
 
-# ── 2 + 3. Commit dirty tracked changes (guarded) ─────────────────────────
-if [[ "$COMMIT" -eq 1 ]]; then
-  step "Working tree"
-  # Count tracked modifications (staged + unstaged), ignoring untracked/ignored.
-  DIRTY="$(git status --porcelain --untracked-files=no | wc -l | tr -d ' ')"
-  if [[ "$DIRTY" == "0" ]]; then
-    ok "clean — nothing new to commit"
-  else
-    warn "$DIRTY tracked file(s) changed"
-    # Stage tracked changes only (never untracked/ignored like out/).
-    if [[ "$DRY" -eq 1 ]]; then
-      git status --short --untracked-files=no
+  # ----------------------------------------------------------
+  3)
+    echo ""
+    echo -e "${YELLOW}⚠️  Force push will overwrite remote history.${NC}"
+    read -p "Are you sure? (y/N): " CONFIRM
+    if [[ "$CONFIRM" =~ ^[Yy]$ ]]; then
+      # Prompt for credentials
+      read -p "GitHub username: " GH_USER
+      read -s -p "GitHub personal access token: " GH_TOKEN
+      echo ""
+      # Extract repo path from existing URL
+      REPO_PATH=$(echo "$REMOTE_URL" | sed -E 's|https://github.com/||' | sed 's|\.git$||')
+      NEW_URL="https://${GH_USER}:${GH_TOKEN}@github.com/${REPO_PATH}.git"
+      git push "$NEW_URL" "$BRANCH" --force
+      echo -e "${GREEN}✅ Force pushed to $BRANCH${NC}"
     else
-      git add -u
+      echo "Cancelled."
     fi
-    # Secret guard on what we are about to commit.
-    STAGED="$(git diff --cached --name-only || true)"
-    BAD=""
-    while IFS= read -r f; do
-      [[ -n "$f" ]] && looks_secret "$f" && BAD+="$f"$'\n'
-    done <<<"$STAGED"
-    if [[ -n "$BAD" ]]; then
-      git reset -q -- $(printf '%s' "$BAD" | tr '\n' ' ') 2>/dev/null || true
-      die "refusing to commit credential-like file(s):"$'\n'"$BAD"
-    fi
-    if [[ "$DRY" -eq 1 ]]; then
-      ok "(dry-run) would commit: $(printf '%s' "$STAGED" | wc -l | tr -d ' ') file(s)"
+    ;;
+
+  # ----------------------------------------------------------
+  4)
+    echo ""
+    echo -e "${BLUE}🔄 Pulling latest changes...${NC}"
+    git pull origin "$BRANCH" --no-edit || echo -e "${YELLOW}⚠️  Pull failed or no upstream. Continuing...${NC}"
+
+    echo -e "${BLUE}📝 Staging all changes...${NC}"
+    git add .
+
+    # Check for changes
+    if [[ -z $(git status -s) ]]; then
+      echo -e "${YELLOW}✅ No changes to commit.${NC}"
     else
-      [[ -n "$COMMIT_MSG" ]] || COMMIT_MSG="chore: sync $(git rev-parse --abbrev-ref HEAD) @ $(date -u +%Y-%m-%dT%H:%MZ)"
-      git commit -q -m "$COMMIT_MSG"
-      ok "committed: $COMMIT_MSG"
+      read -p "Commit message (default: 'Update'): " COMMIT_MSG
+      COMMIT_MSG=${COMMIT_MSG:-Update}
+      git commit -m "$COMMIT_MSG"
+      echo -e "${GREEN}✅ Committed: $COMMIT_MSG${NC}"
     fi
-  fi
-else
-  step "Commit skipped (--no-commit)"
-fi
 
-# ── 4. Fetch + divergence check ────────────────────────────────────────────
-step "Reconcile with origin"
-if [[ "$DRY" -eq 1 ]]; then
-  warn "dry-run: skipping 'git fetch origin'"
-else
-  git fetch --quiet origin "$BRANCH" 2>/dev/null || warn "could not fetch '$BRANCH' from origin (may be a new remote branch)"
-fi
+    echo -e "${BLUE}🚀 Pushing to origin/$BRANCH...${NC}"
+    if git push origin "$BRANCH"; then
+      echo -e "${GREEN}✅ Pushed successfully!${NC}"
+    else
+      echo -e "${RED}❌ Push failed. Run option 2 to update Git user, or option 1 to change remote.${NC}"
+      exit 1
+    fi
+    ;;
 
-if git rev-parse --verify --quiet "origin/$BRANCH" >/dev/null; then
-  read -r BEHIND AHEAD < <(git rev-list --left-right --count "origin/$BRANCH...HEAD")
-  ok "local vs origin/$BRANCH → ahead $AHEAD, behind $BEHIND"
-  if [[ "$BEHIND" -gt 0 ]]; then
-    die "your branch is $BEHIND commit(s) BEHIND origin. Rebase/merge first — this script will NOT force-push."
-  fi
-  if [[ "$AHEAD" -eq 0 ]]; then
-    ok "already in sync — nothing to push"
-    [[ "$DRY" -eq 1 ]] || exit 0
-  fi
-else
-  warn "origin/$BRANCH does not exist yet — will push a new branch with -u"
-  AHEAD="?"
-fi
+  # ----------------------------------------------------------
+  5)
+    echo "Exiting."
+    exit 0
+    ;;
 
-echo
-step "Commits that will be pushed"
-git log --oneline "origin/${BRANCH}..HEAD" 2>/dev/null || git log --oneline -5
+  *)
+    echo -e "${RED}Invalid choice.${NC}"
+    exit 1
+    ;;
+esac
 
-# ── 5. Push ────────────────────────────────────────────────────────────────
-step "Push to origin/$BRANCH"
-if [[ "$DRY" -eq 1 ]]; then
-  warn "dry-run: would run → git push -u origin $BRANCH"
-  exit 0
-fi
-git push -u --atomic origin "$BRANCH"
-ok "pushed"
-
-# ── 6. Verify ──────────────────────────────────────────────────────────────
-step "Verify"
-LOCAL_SHA="$(git rev-parse HEAD)"
-REMOTE_SHA="$(git ls-remote origin "refs/heads/$BRANCH" | awk '{print $1}')"
-if [[ "$LOCAL_SHA" == "$REMOTE_SHA" ]]; then
-  ok "origin/$BRANCH == HEAD (${LOCAL_SHA:0:7}) — done ✅"
-else
-  warn "remote sha ($REMOTE_SHA) != local ($LOCAL_SHA) — check the push output above"
-fi
+echo ""
+echo -e "${GREEN}🎯 Done.${NC}"

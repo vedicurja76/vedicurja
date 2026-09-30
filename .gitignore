@@ -47,3 +47,11 @@ Book23.txt
 project_tree.txt
 vedicurj.txt
 zeal_full_repository_dump.txt
+.env
+next-env.d.ts
+tsconfig.tsbuildinfo
+*.bak
+*.bak_*
+*.old
+*.clean
+*.fix

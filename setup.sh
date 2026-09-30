@@ -123,7 +123,7 @@ else
 fi
 
 if git rev-parse --verify --quiet "origin/$BRANCH" >/dev/null; then
-  read -r AHEAD BEHIND < <(git rev-list --left-right --count "origin/$BRANCH...HEAD")
+  read -r BEHIND AHEAD < <(git rev-list --left-right --count "origin/$BRANCH...HEAD")
   ok "local vs origin/$BRANCH → ahead $AHEAD, behind $BEHIND"
   if [[ "$BEHIND" -gt 0 ]]; then
     die "your branch is $BEHIND commit(s) BEHIND origin. Rebase/merge first — this script will NOT force-push."

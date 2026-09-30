@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 export default function FloatingParticles() {
   return (
     <div className="absolute inset-0 pointer-events-none">

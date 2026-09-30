@@ -1,9 +1,8 @@
 'use client';
-'use client';
-'use client';
 
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useBi } from '@/lib/i18n/Bilingual';
 
 // Reel data – URL, view count (from your provided blocks)
 // Add/remove entries as needed. The embed will show likes/comments automatically.
@@ -17,6 +16,7 @@ const REELS = [
 ];
 
 export default function InstagramReelsShowcase() {
+  const bi = useBi();
   useEffect(() => {
     // Load Instagram embed script once
     if (!document.querySelector('script[src="//www.instagram.com/embed.js"]')) {
@@ -30,18 +30,18 @@ export default function InstagramReelsShowcase() {
   }, []);
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-b from-vastu-parchment via-white to-vastu-stone/20">
+    <section className="py-16 sm:py-20 bg-gradient-to-b from-vastu-parchment via-[var(--color-bg-primary)] to-vastu-stone/20">
       <div className="container mx-auto px-4 sm:px-6">
         {/* Section header */}
         <div className="text-center mb-12">
           <span className="text-sacred-saffron uppercase tracking-[0.3em] text-sm font-semibold">
-            Viral Wisdom
+            {bi('Viral Wisdom', 'वायरल ज्ञान')}
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-nidra-indigo mt-3 mb-4">
-            Watch AstroVastu Expert in Action
+            {bi('Watch AstroVastu Expert in Action', 'एस्ट्रोवास्तु एक्सपर्ट को कार्यरत देखें')}
           </h2>
           <p className="text-nidra-indigo/60 max-w-2xl mx-auto text-sm sm:text-base">
-            Real remedies, rituals and insights – seen by millions
+            {bi('Real remedies, rituals and insights – seen by millions', 'वास्तविक उपचार, अनुष्ठान और अंतर्दृष्टि – लाखों ने देखी')}
           </p>
         </div>
 
@@ -54,14 +54,14 @@ export default function InstagramReelsShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05, duration: 0.5 }}
-              className="group relative bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-prakash-gold/20 hover:shadow-xl transition-shadow"
+              className="group relative bg-[var(--color-bg-glass)] backdrop-blur-sm rounded-2xl overflow-hidden shadow-lg border border-prakash-gold/20 hover:shadow-xl transition-shadow"
             >
               {/* View count badge */}
               <div className="absolute top-3 right-3 z-10 bg-black/70 backdrop-blur-sm text-white text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
                 </svg>
-                {reel.views} views
+                {reel.views} {bi('views', 'दर्शक')}
               </div>
 
               {/* Instagram embed */}
@@ -105,7 +105,7 @@ export default function InstagramReelsShowcase() {
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.247 2.242 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.975.975-2.242 1.247-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.975-1.247-2.242-1.31-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.242-1.247 3.608-1.31C8.416 2.175 8.796 2.163 12 2.163z"/>
             </svg>
-            Follow @vedicurja
+            {bi('Follow', 'फॉलो करें')} @vedicurja
           </a>
         </div>
       </div>

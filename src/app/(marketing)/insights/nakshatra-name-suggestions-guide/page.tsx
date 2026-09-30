@@ -1,88 +1,23 @@
-'use client';
-'use client';
-import Header from '@/features/shared/components/Header';
-import { SoundController } from '@/features/shared/components/SoundController';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import { articleMetadata, articleJsonLd, type ArticleSeo } from "@/lib/seo/articlePage";
+import Client from "./ClientPage";
 
-export default function BlogPage() {
+const seo: ArticleSeo = {
+  slug: "nakshatra-name-suggestions-guide",
+  title: "Nakshatra-Based Name Suggestion Guide",
+  description:
+    "How the 27 Nakshatras and their auspicious starting syllables guide naming a child or correcting a name in Vedic tradition — a clear guide to birth-star syllables, meaning and numerology by AstroVastu Expert KK Nagaich.",
+  headline: "Nakshatra and Name Suggestion Guide",
+  keywords: ["nakshatra name suggestion", "name by birth star", "vedic naming", "namakaran guide", "auspicious syllables"],
+};
+
+export const metadata: Metadata = articleMetadata(seo);
+
+export default function NakshatraNameArticlePage() {
   return (
     <>
-      <SoundController />
-      <Header />
-      
-        <article className="pt-28 pb-20 min-h-screen">
-
-          <section className="relative py-16 sm:py-24 overflow-hidden bg-gradient-to-br from-[#0a001a] via-[#1a0040] to-nidra-indigo/95 mb-12">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(232,185,96,0.12),transparent_60%)]" />
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-prakash-gold/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-prakash-gold/40 to-transparent" />
-            <div className="container mx-auto px-4 sm:px-6 relative z-10">
-              <div className="absolute top-0 right-4 sm:right-10 w-28 h-28 sm:w-36 sm:h-36 opacity-25 pointer-events-none">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="50" cy="50" r="44" fill="none" stroke="#E8B960" strokeWidth="0.7" opacity="0.3">
-                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="30s" repeatCount="indefinite"/>
-                  </circle>
-                  {[0,45,90,135,180,225,270,315].map((a,i)=>(<circle key={i} cx={50+32*Math.cos(a*Math.PI/180)} cy={50+32*Math.sin(a*Math.PI/180)} r="3" fill="none" stroke="#E8B960" strokeWidth="1" opacity="0.6"><animate attributeName="opacity" values="0.2;0.8;0.2" dur={`${1.5+i*0.3}s`} repeatCount="indefinite"/></circle>))}
-                  <text x="50" y="55" textAnchor="middle" fontSize="11" fill="#E8B960" fontFamily="serif">Nk</text>
-                </svg>
-              </div>
-              <Link href="/insights" className="inline-flex items-center text-prakash-gold hover:text-sacred-saffron mb-4 text-sm transition-colors">
-                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/></svg>
-                Back to Archives
-              </Link>
-              <div className="flex items-center gap-3 text-sm text-white/50 mb-4">
-                <span className="bg-violet-500/20 text-violet-300 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">Numerology</span>
-                <span className="w-1 h-1 bg-white/30 rounded-full" /><span>10 min read</span>
-                <span className="w-1 h-1 bg-white/30 rounded-full" /><span>By AstroVastu Expert KK Nagaich</span>
-              </div>
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4">
-                Nakshatra and Name Suggestions —{' '}
-                <span className="bg-gradient-to-r from-violet-400 via-prakash-gold to-sacred-saffron bg-clip-text text-transparent">The Complete Guide to Auspicious Names</span>
-              </h1>
-              <p className="text-lg text-white/60 max-w-3xl">How your birth star determines the ideal starting sound for your name, why the Brihat Parashara Hora Shastra's 108 sacred syllables still guide naming ceremonies today, and real‑world evidence that name alignment transforms lives.</p>
-            </div>
-          </section>
-
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl"><div className="prose prose-lg prose-stone max-w-none">
-
-<p className="lead text-xl text-nidra-indigo/70 leading-relaxed">For over 5,000 years, Indian families have not chosen their children's names arbitrarily. They have consulted the Nakshatra — the precise lunar mansion in which the child was born — to identify the sacred syllable with which the name must begin. This practice, codified in the Brihat Parashara Hora Shastra, is among the most enduring and scientifically intriguing naming systems in human history. Unlike Western numerology, which operates on a limited 9‑number system, the Nakshatra system divides the zodiac into 27 precise lunar mansions, each spanning 13 degrees and 20 minutes of the ecliptic. Every mansion is further divided into four padas (quarters), and each pada is associated with a specific auspicious syllable — providing 108 unique starting sounds, each with distinct cosmic resonance. The Cycle.in astrology portal confirms: "The 27 Nakshatras form the backbone of Vedic astrology, with each Nakshatra having a specific starting syllable that is traditionally used to name a child born under that star." This article presents the complete Nakshatra naming framework, the 27‑star syllable list, business naming applications, and documented transformations achieved through name correction — all grounded in the Brihat Parashara Hora Shastra and two decades of clinical practice by AstroVastu Expert K.K. Nagaich.</p>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-violet-400 to-purple-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">What Are Nakshatras? The 27 Lunar Mansions of Vedic Astrology</h2></div>
-<p>A Nakshatra is a lunar mansion — a specific 13‑degree‑20‑minute segment of the ecliptic through which the Moon travels during its 27.3‑day sidereal cycle. The Moon spends approximately one day in each Nakshatra, and the specific mansion occupied by the Moon at the moment of birth is the individual's Janma Nakshatra (birth star). DrikPanchang, one of India's most comprehensive Vedic astrology portals, maintains detailed current Nakshatra transit data and emphasises that "Nakshatra is the primary consideration for Muhurta (auspicious timing) and naming." The RVA Astrologers portal adds: "Naming a child based on their Nakshatra has been a Vedic tradition for thousands of years. Each Nakshatra resonates with certain sounds that harmonise with the child's cosmic blueprint."</p>
-<p>Unlike sun signs (which change monthly) or numerology (which reduces birth dates to single digits), the Nakshatra system operates on the Moon's position — which changes approximately every 24 hours and is unique to the individual. Two people born on the same date but at different times will have different Nakshatras, and therefore different recommended name syllables. This precision — 108 possible starting sounds across 27 Nakshatras and 108 padas — far exceeds the 9‑category limitation of Western numerology.</p></div>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">The Complete 27 Nakshatra Syllable Chart — 108 Auspicious Starting Sounds</h2></div>
-<p>The following chart, sourced from the Brihat Parashara Hora Shastra and cross‑referenced with DrikPanchang, Cycle.in, and RVA Astrologers, lists every Nakshatra, its four padas, and the corresponding auspicious syllable for each pada. When a child is born, the family determines the Janma Nakshatra and selects a name beginning with the syllable assigned to the specific pada occupied by the Moon.</p>
-<div className="mt-4 overflow-hidden rounded-2xl border border-prakash-gold/15"><div className="overflow-x-auto"><table className="w-full text-xs sm:text-sm"><thead><tr className="bg-gradient-to-r from-violet-500/10 to-prakash-gold/10"><th className="py-3 px-2 text-left font-serif text-nidra-indigo">#</th><th className="py-3 px-2 text-left font-serif text-nidra-indigo">Nakshatra</th><th className="py-3 px-2 text-left font-serif text-nidra-indigo">Pada 1</th><th className="py-3 px-2 text-left font-serif text-nidra-indigo">Pada 2</th><th className="py-3 px-2 text-left font-serif text-nidra-indigo">Pada 3</th><th className="py-3 px-2 text-left font-serif text-nidra-indigo">Pada 4</th></tr></thead><tbody>
-{[['1','Ashwini','Chu','Che','Cho','La'],['2','Bharani','Lee','Lu','Le','Lo'],['3','Krittika','A','I','U','E'],['4','Rohini','O','Va','Vi','Vu'],['5','Mrigashira','Ve','Vo','Ka','Ki'],['6','Ardra','Ku','Gha','Ng','Chh'],['7','Punarvasu','Ke','Ko','Ha','Hi'],['8','Pushya','Hu','He','Ho','Da'],['9','Ashlesha','Di','Du','De','Do'],['10','Magha','Ma','Mi','Mu','Me'],['11','Purva Phalguni','Mo','Ta','Ti','Tu'],['12','Uttara Phalguni','Te','To','Pa','Pi'],['13','Hasta','Pu','Sha','Na','Tha'],['14','Chitra','Pe','Po','Ra','Ri'],['15','Swati','Ru','Re','Ro','Ta'],['16','Vishakha','Ti','Tu','Te','To'],['17','Anuradha','Na','Ni','Nu','Ne'],['18','Jyeshtha','No','Ya','Yi','Yu'],['19','Mula','Ye','Yo','Ba','Bi'],['20','Purva Ashadha','Bu','Dha','Bha','Dha'],['21','Uttara Ashadha','Be','Bo','Ja','Ji'],['22','Shravana','Ju','Je','Jo','Gha'],['23','Dhanishta','Ga','Gi','Gu','Ge'],['24','Shatabhisha','Go','Sa','Si','Su'],['25','Purva Bhadrapada','Se','So','Da','Di'],['26','Uttara Bhadrapada','Du','Tha','Jna','Da'],['27','Revati','De','Do','Cha','Chi'],].map((r,i)=>(<tr key={i} className={`border-t border-prakash-gold/10 ${i%2===0?'bg-white/40':'bg-vastu-stone/20'}`}>{r.map((c,j)=><td key={j} className={`py-2 px-2 ${j===0?'text-nidra-indigo/40 text-xs':j===1?'font-medium text-nidra-indigo/80 text-xs':j>=2&&j<=5?'text-prakash-gold font-medium text-center':''}`}>{c}</td>)}</tr>))}</tbody></table></div></div>
-<p className="mt-3 text-xs text-nidra-indigo/40">Sources: Brihat Parashara Hora Shastra; DrikPanchang Nakshatra Finder (2026); Cycle.in Nakshatra & Name Syllables Guide; Times of India Astrology; RVA Astrologers Nakshatra Guide.</p></div>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-cyan-400 to-blue-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Why Nakshatra Naming Works — The Vibrational Science</h2></div>
-<p>Why does the starting syllable of a name matter? The answer lies in the physics of sound vibration. Every syllable generates a specific frequency when spoken — and that frequency resonates with the cosmic energy pattern encoded in the Nakshatra. RVA Astrologers explains: "The starting letter or sound is not chosen randomly. It is based on a cosmic connection that influences an individual's life path." The Cycle.in portal adds: "The relationship between Nakshatras and the syllables of names represents a subtle understanding that specific sound vibrations correspond to specific cosmic forces."</p>
-<p>This is not mysticism — it is consistent with the established physics of cymatics (the study of visible sound vibration), which demonstrates that different frequencies produce different geometric patterns in physical media. The name, repeated thousands of times throughout a lifetime, functions as a mantra — a vibrational imprint that shapes self‑perception, social identity, and energetic resonance. When the name's starting syllable matches the Nakshatra's frequency, the individual experiences less internal dissonance and greater alignment between their identity and their cosmic blueprint.</p></div>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-emerald-400 to-green-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Business Naming — How Corporate Names Align with Stars</h2></div>
-<p>The Nakshatra naming system extends beyond personal names to businesses and brands. A company incorporated on a specific date has its own Janma Nakshatra — and the same syllable rules apply to its name. Cycle.in confirms: "Just as personal names align individuals with their Nakshatra, business names can be harmonised with the Nakshatra of the business's founding moment, supporting financial stability and long‑term success."</p>
-<p>The process involves calculating the Nakshatra of the incorporation date (or the date of the Muhurta ceremony performed at the business launch), identifying the four auspicious syllables for that Nakshatra's padas, and either naming the business directly with one of those syllables or — if the brand already exists — adjusting the spelling to incorporate the syllable. AstroVastu Expert K.K. Nagaich has performed Namakaran for hundreds of businesses, including a Delhi‑based manufacturing firm whose founding Nakshatra was Jyeshtha (Pada 2: "Ya"). After changing the brand prefix to begin with "Ya," the company reported a 35% increase in order volume within six months — a result consistent across multiple documented Namakaran cases.</p></div>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-amber-400 to-orange-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">The Navamsha Connection — Beyond the Birth Star</h2></div>
-<p>Advanced Nakshatra naming goes beyond the Janma Nakshatra alone. The Navamsha (D‑9 chart) — the most important divisional chart in Vedic astrology — reveals the Nakshatra of the Atmakaraka (soul significator planet). Some families, particularly in traditional Brahmin communities, name the child according to the Navamsha Nakshatra rather than the birth Nakshatra, believing it aligns the name with the soul's deeper spiritual purpose rather than the physical birth moment. This dual‑layer system — Janma Nakshatra for worldly identity and Navamsha Nakshatra for spiritual alignment — is one of the most sophisticated naming frameworks ever developed. DrikPanchang and RVA Astrologers both provide tools for calculating both Nakshatras, enabling families to make informed decisions about which system to prioritise.</p></div>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-pink-400 to-rose-500" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Case Study — The Child Whose Name Was Corrected at Age 7</h2></div>
-<p>In 2018, a family from Jaipur consulted AstroVastu Expert K.K. Nagaich regarding their 7‑year‑old son, who was experiencing severe attention difficulties at school and frequent health complaints. The child's birth Nakshatra was Mrigashira (Pada 3: "Ka"), but his given name began with "R" — corresponding to Chitra Nakshatra, entirely misaligned with his cosmic blueprint. The Times of India has reported extensively on how incorrect name alignment affects children's development. AstroVastu Expert recommended a simplified Namakaran ceremony — the child was given a new official name beginning with "Ka" (the correct syllable), while his original name was retained as a middle name. Within three months, his teachers reported significant improvement in concentration. Within one year, his health complaints had reduced by approximately 70%. The family described the change as "transformative." This case is one of dozens documented in AstroVastu Expert's clinical records demonstrating that name correction — when properly calculated and ritually performed — produces measurable changes in behaviour, health, and well‑being.</p></div>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-blue-500 to-indigo-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">The Namakaran Ceremony — A Sacred Rite of Passage</h2></div>
-<p>In Vedic tradition, name assignment is not a casual decision — it is a sacred samskara (rite of passage) called Namakaran, one of the 16 essential Hindu sacraments. The ceremony is traditionally performed on the 10th, 11th, or 12th day after birth, conducted by a qualified priest who calculates the Janma Nakshatra precisely, selects the appropriate syllable, chants specific mantras, and formally whispers the chosen name into the child's right ear. Havan (sacred fire) is lit, offerings are made to the Nakshatra deity, and the family commits to using the name in all official and social contexts. For adults seeking name correction, the ceremony is adapted — the original name is retained as a middle or secondary name, while the new Nakshatra‑aligned name is used as the primary identity. The transition is gradual, allowing social and professional networks to adapt. AstroVastu Expert K.K. Nagaich has conducted Namakaran ceremonies for newborns and adults alike, integrating the ancient Vedic ritual with practical modern name‑change guidance.</p></div>
-
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-teal-400 to-cyan-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">The AI Tool vs the Acharya — When to Trust Technology and When to Trust the Expert</h2></div>
-<p>The VedicUrja AI Name Suggestion tool provides instant, free syllable recommendations for all 27 Nakshatras — the first syllable of each pada. The tool is built directly on the Brihat Parashara Hora Shastra's data and is 100% accurate for pada‑specific syllable identification. However, the tool cannot perform a full Namakaran analysis. It cannot calculate your Janma Nakshatra from your birth details. It cannot determine which pada your Moon occupies. It cannot assess whether your existing name is aligned or misaligned. It cannot evaluate Navamsha Nakshatra for deeper spiritual alignment. And it cannot perform the sacred Namakaran ceremony that ritually seals the name into your destiny. For all these functions — the complete, personalised, and sacred practice of Vedic naming — a one‑on‑one consultation with AstroVastu Expert K.K. Nagaich is required. The AI tool is the map. The Acharya is the guide who reads it.</p></div>
-
-<div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-white rounded-3xl border border-prakash-gold/20"><div className="flex items-center gap-3 mb-4"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-violet-400 to-sacred-saffron" /><h2 className="font-serif text-2xl text-nidra-indigo">Conclusion — Your Name Is Your Vibration</h2></div>
-<p>You hear your name more than any other word. It is spoken by parents, partners, colleagues, and strangers. It is the word you associate most deeply with your own identity. When that word vibrates in harmony with the cosmic forces encoded in your birth star, you experience less internal friction, greater self‑acceptance, and a deeper alignment with your life purpose. When it vibrates against those forces — even subtly — the dissonance accumulates across a lifetime. The Nakshatra naming system is not superstition. It is vibrational science encoded in sound — a technology for human alignment that has operated continuously for over 5,000 years. Whether you are naming a newborn, contemplating a name correction, or launching a business, the 108 sacred syllables of the 27 Nakshatras offer a precise, personalised framework for choosing a name that sings in harmony with the stars.</p>
-<p className="font-medium">AstroVastu Expert K.K. Nagaich provides complete Namakaran services — Janma Nakshatra calculation, pada identification, syllable selection, Navamsha analysis, business naming, and the sacred Namakaran ceremony — as part of his comprehensive Vedic consultation practice.</p></div>
-
-</div>
-<div className="mt-12 p-6 bg-white/60 backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-<div className="w-14 h-14 rounded-full bg-gradient-to-br from-violet-600 to-prakash-gold flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-<div><p className="font-serif text-lg text-nidra-indigo font-bold">AstroVastu Expert KK Nagaich</p><p className="text-sm text-nidra-indigo/60">4th Generation Vastu Guru | MBA | Ex‑CEO | 20+ Years Clinical Practice | 2 Lakh+ Clients Worldwide</p></div>
-</div></div></article></>);}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(seo)) }} />
+      <Client />
+    </>
+  );
+}

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useState, ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -34,12 +32,12 @@ export default function ServiceCard3DEnhanced({ title, description, icon, benefi
       >
         {/* Front – Image */}
         <div
-          className="absolute inset-0 rounded-[40px] bg-white/80 backdrop-blur-xl border-2 border-prakash-gold/30 overflow-hidden flex flex-col"
+          className="absolute inset-0 rounded-[40px] bg-[var(--color-bg-glass)] backdrop-blur-xl border-2 border-prakash-gold/30 overflow-hidden flex flex-col"
           style={{ backfaceVisibility: 'hidden' }}
         >
           <div className="h-56 overflow-hidden">
             <img src={image} alt={title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-nidra-indigo/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-hero-2)]/40 to-transparent" />
           </div>
           <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
             <div className="mb-3 drop-shadow-[0_0_15px_rgba(255,153,51,0.4)]">{icon}</div>
@@ -51,7 +49,7 @@ export default function ServiceCard3DEnhanced({ title, description, icon, benefi
 
         {/* Back – Info */}
         <div
-          className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-white/95 via-prakash-gold/5 to-sacred-saffron/10 backdrop-blur-xl border-2 border-prakash-gold/40 flex flex-col justify-center p-6"
+          className="absolute inset-0 rounded-[40px] bg-gradient-to-br from-[var(--color-bg-elevated)] via-prakash-gold/5 to-sacred-saffron/10 backdrop-blur-xl border-2 border-prakash-gold/40 flex flex-col justify-center p-6"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
           <h4 className="font-serif text-xl text-nidra-indigo font-bold mb-4">{title}</h4>

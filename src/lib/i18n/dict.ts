@@ -1,0 +1,186 @@
+export type Language = 'en' | 'hi';
+
+export interface DictEntry {
+  en: string;
+  hi: string;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   Siddhi i18n dictionary — en + hi (Devanagari)
+   Single source of truth for all UI chrome, booking, chat & CTAs
+   ──────────────────────────────────────────────────────────────── */
+export const dict: Record<string, DictEntry> = {
+  /* ── Navigation ── */
+  'nav.home': { en: 'Home', hi: 'होम' },
+  'nav.about': { en: 'About', hi: 'हमारे बारे में' },
+  'nav.services': { en: 'Services', hi: 'सेवाएं' },
+  'nav.freeTools': { en: 'Free AI Tools', hi: 'मुफ्त AI उपकरण' },
+  'nav.bookings': { en: 'Bookings', hi: 'बुकिंग' },
+  'nav.blogs': { en: 'Insights / Blogs', hi: 'ज्ञान / ब्लॉग' },
+  'nav.cities': { en: 'City Guide', hi: 'शहर गाइड' },
+  'tool.astrology': { en: 'Free AI Astrology', hi: 'निःशुल्क AI ज्योतिष' },
+  'nav.testimonials': { en: 'Testimonials', hi: 'प्रशंसापत्र' },
+  'nav.products': { en: 'Products', hi: 'उत्पाद' },
+  'nav.collaborate': { en: 'Collaborate', hi: 'सहयोग करें' },
+  'nav.consult': { en: 'Consult Acharya', hi: 'आचार्य से परामर्श' },
+
+  /* ── Service names (nav dropdown + footer) ── */
+  'svc.residential': { en: 'Residential Vastu', hi: 'आवासीय वास्तु' },
+  'svc.commercial': { en: 'Commercial Vastu', hi: 'व्यावसायिक वास्तु' },
+  'svc.industrial': { en: 'Industrial Vastu', hi: 'औद्योगिक वास्तु' },
+  'svc.land': { en: 'Land Selection', hi: 'भूमि चयन' },
+  'svc.kundali': { en: 'Kundali Analysis', hi: 'कुंडली विश्लेषण' },
+  'svc.numerology': { en: 'Numerology & Namakaran', hi: 'अंक ज्योतिष व नामकरण' },
+  'svc.geopathic': { en: 'Geopathic Stress', hi: 'जियोपैथिक स्ट्रेस' },
+  'svc.crystal': { en: 'Crystal & Color Therapy', hi: 'क्रिस्टल व रंग चिकित्सा' },
+  'svc.pyramid': { en: 'Pyramidology', hi: 'पिरामिड विज्ञान' },
+  'svc.mercury': { en: 'Mercury Parad', hi: 'पारद शिवलिंग' },
+  'svc.rituals': { en: 'Rituals, Puja & Havan', hi: 'अनुष्ठान, पूजा व हवन' },
+  'svc.remedies': { en: 'Vastu Remedies', hi: 'वास्तु उपाय' },
+  'svc.spiritual': { en: 'Spiritual Vastu', hi: 'आध्यात्मिक वास्तु' },
+  'svc.virtual': { en: 'Virtual Consult', hi: 'वर्चुअल परामर्श' },
+
+  /* ── Free tools ── */
+  'tool.horoscope': { en: 'Daily Horoscope', hi: 'दैनिक राशिफल' },
+  'tool.name': { en: 'Name Suggestion', hi: 'नाम सुझाव' },
+
+  /* ── Insights (blog nav) ── */
+  'blog.all': { en: 'All Insights', hi: 'सभी लेख' },
+  'blog.science': { en: 'Science of Vastu', hi: 'वास्तु का विज्ञान' },
+  'blog.numerology': { en: 'Numerology Beginners', hi: 'अंक ज्योतिष शुरुआत' },
+  'blog.remedies': { en: 'Remedies Without Demolition', hi: 'बिना तोड़-फोड़ उपाय' },
+  'blog.entrance': { en: 'Main Entrance Vastu', hi: 'मुख्य द्वार वास्तु' },
+  'blog.kitchen': { en: 'Kitchen Vastu', hi: 'रसोई वास्तु' },
+  'blog.bedroom': { en: 'Bedroom Vastu', hi: 'शयनकक्ष वास्तु' },
+  'blog.office': { en: 'Commercial Vastu Office', hi: 'ऑफिस वास्तु' },
+  'blog.geopathic': { en: 'Geopathic Stress', hi: 'जियोपैथिक स्ट्रेस' },
+  'blog.nakshatra': { en: 'Nakshatra Names', hi: 'नक्षत्र नाम' },
+  'blog.panch': { en: 'Panch Mahabhutas', hi: 'पंच महाभूत' },
+  'blog.spiritual': { en: 'Spiritual Vastu', hi: 'आध्यात्मिक वास्तु' },
+
+  /* ── Drawer extras ── */
+  'drawer.remedies': { en: 'Remedies', hi: 'उपाय' },
+  'drawer.remediesBadge': { en: '5 Therapies', hi: '5 चिकित्साएं' },
+  'drawer.rituals': { en: 'Rituals', hi: 'अनुष्ठान' },
+  'drawer.ritualsBadge': { en: 'Puja & Havan', hi: 'पूजा व हवन' },
+  'drawer.consultCta': { en: 'Consult AstroVastu Expert ji', hi: 'वास्तुविद जी से परामर्श करें' },
+  'header.openMenu': { en: 'Open menu', hi: 'मेनू खोलें' },
+  'header.closeMenu': { en: 'Close menu', hi: 'मेनू बंद करें' },
+
+  /* ── Footer ── */
+  'footer.tagline': { en: 'Vedic Vastu Energy — a promise of happiness, prosperity, peace and health', hi: 'वैदिक वास्तु ऊर्जा — सुख, समृद्धि, शांति और स्वास्थ्य का संकल्प' },
+  'footer.registered': { en: 'Registered Business: Vedic Vastu Urja', hi: 'पंजीकृत व्यवसाय: वैदिक वास्तु ऊर्जा' },
+  'footer.guru': { en: '4th Generation Vastu Guru', hi: 'चौथी पीढ़ी के वास्तु गुरु' },
+  'footer.company': { en: 'Company', hi: 'कंपनी' },
+  'footer.sacredServices': { en: 'Sacred Services', hi: 'पवित्र सेवाएं' },
+  'footer.learn': { en: 'Learn', hi: 'सीखें' },
+  'footer.connect': { en: 'Connect', hi: 'संपर्क करें' },
+  'footer.rights': { en: 'All rights reserved.', hi: 'सर्वाधिकार सुरक्षित।' },
+  'footer.privacy': { en: 'Privacy Policy', hi: 'गोपनीयता नीति' },
+  'footer.terms': { en: 'Terms & Conditions', hi: 'नियम व शर्तें' },
+  'footer.clientStories': { en: 'Client Stories', hi: 'ग्राहक कहानियां' },
+  'footer.contact': { en: 'Contact', hi: 'संपर्क' },
+  'footer.address': { en: 'Rishita, Ansal Api, Celebrity Greens, P1101, Golf City, Sector B, Lucknow, Uttar Pradesh 226030', hi: 'रिशिता, अंसल एपीआई, सेलिब्रिटी ग्रीन्स, P1101, गोल्फ सिटी, सेक्टर B, लखनऊ, उत्तर प्रदेश 226030' },
+
+  /* ── Common CTAs ── */
+  'cta.bookNow': { en: 'Book Now', hi: 'अभी बुक करें' },
+  'cta.bookConsultation': { en: 'Book Consultation', hi: 'परामर्श बुक करें' },
+  'cta.contactUs': { en: 'Contact Us', hi: 'संपर्क करें' },
+  'cta.learnMore': { en: 'Learn More', hi: 'और जानें' },
+  'cta.exploreSolutions': { en: 'Explore Solutions', hi: 'समाधान देखें' },
+  'cta.getSolutionWhatsApp': { en: 'Get Solution on WhatsApp', hi: 'WhatsApp पर समाधान पाएं' },
+  'cta.bookWhatsApp': { en: 'Book via WhatsApp', hi: 'WhatsApp से बुक करें' },
+  'cta.startJourney': { en: 'Start Your Journey', hi: 'यात्रा शुरू करें' },
+  'cta.consultMaster': { en: 'Consult the Master', hi: 'गुरु से परामर्श' },
+  'cta.exploreFreeTools': { en: 'Explore Free Tools', hi: 'मुफ्त उपकरण देखें' },
+  'cta.stillQuestions': { en: 'Still Have Questions?', hi: 'अभी भी प्रश्न हैं?' },
+  'cta.readMore': { en: 'Read More', hi: 'और पढ़ें' },
+  'cta.viewPlans': { en: 'View Plans', hi: 'प्लान देखें' },
+  'cta.sendWhatsApp': { en: 'Send on WhatsApp', hi: 'WhatsApp पर भेजें' },
+  'cta.scheduleAudit': { en: 'Schedule Your Audit', hi: 'ऑडिट शेड्यूल करें' },
+  'cta.contactNow': { en: 'Contact Us Now', hi: 'अभी संपर्क करें' },
+
+  /* ── Booking flow ── */
+  'bk.heroEyebrow': { en: 'Begin Your Transformation', hi: 'अपनी परिवर्तन यात्रा शुरू करें' },
+  'bk.heroTitle1': { en: 'Align Your Space,', hi: 'अपने स्थान को संरेखित करें,' },
+  'bk.heroTitle2': { en: 'Elevate Your Life', hi: 'अपने जीवन को ऊंचा उठाएं' },
+  'bk.heroSub': { en: "Book a one-on-one consultation with AstroVastu Expert KK Nagaich – India's most trusted Vastu expert. Instant online payment, confirmed within 12 hours.", hi: 'एस्ट्रोवास्तु एक्सपर्ट के.के. नागाइच — भारत के सबसे विश्वसनीय वास्तु विशेषज्ञ से एक-पर-एक परामर्श बुक करें। तुरंत ऑनलाइन भुगतान, 12 घंटे में पुष्टि।' },
+  'bk.stat.experience': { en: 'Years Experience', hi: 'वर्षों का अनुभव' },
+  'bk.stat.clients': { en: 'Clients Served', hi: 'ग्राहक सेवित' },
+  'bk.stat.countries': { en: 'Countries', hi: 'देश' },
+  'bk.stat.rating': { en: 'Client Rating', hi: 'ग्राहक रेटिंग' },
+  'bk.processTitle': { en: 'Simple 3-Step Process', hi: 'सरल 3-चरणीय प्रक्रिया' },
+  'bk.proc1Title': { en: 'Choose Service & Plan', hi: 'सेवा व प्लान चुनें' },
+  'bk.proc1Desc': { en: 'Pick from 14 Vastu services and a plan that fits your budget.', hi: 'अपने बजट के अनुसार 14 वास्तु सेवाओं और प्लान में से चुनें।' },
+  'bk.proc2Title': { en: 'Submit Details', hi: 'विवरण जमा करें' },
+  'bk.proc2Desc': { en: 'Tell us about your space and concern. Acharya ji reviews personally.', hi: 'अपने स्थान और समस्या के बारे में बताएं। आचार्य जी स्वयं समीक्षा करते हैं।' },
+  'bk.proc3Title': { en: 'Pay & Confirm', hi: 'भुगतान व पुष्टि' },
+  'bk.proc3Desc': { en: 'Secure Razorpay checkout — then consult via WhatsApp video call.', hi: 'सुरक्षित Razorpay चेकआउट — फिर WhatsApp वीडियो कॉल से परामर्श।' },
+  'bk.step1': { en: 'Choose Service', hi: 'सेवा चुनें' },
+  'bk.step2': { en: 'Your Details', hi: 'आपकी जानकारी' },
+  'bk.step3': { en: 'Payment', hi: 'भुगतान' },
+  'bk.helpWith': { en: 'What do you need help with?', hi: 'आपको किस चीज़ में सहायता चाहिए?' },
+  'bk.chooseHint': { en: 'Choose a service — Siddhi can guide you anytime from the homepage chat.', hi: 'एक सेवा चुनें — सिद्धि होमपेज चैट से आपका मार्गदर्शन कर सकती है।' },
+  'bk.mostPopular': { en: 'Most Popular', hi: 'सबसे लोकप्रिय' },
+  'bk.continue': { en: 'Continue', hi: 'आगे बढ़ें' },
+  'bk.detailsPrivate': { en: 'Your details stay private. Acharya ji reviews every booking personally.', hi: 'आपकी जानकारी गोपनीय रहती है। आचार्य जी हर बुकिंग स्वयं देखते हैं।' },
+  'bk.fullName': { en: 'Full Name *', hi: 'पूरा नाम *' },
+  'bk.phone': { en: 'Phone *', hi: 'फ़ोन *' },
+  'bk.email': { en: 'Email', hi: 'ईमेल' },
+  'bk.city': { en: 'City *', hi: 'शहर *' },
+  'bk.pincode': { en: 'Pincode *', hi: 'पिनकोड *' },
+  'bk.preferredDate': { en: 'Preferred Date', hi: 'पसंदीदा तिथि' },
+  'bk.address': { en: 'Address', hi: 'पता' },
+  'bk.concern': { en: 'Your Concern', hi: 'आपकी समस्या' },
+  'bk.ph.name': { en: 'Your name', hi: 'आपका नाम' },
+  'bk.ph.address': { en: 'Your complete address (for report mapping)', hi: 'आपका पूरा पता (रिपोर्ट के लिए)' },
+  'bk.ph.concern': { en: 'e.g. Health issues after moving in, business losses, sleep problems…', hi: 'जैसे: घर बदलने के बाद बीमारी, व्यापार में घाटा, नींद की समस्या…' },
+  'bk.back': { en: 'Back', hi: 'वापस' },
+  'bk.reviewPay': { en: 'Review & Pay', hi: 'समीक्षा व भुगतान' },
+  'bk.orderSummary': { en: 'Order Summary', hi: 'ऑर्डर सारांश' },
+  'bk.service': { en: 'Service', hi: 'सेवा' },
+  'bk.plan': { en: 'Plan', hi: 'प्लान' },
+  'bk.duration': { en: 'Duration', hi: 'अवधि' },
+  'bk.name': { en: 'Name', hi: 'नाम' },
+  'bk.cityPlain': { en: 'City', hi: 'शहर' },
+  'bk.amount': { en: 'Amount', hi: 'राशि' },
+  'bk.total': { en: 'Total', hi: 'कुल' },
+  'bk.payTest': { en: 'Pay Now (Test Mode)', hi: 'अभी भुगतान करें (टेस्ट मोड)' },
+  'bk.paySecure': { en: 'Pay Now — Secure Checkout', hi: 'अभी भुगतान करें — सुरक्षित चेकआउट' },
+  'bk.testNote': { en: 'Test Mode: Razorpay keys not configured yet. Payment is simulated so you can test the full flow end-to-end.', hi: 'टेस्ट मोड: Razorpay कुंजियाँ अभी सेट नहीं हैं। पूरा फ्लो जांचने के लिए भुगतान सिम्युलेटेड है।' },
+  'bk.secureNote': { en: 'Secured by Razorpay. You will be redirected to the official Razorpay checkout.', hi: 'Razorpay द्वारा सुरक्षित। आप आधिकारिक Razorpay चेकआउट पर जाएंगे।' },
+  'bk.iHavePaid': { en: 'I have paid', hi: 'मैंने भुगतान कर दिया है' },
+  'bk.reopen': { en: 'Reopen payment', hi: 'भुगतान फिर खोलें' },
+  'bk.confirmed': { en: 'Booking Confirmed!', hi: 'बुकिंग की पुष्टि हुई!' },
+  'bk.confirmedNote': { en: 'Acharya ji will reach out within 12 hours. For a faster start, send your booking summary on WhatsApp — you can attach your layout plan there too.', hi: 'आचार्य जी 12 घंटे में संपर्क करेंगे। जल्दी शुरुआत के लिए WhatsApp पर बुकिंग सारांश भेजें — वहाँ लेआउट प्लान भी भेज सकते हैं।' },
+  'bk.bookAnother': { en: 'Book another consultation', hi: 'एक और परामर्श बुक करें' },
+  'bk.payFailed': { en: 'Payment Not Completed', hi: 'भुगतान पूरा नहीं हुआ' },
+  'bk.tryAgain': { en: 'Try Again', hi: 'फिर प्रयास करें' },
+  'bk.backSummary': { en: 'Back to Summary', hi: 'सारांश पर वापस जाएं' },
+  'bk.processing': { en: 'Processing…', hi: 'प्रोसेस हो रहा है…' },
+  'bk.err.name': { en: 'Please enter your full name.', hi: 'कृपया अपना पूरा नाम लिखें।' },
+  'bk.err.phone': { en: 'Please enter a valid 10-digit phone number.', hi: 'कृपया सही 10 अंकों का फ़ोन नंबर लिखें।' },
+  'bk.err.email': { en: 'Please enter a valid email address.', hi: 'कृपया सही ईमेल पता लिखें।' },
+  'bk.err.city': { en: 'Please enter your city.', hi: 'कृपया अपना शहर लिखें।' },
+  'bk.err.pincode': { en: 'Please enter a valid 6-digit pincode.', hi: 'कृपया सही 6 अंकों का पिनकोड लिखें।' },
+  'bk.err.address': { en: 'Please enter your address.', hi: 'कृपया अपना पता लिखें।' },
+  'bk.testPayment': { en: 'test payment', hi: 'टेस्ट भुगतान' },
+
+  /* ── Siddhi chat UI ── */
+  'chat.aiGuide': { en: 'AI Vastu Guide', hi: 'AI वास्तु मार्गदर्शिका' },
+  'chat.online': { en: 'Online now', hi: 'अभी ऑनलाइन' },
+  'chat.onlineSub': { en: 'instant answers', hi: 'तुरंत उत्तर' },
+  'chat.placeholder': { en: 'Ask in Hindi or English…', hi: 'हिंदी या English में पूछें…' },
+  'chat.send': { en: 'Send message', hi: 'संदेश भेजें' },
+  'chat.free': { en: 'Free guidance · 24×7', hi: 'मुफ्त मार्गदर्शन · 24×7' },
+  'chat.error': { en: 'Sorry, a technical issue occurred. Please book directly or ask again shortly.', hi: 'क्षमा करें, अभी तकनीकी समस्या है। सीधे बुक करें या थोड़ी देर बाद फिर पूछें।' },
+
+  /* ── Generic / misc ── */
+  'misc.loading': { en: 'Loading…', hi: 'लोड हो रहा है…' },
+  'misc.secure': { en: 'Your details are secure. We never share your information.', hi: 'आपकी जानकारी सुरक्षित है। हम इसे कभी साझा नहीं करते।' },
+  'misc.contactNote': { en: 'Contact us directly on WhatsApp or call our support team.', hi: 'WhatsApp पर सीधे संपर्क करें या हमारी सहायता टीम को कॉल करें।' },
+};
+
+export function getDict(key: string): DictEntry | undefined {
+  return dict[key];
+}

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';

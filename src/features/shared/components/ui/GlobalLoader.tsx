@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { motion } from 'framer-motion';
 import styles from './GlobalLoader.module.css';
 
@@ -9,7 +7,7 @@ interface GlobalLoaderProps {
   message?: string;
 }
 
-export default function GlobalLoader({ isLoading, message = "Loading VedicUrja..." }: GlobalLoaderProps) {
+export default function GlobalLoader({ isLoading, message = "Loading AstroVastu Expert..." }: GlobalLoaderProps) {
   if (!isLoading) return null;
   
   return (

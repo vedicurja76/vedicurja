@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 

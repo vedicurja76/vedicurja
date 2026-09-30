@@ -29,3 +29,21 @@ Thumbs.db
 # Backups
 .backups/
 *.backup
+
+# Snapshot/diagnostic dirs (never commit)
+.pre_final_build_*/
+.diagnostic_*/
+.about_backups/
+.favicon_v_*/
+.hero_upgrade_*/
+.menu_scroll_*/
+.menu_shrink_*/
+.remove_kundali_*/
+
+# Dump files (never commit)
+*_dump*.txt
+*.dump.txt
+Book23.txt
+project_tree.txt
+vedicurj.txt
+zeal_full_repository_dump.txt

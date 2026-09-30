@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -13,7 +11,7 @@ export default function CosmicLoader() {
     return () => clearTimeout(timer);
   }, []);
 
-  const fullText = "VedicVastuUrja";
+  const fullText = "AstroVastu Expert";
   const [displayText, setDisplayText] = useState("");
   const [index, setIndex] = useState(0);
 

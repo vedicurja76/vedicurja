@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import { usePathname } from 'next/navigation';

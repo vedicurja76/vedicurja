@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { Component, ReactNode } from 'react';
 export class ErrorBoundary extends Component<{children:ReactNode},{hasError:boolean}> {
   constructor(p:any){ super(p); this.state={hasError:false}; }

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { GoogleReview } from '@/data/googleReviews';
@@ -25,7 +23,7 @@ export default function TestimonialCard({ review, index }: TestimonialCardProps)
       className="h-full rounded-2xl p-[2px] shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
       style={{ background: 'linear-gradient(135deg, #FF9933 0%, #C10000 100%)' }}
     >
-      <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-5 h-full flex flex-col">
+      <div className="bg-[var(--color-bg-glass)] backdrop-blur-sm rounded-2xl p-5 h-full flex flex-col">
         {/* Profile header */}
         <div className="flex items-center gap-3 mb-3">
           <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-prakash-gold/30">

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -47,7 +45,7 @@ export default function RouteLoader() {
           </div>
           <div className="absolute bottom-20 text-center">
             <span className="font-serif text-xl sm:text-2xl font-bold bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red bg-clip-text text-transparent">
-              VedicVastuUrja
+              AstroVastu Expert
             </span>
           </div>
         </motion.div>

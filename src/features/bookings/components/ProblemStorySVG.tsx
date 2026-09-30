@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 export default function ProblemStorySVG() {
   return (
     <svg viewBox="0 0 600 250" className="w-full h-auto max-w-2xl mx-auto" xmlns="http://www.w3.org/2000/svg">

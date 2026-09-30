@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useRef, ReactNode } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Link from 'next/link';
@@ -78,7 +76,7 @@ export function ServiceCard3D({
           <div className="mt-auto pt-6 transform translate-z-4">
             <Link
               href={href}
-              className="block w-full py-3.5 text-center bg-white/90 backdrop-blur-sm rounded-full font-semibold text-nidra-indigo border border-white/60 shadow-lg hover:bg-prakash-gold hover:text-white hover:border-prakash-gold transition-all duration-300"
+              className="block w-full py-3.5 text-center bg-[var(--color-bg-glass)] backdrop-blur-sm rounded-full font-semibold text-nidra-indigo border border-white/60 shadow-lg hover:bg-prakash-gold hover:text-white hover:border-prakash-gold transition-all duration-300"
             >
               Learn More →
             </Link>

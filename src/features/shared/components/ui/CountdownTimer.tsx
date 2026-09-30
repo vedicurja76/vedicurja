@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useState, useEffect, useRef } from 'react';
 
 interface CountdownTimerProps {
@@ -37,11 +35,11 @@ export default function CountdownTimer({ targetDate, onExpire }: CountdownTimerP
   if (isExpired) return null;
   return (
     <div className="flex gap-2 justify-center font-mono text-2xl font-bold text-nidra-indigo">
-      <div className="bg-white/50 backdrop-blur-sm px-4 py-2 rounded-xl shadow-inner">{String(timeLeft.hours).padStart(2, '0')}</div>
+      <div className="bg-[var(--color-bg-glass)] backdrop-blur-sm px-4 py-2 rounded-xl shadow-inner">{String(timeLeft.hours).padStart(2, '0')}</div>
       <span className="text-prakash-gold">:</span>
-      <div className="bg-white/50 backdrop-blur-sm px-4 py-2 rounded-xl shadow-inner">{String(timeLeft.minutes).padStart(2, '0')}</div>
+      <div className="bg-[var(--color-bg-glass)] backdrop-blur-sm px-4 py-2 rounded-xl shadow-inner">{String(timeLeft.minutes).padStart(2, '0')}</div>
       <span className="text-prakash-gold">:</span>
-      <div className="bg-white/50 backdrop-blur-sm px-4 py-2 rounded-xl shadow-inner">{String(timeLeft.seconds).padStart(2, '0')}</div>
+      <div className="bg-[var(--color-bg-glass)] backdrop-blur-sm px-4 py-2 rounded-xl shadow-inner">{String(timeLeft.seconds).padStart(2, '0')}</div>
     </div>
   );
 }

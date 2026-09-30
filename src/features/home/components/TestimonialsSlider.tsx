@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import TestimonialCard from '@/features/testimonials/components/TestimonialCard';
 import { googleReviews } from '@/data/googleReviews';
 

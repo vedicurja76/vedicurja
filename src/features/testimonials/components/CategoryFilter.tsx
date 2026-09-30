@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { motion } from 'framer-motion';
 
 interface Props {
@@ -25,7 +23,7 @@ export default function CategoryFilter({ categories, activeCategory, onSelect, s
             className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
               activeCategory === cat
                 ? 'bg-gradient-to-r from-prakash-gold to-sacred-saffron text-white shadow-md'
-                : 'bg-white/50 backdrop-blur-sm border border-prakash-gold/30 text-nidra-indigo hover:bg-prakash-gold/10'
+                : 'bg-[var(--color-bg-glass)] backdrop-blur-sm border border-prakash-gold/30 text-nidra-indigo hover:bg-prakash-gold/10'
             }`}
           >
             {cat}
@@ -38,7 +36,7 @@ export default function CategoryFilter({ categories, activeCategory, onSelect, s
           placeholder="Search by name or keyword..."
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          className="w-full px-6 py-3 rounded-full border border-prakash-gold/30 bg-white/50 backdrop-blur-sm text-nidra-indigo placeholder:text-nidra-indigo/40 focus:outline-none focus:border-prakash-gold"
+          className="w-full px-6 py-3 rounded-full border border-prakash-gold/30 bg-[var(--color-bg-glass)] backdrop-blur-sm text-nidra-indigo placeholder:text-nidra-indigo/40 focus:outline-none focus:border-prakash-gold"
         />
       </div>
     </div>

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { motion } from 'framer-motion';
 
 interface VastuZone { name: string; element: string; score: number; recommendation?: string; }
@@ -16,7 +14,7 @@ export default function VastuBars3D({ zones }: { zones: VastuZone[] }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.05 }}
-            className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-prakash-gold/20"
+            className="bg-[var(--color-bg-glass)] backdrop-blur-sm rounded-xl p-4 border border-prakash-gold/20"
             whileHover={{ rotateY: 3, scale: 1.02 }}
           >
             <div className="flex justify-between items-center mb-2">

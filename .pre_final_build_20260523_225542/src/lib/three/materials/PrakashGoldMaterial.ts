@@ -1,1 +1,0 @@
-// Custom Prakash Gold material

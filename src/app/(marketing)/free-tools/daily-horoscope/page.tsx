@@ -1,39 +1,36 @@
-'use client';
-'use client';
-'use client';
-import { Suspense } from 'react';
-import Header from '@/features/shared/components/Header';
-import SmoothScroll from '@/features/shared/components/global/ScrollSmoother';
+import type { Metadata } from "next";
+import { SEO_BASE } from "@/lib/seo/servicePage";
+import Client from "./ClientPage";
 
-function HoroscopeContent() {
-  return (
-    <div className="pt-28 pb-20 px-6 min-h-screen bg-gradient-to-b from-vastu-parchment to-white">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="font-serif text-4xl md:text-5xl text-nidra-indigo mb-4">
-          Daily Horoscope
-        </h1>
-        <p className="text-nidra-indigo/60 mb-8">
-          Your daily Vedic horoscope based on ancient calculations.
-        </p>
-        <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-prakash-gold/30">
-          <p className="text-nidra-indigo/70">Content coming soon. Check back tomorrow.</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+const URL = `${SEO_BASE}/free-tools/daily-horoscope`;
 
-export default function DailyHoroscopePage() {
+export const metadata: Metadata = {
+  title: "Daily Horoscope — 12 Rashi Predictions Today",
+  description:
+    "Read today's daily horoscope for all 12 Rashis (Mesha to Meena) — love, career, health, finance and lucky colour and number guidance, prepared from authentic Vedic principles by AstroVastu Expert.",
+  alternates: { canonical: URL },
+  openGraph: { title: "Daily Horoscope — 12 Rashi", description: "Today's Vedic rashi predictions — free daily horoscope.", url: URL, type: "website", siteName: "AstroVastu Expert" },
+  twitter: { card: "summary_large_image", title: "Daily Horoscope", description: "12 Rashi predictions today." },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${URL}#app`,
+  name: "Daily Horoscope — 12 Rashi",
+  url: URL,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Web",
+  isAccessibleForFree: true,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+  provider: { "@id": `${SEO_BASE}/#organization` },
+};
+
+export default function DailyHoroscopeIndex() {
   return (
     <>
-      <Header />
-      <SmoothScroll>
-        <main>
-          <Suspense fallback={<div className="pt-28 text-center">Loading...</div>}>
-            <HoroscopeContent />
-          </Suspense>
-        </main>
-      </SmoothScroll>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Client />
     </>
   );
 }

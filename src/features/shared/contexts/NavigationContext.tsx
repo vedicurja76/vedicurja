@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { createContext, useContext, useState, useCallback, useRef, ReactNode } from 'react';
 
 interface NavigationContextType {

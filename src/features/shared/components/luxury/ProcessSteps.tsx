@@ -1,6 +1,7 @@
 'use client';
-'use client';
-'use client';
+
+
+
 import { motion } from 'framer-motion';
 
 export default function ProcessSteps() {
@@ -12,7 +13,7 @@ export default function ProcessSteps() {
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="bg-[var(--color-bg-elevated)] relative py-20 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
           <span className="text-sacred-saffron uppercase tracking-[0.2em] text-sm font-semibold">How It Works</span>
@@ -27,7 +28,7 @@ export default function ProcessSteps() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
               whileHover={{ scale: 1.05, rotateY: 5 }}
-              className="relative text-center p-6 bg-white/80 rounded-2xl border border-prakash-gold/20 shadow-lg"
+              className="relative text-center p-6 bg-[var(--color-bg-glass)] rounded-2xl border border-prakash-gold/20 shadow-lg"
               style={{ transformStyle: 'preserve-3d', perspective: 600 }}
             >
               <div className="text-5xl font-bold text-prakash-gold/30 mb-3">{step.num}</div>

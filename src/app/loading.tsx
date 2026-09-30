@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 
 import { useState, useEffect } from 'react';
 import Mandala3D from '@/features/shared/components/Mandala3D';
@@ -15,7 +13,7 @@ export default function Loading() {
 
   if (!show) return null;
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#1A0A2E]">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[var(--color-bg-primary)]">
       <Mandala3D />
     </div>
   );

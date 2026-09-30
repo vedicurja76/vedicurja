@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 export default function GlowingOrb({ color = '#E8B960' }: { color?: string }) {
   return (
     <div className="absolute pointer-events-none animate-pulse">

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import CosmicLoader from '@/features/shared/components/ui/CosmicLoader';

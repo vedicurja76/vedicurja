@@ -22,8 +22,8 @@ const staticData: Record<string, any[]> = {
     { id: '3', client_name: 'Ananya Sharma', location: 'Dubai, UAE', content: 'My health improved dramatically.', rating: 5, verified: true, is_published: true, order_index: 3 },
   ],
   site_settings: [
-    { key: 'footer_about', value: 'VedicUrja – Ancient Wisdom. Modern Precision.' },
-    { key: 'footer_copyright', value: '© 2026 VedicUrja. All rights reserved.' },
+    { key: 'footer_about', value: 'AstroVastu Expert – Ancient Wisdom. Modern Precision.' },
+    { key: 'footer_copyright', value: '© 2026 AstroVastu Expert. All rights reserved.' },
   ],
 };
 

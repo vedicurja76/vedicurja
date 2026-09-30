@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { motion } from 'framer-motion';
 interface Props { points: string[]; title: string; accent: string; delay?: number; }
 export default function PainPointCard({ points, title, accent, delay = 0 }: Props) {

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 
 import Image from 'next/image';
 
@@ -15,7 +13,7 @@ const logos = [
 
 export default function GuruAuthority() {
   return (
-    <section className="py-12 sm:py-16 bg-white border-b border-prakash-gold/10">
+    <section className="py-12 sm:py-16 bg-[var(--color-bg-elevated)] border-b border-prakash-gold/10">
       <div className="container mx-auto px-4 text-center">
         <h3 className="font-serif text-2xl sm:text-3xl text-nidra-indigo mb-8">
           Trusted by India's Most Respected Brands

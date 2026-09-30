@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 export default function SpiritualSVG() {
   return (
     <svg viewBox="0 0 80 80" className="w-20 h-20" fill="none">

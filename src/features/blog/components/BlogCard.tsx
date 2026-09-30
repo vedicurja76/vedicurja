@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { BlogPost } from '@/types/admin';
@@ -20,7 +18,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
       className="group h-full"
     >
       <Link href={`/insights/${post.slug}`} className="block h-full">
-        <div className="relative h-full bg-white/80 backdrop-blur-sm rounded-2xl overflow-hidden border border-prakash-gold/20 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
+        <div className="relative h-full bg-[var(--color-bg-glass)] backdrop-blur-sm rounded-2xl overflow-hidden border border-prakash-gold/20 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-1">
           {/* Category badge – elegant gold gradient */}
           <div className="absolute top-4 left-4 z-10">
             <span className="inline-block px-4 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full bg-gradient-to-r from-prakash-gold/90 to-sacred-saffron/90 text-white shadow-md">
@@ -29,7 +27,7 @@ export default function BlogCard({ post, index }: BlogCardProps) {
           </div>
 
           {/* Image area */}
-          <div className="relative h-48 overflow-hidden bg-gradient-to-br from-nidra-indigo/5 to-prakash-gold/5">
+          <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[var(--color-hero-2)]/5 to-prakash-gold/5">
             {post.featured_image ? (
               <img 
                 src={post.featured_image} 

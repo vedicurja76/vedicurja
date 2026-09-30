@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform, MotionValue } from 'framer-motion';
 
@@ -175,7 +173,7 @@ export default function AnimatedStatCard3D({ label, value, suffix, description, 
 
         {/* Edge highlight */}
         <div className="absolute inset-0 rounded-[40px] border-2 border-white/20 pointer-events-none" />
-        <div className="absolute inset-[2px] rounded-[38px] border border-white/10 pointer-events-none" />
+        <div className="absolute inset-[2px] rounded-[38px] border border-[var(--color-border-soft)] pointer-events-none" />
       </div>
     </motion.div>
   );

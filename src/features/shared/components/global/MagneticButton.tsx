@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { useSound } from '@/features/shared/hooks/useSound';

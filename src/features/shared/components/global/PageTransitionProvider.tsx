@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useEffect, useState } from 'react';
 import PageTransitionLoader from '@/features/shared/components/ui/PageTransitionLoader';
 import { consumeTransition } from '@/lib/pageTransition';

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 
 export function TrustMarquee() {
   const brands = [
@@ -17,7 +15,7 @@ export function TrustMarquee() {
   return (
     <section className="relative py-10 sm:py-14 overflow-hidden">
       {/* Slow looping gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-nidra-indigo/5 via-prakash-gold/10 to-sacred-saffron/5 bg-[length:400%_400%] animate-[trustGradient_12s_ease-in-out_infinite] rounded-[60px] mx-4 sm:mx-8" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-hero-2)]/5 via-prakash-gold/10 to-sacred-saffron/5 bg-[length:400%_400%] animate-[trustGradient_12s_ease-in-out_infinite] rounded-[60px] mx-4 sm:mx-8" />
 
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6">

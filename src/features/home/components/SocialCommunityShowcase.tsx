@@ -2,6 +2,7 @@
 import Script from "next/script";
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useBi } from '@/lib/i18n/Bilingual';
 
 // Facebook posts – replace with your actual data
 const facebookPosts = [
@@ -29,6 +30,7 @@ const youtubeVideos = [
 ];
 
 export default function SocialCommunityShowcase() {
+  const bi = useBi();
   useEffect(() => {
     if ((window as any).instgrm) (window as any).instgrm.Embeds.process();
   }, []);
@@ -42,14 +44,14 @@ export default function SocialCommunityShowcase() {
           if ((window as any).instgrm) (window as any).instgrm.Embeds.process();
         }}
       />
-      <section className="py-20 sm:py-28 bg-gradient-to-b from-vastu-parchment to-white">
+      <section className="py-20 sm:py-28 bg-gradient-to-b from-vastu-parchment to-[var(--color-bg-primary)]">
         <div className="container mx-auto px-4 sm:px-6">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="font-serif text-3xl sm:text-4xl md:text-5xl text-center text-nidra-indigo mb-4"
           >
-            Our Sacred Community
+            {bi('Our Sacred Community', 'हमारा पवित्र समुदाय')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -57,7 +59,7 @@ export default function SocialCommunityShowcase() {
             transition={{ delay: 0.1 }}
             className="text-center text-nidra-indigo/60 mb-12 max-w-3xl mx-auto"
           >
-            Join thousands of seekers on their journey with VedicUrja
+            {bi('Join thousands of seekers on their journey with AstroVastu Expert', 'एस्ट्रोवास्तु एक्सपर्ट के साथ अपनी यात्रा पर हज़ारों साधकों से जुड़ें')}
           </motion.p>
 
           {/* Facebook Section */}
@@ -68,7 +70,7 @@ export default function SocialCommunityShowcase() {
             <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
               {facebookPosts.map((post, i) => (
                 <motion.div key={i} className="flex-shrink-0 w-[300px] sm:w-[360px] snap-start">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-prakash-gold/20">
+                  <div className="bg-[var(--color-bg-elevated)] rounded-2xl shadow-lg overflow-hidden border border-prakash-gold/20">
                     <iframe loading="lazy" src={post.src} width="100%" height={post.height} style={{ border: 'none', overflow: 'hidden' }} scrolling="no" frameBorder="0" />
                   </div>
                 </motion.div>
@@ -84,7 +86,7 @@ export default function SocialCommunityShowcase() {
             <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
               {instagramEmbeds.map((embed, i) => (
                 <motion.div key={i} className="flex-shrink-0 w-[300px] sm:w-[360px] snap-start">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-prakash-gold/20" dangerouslySetInnerHTML={{ __html: embed.html }} />
+                  <div className="bg-[var(--color-bg-elevated)] rounded-2xl shadow-lg overflow-hidden border border-prakash-gold/20" dangerouslySetInnerHTML={{ __html: embed.html }} />
                 </motion.div>
               ))}
             </div>
@@ -93,12 +95,12 @@ export default function SocialCommunityShowcase() {
           {/* YouTube Section */}
           <div>
             <h3 className="font-serif text-2xl text-center sm:text-left text-nidra-indigo mb-4 flex items-center gap-2">
-              <span className="text-3xl">▶️</span> YouTube Community
+              <span className="text-3xl">▶️</span> {bi('YouTube Community', 'YouTube समुदाय')}
             </h3>
             <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
               {youtubeVideos.map((video, i) => (
                 <motion.div key={video.id} className="flex-shrink-0 w-[300px] sm:w-[360px] snap-start">
-                  <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-prakash-gold/20">
+                  <div className="bg-[var(--color-bg-elevated)] rounded-2xl shadow-lg overflow-hidden border border-prakash-gold/20">
                     <div className="aspect-video">
                       <iframe
                         width="100%"

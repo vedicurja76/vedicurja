@@ -1,9 +1,9 @@
 'use client';
-'use client';
-'use client';
 import { useSound } from '@/features/shared/hooks/useSound';
+import { useBi } from '@/lib/i18n/Bilingual';
 
 export function SoundController() {
+  const bi = useBi();
   const { isPlaying, isMuted, toggleAmbient, toggleMute } = useSound();
 
   return (
@@ -19,7 +19,7 @@ export function SoundController() {
             <button 
               onClick={toggleAmbient} 
               className="w-8 h-8 rounded-full bg-prakash-gold/20 flex items-center justify-center hover:bg-prakash-gold/40 transition"
-              title={isPlaying ? 'Pause ambient' : 'Play ambient'}
+              title={bi(isPlaying ? 'Pause ambient' : 'Play ambient', isPlaying ? 'एम्बिएंट रोकें' : 'एम्बिएंट चलाएँ')}
             >
               {isPlaying ? '⏸' : '▶'}
             </button>
@@ -27,7 +27,7 @@ export function SoundController() {
               onClick={(e) => { e.preventDefault(); toggleMute(); }} 
               onContextMenu={(e) => { e.preventDefault(); toggleMute(); }}
               className="w-8 h-8 rounded-full bg-prakash-gold/20 flex items-center justify-center hover:bg-prakash-gold/40 transition"
-              title={isMuted ? 'Unmute' : 'Mute (right-click)'}
+              title={bi(isMuted ? 'Unmute' : 'Mute (right-click)', isMuted ? 'आवाज़ चालू करें' : 'म्यूट (राइट-क्लिक)')}
             >
               {isMuted ? '🔇' : '🔊'}
             </button>

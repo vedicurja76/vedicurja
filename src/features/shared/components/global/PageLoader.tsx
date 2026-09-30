@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 export function PageLoader() {
   return (
     <div className="min-h-screen bg-vastu-parchment flex items-center justify-center">

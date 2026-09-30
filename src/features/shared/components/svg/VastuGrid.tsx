@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 export default function VastuGrid() {
   return (
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">

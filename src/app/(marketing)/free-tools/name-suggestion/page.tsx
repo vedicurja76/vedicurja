@@ -1,39 +1,36 @@
-'use client';
-'use client';
-'use client';
-import { Suspense } from 'react';
-import Header from '@/features/shared/components/Header';
-import SmoothScroll from '@/features/shared/components/global/ScrollSmoother';
+import type { Metadata } from "next";
+import { SEO_BASE } from "@/lib/seo/servicePage";
+import Client from "./ClientPage";
 
-function NameSuggestionContent() {
-  return (
-    <div className="pt-28 pb-20 px-6 min-h-screen bg-gradient-to-b from-vastu-parchment to-white">
-      <div className="max-w-4xl mx-auto text-center">
-        <h1 className="font-serif text-4xl md:text-5xl text-nidra-indigo mb-4">
-          Name Suggestion
-        </h1>
-        <p className="text-nidra-indigo/60 mb-8">
-          Auspicious names based on Nakshatra.
-        </p>
-        <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-prakash-gold/30">
-          <p className="text-nidra-indigo/70">This tool is being upgraded. Please check back soon.</p>
-        </div>
-      </div>
-    </div>
-  );
-}
+const URL = `${SEO_BASE}/free-tools/name-suggestion`;
 
-export default function NameSuggestionPage() {
+export const metadata: Metadata = {
+  title: "Name Suggestion by Nakshatra — Free Vedic Naam Tool",
+  description:
+    "Get auspicious name suggestions from your Nakshatra and birth star — Vedic and Chaldean numerology-based Naam Suggestion for babies, people and businesses, free by AstroVastu Expert.",
+  alternates: { canonical: URL },
+  openGraph: { title: "Name Suggestion by Nakshatra", description: "Free Vedic auspicious-name tool by birth star.", url: URL, type: "website", siteName: "AstroVastu Expert" },
+  twitter: { card: "summary_large_image", title: "Name Suggestion Tool", description: "Auspicious syllables from 27 Nakshatras." },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "@id": `${URL}#app`,
+  name: "Name Suggestion by Nakshatra",
+  url: URL,
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "Web",
+  isAccessibleForFree: true,
+  offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
+  provider: { "@id": `${SEO_BASE}/#organization` },
+};
+
+export default function NameSuggestionIndex() {
   return (
     <>
-      <Header />
-      <SmoothScroll>
-        <main>
-          <Suspense fallback={<div className="pt-28 text-center">Loading...</div>}>
-            <NameSuggestionContent />
-          </Suspense>
-        </main>
-      </SmoothScroll>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <Client />
     </>
   );
 }

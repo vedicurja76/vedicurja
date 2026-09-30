@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/features/shared/components/Header';

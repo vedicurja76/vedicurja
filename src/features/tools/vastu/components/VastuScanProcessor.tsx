@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { motion } from 'framer-motion';
@@ -36,7 +34,7 @@ export default function VastuScanProcessor({ onAnalysisComplete }: Props) {
   return (
     <div className="max-w-2xl mx-auto space-y-6">
       <div {...getRootProps()} className={`border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition ${isDragActive ? 'border-prakash-gold bg-prakash-gold/10' : 'border-prakash-gold/30'}`}><input {...getInputProps()} /><p className="text-nidra-indigo/60">{isDragActive ? 'Drop your floor plan here' : 'Drag & drop a floor plan, or click to select'}</p></div>
-      {image && (<div><img src={image} alt="Floor plan" className="w-full rounded-xl shadow-lg" /><select value={orientation} onChange={e => setOrientation(e.target.value)} className="mt-4 p-3 border border-prakash-gold/30 rounded-xl bg-white/50 w-full">{['North','South','East','West','North‑East','North‑West','South‑East','South‑West'].map(d=><option key={d}>{d}</option>)}</select><button onClick={analyzeVastu} disabled={loading} className="mt-4 w-full luxury-button py-4 disabled:opacity-50">{loading ? 'Analyzing...' : 'Analyze Vastu (Free)'}</button></div>)}
+      {image && (<div><img src={image} alt="Floor plan" className="w-full rounded-xl shadow-lg" /><select value={orientation} onChange={e => setOrientation(e.target.value)} className="mt-4 p-3 border border-prakash-gold/30 rounded-xl bg-[var(--color-bg-glass)] w-full">{['North','South','East','West','North‑East','North‑West','South‑East','South‑West'].map(d=><option key={d}>{d}</option>)}</select><button onClick={analyzeVastu} disabled={loading} className="mt-4 w-full luxury-button py-4 disabled:opacity-50">{loading ? 'Analyzing...' : 'Analyze Vastu (Free)'}</button></div>)}
     </div>
   );
 }

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 export default function KundaliLuxurySVG() {
   return (
     <svg viewBox="0 0 120 120" className="w-28 h-28" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,4 @@
 'use client';
-'use client';
-'use client';
 import { useState, useEffect } from 'react';
 import GlobalLoader from './GlobalLoader';
 
@@ -15,7 +13,7 @@ export default function PageLoaderWrapper({ children }: { children: React.ReactN
 
   return (
     <>
-      <GlobalLoader isLoading={isPageLoading} message="Loading VedicUrja..." />
+      <GlobalLoader isLoading={isPageLoading} message="Loading AstroVastu Expert..." />
       {children}
     </>
   );

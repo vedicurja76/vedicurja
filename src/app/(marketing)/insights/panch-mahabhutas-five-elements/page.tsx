@@ -1,134 +1,23 @@
-'use client';
-'use client';
-import Header from '@/features/shared/components/Header';
-import { SoundController } from '@/features/shared/components/SoundController';
-import Link from 'next/link';
+import type { Metadata } from "next";
+import { articleMetadata, articleJsonLd, type ArticleSeo } from "@/lib/seo/articlePage";
+import Client from "./ClientPage";
 
-export default function BlogPage() {
+const seo: ArticleSeo = {
+  slug: "panch-mahabhutas-five-elements",
+  title: "The Panch Mahabhutas — Five Elements of Vastu Explained",
+  description:
+    "Earth, Water, Fire, Air and Space (Akash) and their directions, qualities and roles in Vastu — how balancing the five elements shapes a healthy, prosperous living space, by AstroVastu Expert KK Nagaich.",
+  headline: "Understanding the Panch Mahabhutas — Five Elements",
+  keywords: ["panch mahabhutas", "five elements vastu", "vastu elements directions", "brahmasthan", "vastu science basics"],
+};
+
+export const metadata: Metadata = articleMetadata(seo);
+
+export default function PanchMahabhutasArticlePage() {
   return (
     <>
-      <SoundController />
-      <Header />
-      
-        <article className="pt-28 pb-20 min-h-screen">
-
-          <section className="relative py-16 sm:py-24 overflow-hidden bg-gradient-to-br from-[#0a0a1a] via-[#1a1a3e] to-nidra-indigo/95 mb-12">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(168,85,247,0.10),transparent_60%)]" />
-            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-prakash-gold/40 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-prakash-gold/40 to-transparent" />
-            <div className="container mx-auto px-4 sm:px-6 relative z-10">
-              <div className="absolute top-0 right-4 sm:right-10 w-28 h-28 sm:w-36 sm:h-36 opacity-25 pointer-events-none">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="15" y="15" width="70" height="70" fill="none" stroke="#A855F7" strokeWidth="1.2" opacity="0.5"/>
-                  <circle cx="50" cy="50" r="28" fill="none" stroke="#E8B960" strokeWidth="1" opacity="0.5"/>
-                  <circle cx="50" cy="50" r="14" fill="none" stroke="#FF9933" strokeWidth="0.8" opacity="0.4"/>
-                  <line x1="15" y1="50" x2="85" y2="50" stroke="#A855F7" strokeWidth="0.4" opacity="0.3"/>
-                  <line x1="50" y1="15" x2="50" y2="85" stroke="#A855F7" strokeWidth="0.4" opacity="0.3"/>
-                  <circle cx="50" cy="50" r="44" fill="none" stroke="#E8B960" strokeWidth="0.7" opacity="0.3">
-                    <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="35s" repeatCount="indefinite"/>
-                  </circle>
-                </svg>
-              </div>
-              <Link href="/insights" className="inline-flex items-center text-prakash-gold hover:text-sacred-saffron mb-4 text-sm transition-colors">
-                <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/></svg>
-                Back to Archives
-              </Link>
-              <div className="flex items-center gap-3 text-sm text-white/50 mb-4">
-                <span className="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">Vastu Science</span>
-                <span className="w-1 h-1 bg-white/30 rounded-full" /><span>10 min read</span>
-                <span className="w-1 h-1 bg-white/30 rounded-full" /><span>By AstroVastu Expert KK Nagaich</span>
-              </div>
-              <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4">
-                Understanding the Panch Mahabhutas —{' '}
-                <span className="bg-gradient-to-r from-purple-400 via-prakash-gold to-sacred-saffron bg-clip-text text-transparent">The Five Elements of Vastu</span>
-              </h1>
-              <p className="text-lg text-white/60 max-w-3xl">A deep dive into earth, water, fire, air, and space — the cosmic building blocks that govern every direction, every room, and every aspect of your life — validated by peer‑reviewed Ayurvedic research, quantum field theory, and the ancient texts.</p>
-            </div>
-          </section>
-
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl"><div className="prose prose-lg prose-stone max-w-none">
-
-<p className="lead text-xl text-nidra-indigo/70 leading-relaxed">The Taittiriya Upanishad (1.1.1) declares: "Earth, Water, Fire, Air, and Space — these are the five great elements." Long before Dmitri Mendeleev organised the periodic table in 1869, and millennia before quantum field theory described energy condensing into matter, the Vedic Rishis had already mapped the universe into five fundamental states of existence called the <strong>Pancha Mahabhutas</strong>. These are not simplistic physical substances. As the Sanatana &amp; Science research portal explains, they are "states of existence, vibrational fields, and layers of consciousness" that map remarkably well to modern atomic theory — with Akasha (Space) corresponding to the quantum vacuum, Vayu (Air) to electromagnetic fields, Agni (Fire) to thermodynamic transformations, Jala (Water) to fluid dynamics and plasma states, and Prithvi (Earth) to solid‑state matter and crystalline lattices. This article presents the definitive Vastu framework for understanding and balancing the five elements — grounded in peer‑reviewed science, ancient Sanskrit texts, and two decades of clinical practice by AstroVastu Expert K.K. Nagaich.</p>
-
-{/* SECTION 1 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-indigo-500" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">The Pancha Mahabhutas — A Complete Reference Table</h2></div>
-<p>Every Vastu principle — from room placement to colour therapy, from yantra installation to daily ritual — is ultimately a technique for balancing these five elements. Each element governs a specific direction, a planet, a sensory organ, a bodily function, and a set of life outcomes. The table below synthesises data from the peer‑reviewed Panchamahabhuta Siddhanta study (2025), the CCC–AAA Architects' Vastu manual, and the JyotishGram elemental imbalance research (2026).</p>
-<div className="mt-4 overflow-hidden rounded-2xl border border-prakash-gold/15">
-<table className="w-full text-xs sm:text-sm"><thead><tr className="bg-gradient-to-r from-purple-500/10 to-prakash-gold/10"><th className="py-3 px-2 sm:px-4 text-left font-serif text-nidra-indigo">Element</th><th className="py-3 px-2 sm:px-4 text-left font-serif text-nidra-indigo">Direction</th><th className="py-3 px-2 sm:px-4 text-left font-serif text-nidra-indigo">Planet</th><th className="py-3 px-2 sm:px-4 text-left font-serif text-nidra-indigo">Sense</th><th className="py-3 px-2 sm:px-4 text-left font-serif text-nidra-indigo">Body Part</th><th className="py-3 px-2 sm:px-4 text-left font-serif text-nidra-indigo">Life Domain</th></tr></thead><tbody>
-{[['Earth (Prithvi)','Southwest','Rahu','Smell','Bones, muscles','Stability, finances, relationships'],['Water (Jal)','Northeast','Moon','Taste','Blood, fluids','Emotions, clarity, wealth flow'],['Fire (Agni)','Southeast','Sun, Mars','Sight','Metabolism, eyes','Energy, ambition, digestive health'],['Air (Vayu)','Northwest','Saturn','Touch','Lungs, nerves','Communication, movement, networking'],['Space (Akash)','Center (Brahmasthan)','Jupiter','Hearing','Brain, consciousness','Expansion, wisdom, spiritual growth'],].map((r,i)=>(<tr key={i} className={`border-t border-prakash-gold/10 ${i%2===0?'bg-white/40':'bg-vastu-stone/20'}`}>{r.map((c,j)=><td key={j} className={`py-3 px-2 sm:px-4 ${j===0?'font-medium text-nidra-indigo/80':j===1?'text-prakash-gold font-medium':j===5?'text-nidra-indigo/60':'text-nidra-indigo/50'}`}>{c}</td>)}</tr>))}</tbody></table></div>
-<p className="mt-3 text-xs text-nidra-indigo/40">Sources: Dr. Kunal ojha et al., "Panchamahabhuta Siddhanta: A Review," AJPRI, 2025; JyotishGram, "Vastu and the Five Elements," 2026; CCC–AAA Architects Vastu Manual, 2025; Sanatana &amp; Science, "The 5 Elements &amp; Atomic Science," 2025.</p>
-</div>
-
-{/* SECTION 2 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-amber-600 to-brown-700" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Prithvi (Earth) — The Element of Stability, Southwest</h2></div>
-<p>Earth is the heaviest element — associated with the Southwest (Nairutya) direction, ruled by Rahu, and connected to the sense of smell, bones, and muscles. Prithvi provides the structural integrity of both the physical building and the psychological stability of its residents. According to Housing.com, "The southwest receives the most stable solar radiation during the day, making it ideal for heavy structures and master bedrooms." Vastu Solutions notes that the Southwest quadrant "also receives the strongest infrared radiation from the setting sun, providing sustained thermal mass that releases heat slowly through the night."</p>
-<p>Scientific parallel: In modern physics, Earth corresponds to solid‑state matter — atomic lattices, crystalline structures, and gravity‑influenced mass. The Sanatana &amp; Science portal maps Prithvi directly to "solid matter, atomic lattice, crystalline structure, gravity‑affected mass."</p>
-<div className="mt-4 grid sm:grid-cols-2 gap-4">
-<div className="p-4 bg-green-50/50 rounded-2xl border border-green-200"><h3 className="font-serif text-base text-green-800 font-bold mb-2">Balanced Earth</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Financial stability &amp; steady career growth</li><li>• Emotional grounding &amp; secure relationships</li><li>• Strong decision‑making ability</li><li>• Deep, restful sleep (SW master bedroom)</li></ul></div>
-<div className="p-4 bg-red-50/50 rounded-2xl border border-red-200"><h3 className="font-serif text-base text-red-800 font-bold mb-2">Imbalanced Earth</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Frequent relocations or career instability</li><li>• Weak decision‑making &amp; restlessness</li><li>• Financial leakage despite good income</li><li>• Feelings of uncertainty &amp; insecurity</li></ul></div></div>
-<p className="mt-3 text-sm"><strong>Remedy:</strong> Keep the SW heavy — solid furniture, storage units, a ceramic pot with soil. Use beige, brown, or earthy tones. Never place a water tank or toilet here. CCC–AAA Architects (2025) recommends "heavy furniture or storage units here to enhance stability."</p></div>
-
-{/* SECTION 3 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-cyan-400 to-blue-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Jal (Water) — Flow, Prosperity, Northeast</h2></div>
-<p>The Northeast (Ishanya) is governed by Water, ruled by the Moon, and associated with taste, blood, and emotional well‑being. The Culture &amp; Heritage portal explains: "Water (Jala) — Symbolic of life, it is associated with the north‑east." This direction is considered the most sacred because it combines the beneficial energies of both North (Kuber's wealth) and East (Surya's health). The Northeast must remain open, clean, well‑lit, and never burdened by toilets, kitchens, or heavy storage.</p>
-<p>Scientific parallel: Water corresponds to fluid dynamics, plasma states, and hydrogen bonding — essential to life and chemical transport. The ArtFactory notes that "Water bodies regulate humidity, create calmness, and reflect light. Water features improve emotional and psychological well‑being."</p>
-<div className="mt-4 grid sm:grid-cols-2 gap-4">
-<div className="p-4 bg-green-50/50 rounded-2xl border border-green-200"><h3 className="font-serif text-base text-green-800 font-bold mb-2">Balanced Water</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Smooth cash flow &amp; financial opportunities</li><li>• Emotional clarity &amp; mental calm</li><li>• Enhanced creativity &amp; intuition</li><li>• Spiritual receptivity</li></ul></div>
-<div className="p-4 bg-red-50/50 rounded-2xl border border-red-200"><h3 className="font-serif text-base text-red-800 font-bold mb-2">Imbalanced Water</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Financial leakage (JyotishGram, 2026)</li><li>• Anxiety, emotional confusion</li><li>• Lack of mental clarity</li><li>• Stagnant opportunities</li></ul></div></div>
-<p className="mt-3 text-sm"><strong>Remedy:</strong> Keep a copper vessel with fresh water and rose petals in the NE, changed daily. A small fountain amplifies prosperity. Housivity (2025) recommends "a small indoor fountain or aquarium in the northeast corner. Avoid red or dark colours here."</p></div>
-
-{/* SECTION 4 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-orange-500 to-red-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Agni (Fire) — Energy, Transformation, Southeast</h2></div>
-<p>The Southeast (Agneya) is the domain of Fire, ruled by the Sun and Mars, associated with sight, metabolism, and vitality. CCC–AAA Architects (2025) confirm: "Kitchen: Southeast (Agni corner), as it represents fire." The fire element is the driver of ambition — when balanced, it fuels confidence, initiative, and digestive health. When excessive, it creates aggression, conflict, and burnout.</p>
-<p>Scientific parallel: Fire corresponds to thermodynamics, photon emission, metabolism, and nuclear fusion. Housing.com observes: "Locating the kitchen in the southeast (fire zone) aligns with the sun's natural heat, potentially reducing reliance on artificial cooking methods." The Sanatana &amp; Science portal maps Agni to "energy transformations, metabolism, nuclear fusion, thermodynamics, photon emission."</p>
-<div className="mt-4 grid sm:grid-cols-2 gap-4">
-<div className="p-4 bg-green-50/50 rounded-2xl border border-green-200"><h3 className="font-serif text-base text-green-800 font-bold mb-2">Balanced Fire</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Strong metabolism &amp; vitality</li><li>• Confidence, drive, leadership</li><li>• Good digestive health</li><li>• Career ambition &amp; recognition</li></ul></div>
-<div className="p-4 bg-red-50/50 rounded-2xl border border-red-200"><h3 className="font-serif text-base text-red-800 font-bold mb-2">Imbalanced Fire</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Anger issues, family conflicts</li><li>• Digestive problems &amp; acidity</li><li>• Low motivation or burnout</li><li>• JyotishGram: "Excess fire agitates; weak fire reduces drive"</li></ul></div></div>
-<p className="mt-3 text-sm"><strong>Remedy:</strong> A salt lamp in the SE, a ghee lamp lit at sunrise, warm tones (orange, red, yellow). NHS–Spazay (2024) recommends "light orange, red, yellow, and peach to stimulate appetite." Never place water features in this zone.</p></div>
-
-{/* SECTION 5 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-sky-300 to-slate-500" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Vayu (Air) — Movement, Communication, Northwest</h2></div>
-<p>The Northwest (Vayavya) is governed by Air, ruled by Saturn, and connected to touch, lungs, and nerve impulses. Vayu enables communication, networking, travel, and intellectual agility. The NewsPoint lifestyle portal (2026) explains: "Air is associated with movement, freshness, and communication. It governs the northwest direction and supports circulation, both physically and emotionally."</p>
-<p>Scientific parallel: Vayu corresponds to the movement of electrons, electromagnetic fields, and force carriers (photons). Proper ventilation in this zone reduces stress, improves air quality, and facilitates social connection. Housivity notes: "Open windows daily, especially in the morning, to allow fresh air to circulate."</p>
-<div className="mt-4 grid sm:grid-cols-2 gap-4">
-<div className="p-4 bg-green-50/50 rounded-2xl border border-green-200"><h3 className="font-serif text-base text-green-800 font-bold mb-2">Balanced Air</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Smooth communication &amp; networking</li><li>• Timely project completion</li><li>• Healthy relationships</li><li>• Mental agility &amp; fresh ideas</li></ul></div>
-<div className="p-4 bg-red-50/50 rounded-2xl border border-red-200"><h3 className="font-serif text-base text-red-800 font-bold mb-2">Imbalanced Air</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Communication gaps &amp; misunderstandings</li><li>• Project delays &amp; stagnation</li><li>• JyotishGram: "Instability in relationships"</li><li>• Overthinking &amp; mental restlessness</li></ul></div></div>
-<p className="mt-3 text-sm"><strong>Remedy:</strong> A metal wind chime with 5‑6 rods in the NW. Ensure good cross‑ventilation. Light, white, or pastel grey colours. Housivity recommends: "Avoid clutter and unused items" in this zone.</p></div>
-
-{/* SECTION 6 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-fuchsia-400 to-purple-700" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Akash (Space) — The Brahmasthan, the Cosmic Center</h2></div>
-<p>Space (Akasha) is the subtlest element — the void from which all others emerge. It governs the center of the home, the Brahmasthan, and is ruled by Jupiter. The Sanatana &amp; Science portal makes a striking comparison: "Akasha as Quantum Vacuum — The vacuum is not empty; it's a field full of fluctuations, the base energy field from which all particles arise." This aligns with the Chandogya Upanishad (6.3.4), which describes the cosmic condensation process: "From Akasha arose Vayu, from Vayu Agni, from Agni Apas, from Apas Prithvi" — a five‑thousand‑year‑old description of energy condensing into matter.</p>
-<p>The Brahmasthan must remain open, unbuilt, and well‑lit. ArtFactory explains: "Open central areas enhance air circulation and spatial perception, lowering stress." JyotishGram (2026) notes: "When blocked: feeling stuck or directionless, overall stagnation, health issues without clear cause."</p>
-<div className="mt-4 grid sm:grid-cols-2 gap-4">
-<div className="p-4 bg-green-50/50 rounded-2xl border border-green-200"><h3 className="font-serif text-base text-green-800 font-bold mb-2">Balanced Space</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Mental clarity &amp; spiritual growth</li><li>• All‑round harmony</li><li>• Creative expansion</li><li>• Light‑filled, peaceful atmosphere</li></ul></div>
-<div className="p-4 bg-red-50/50 rounded-2xl border border-red-200"><h3 className="font-serif text-base text-red-800 font-bold mb-2">Blocked Space</h3><ul className="text-sm text-nidra-indigo/60 space-y-1.5"><li>• Overall life stagnation</li><li>• Feeling directionless</li><li>• Unexplained health issues</li><li>• JyotishGram: "Jupiter governs expansion — blocked space restricts growth on all levels"</li></ul></div></div>
-<p className="mt-3 text-sm"><strong>Remedy:</strong> Keep the center completely open — no walls, heavy furniture, or storage. A skylight or crystal lotus amplifies cosmic energy. Light, neutral colours.</p></div>
-
-{/* SECTION 7 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-emerald-400 to-teal-600" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">The Vastu Purusha Mandala — The 64‑Square Cosmic Grid</h2></div>
-<p>The Vastu Purusha Mandala is the sacred geometric diagram upon which all Vastu principles are mapped. It is a square grid of 64 (8×8) or 81 (9×9) equal squares, with 45 deities assigned to specific positions. Each square corresponds to a direction, an element, a body part of the Vastu Purusha (the cosmic being), and a life function. The Culture &amp; Heritage portal describes it as "the metaphysical plan of a building that incorporates cosmic energy and directional alignments." CCC–AAA Architects (2025) adds: "The Vastu Purusha Mandala is a sacred diagram used to plan the layout, dividing the site into a grid."</p>
-<p>In this mandala, the Vastu Purusha lies face‑down with his head in the Northeast (Ishanya — the seat of clarity and wisdom), his feet in the Southwest (stability), his right arm in the Southeast (fire/action), and his left arm in the Northwest (air/movement). Each body part governs a specific zone, and aligning design elements with these body parts optimises energy flow — a concept independently validated by the Morphogenesis architectural research group (2025). The 45 deities assigned to the mandala's squares represent specific cosmic forces, each governing measurable life functions — from career progression to relationship harmony.</p></div>
-
-{/* SECTION 8 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-sacred-saffron to-kumkuma-red" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">The Human Body — A Living Vastu Mandala</h2></div>
-<p>One of the most profound Vedic insights is that the five elements in the home directly correspond to the five elements in the human body. The Sharecare health portal explains: "Vastu Shastra can benefit your health by balancing the five elements in your home; different corners of your home are connected to different areas of your body." The Ayurvedic connection deepens this: the three doshas (Vata, Pitta, Kapha) are themselves combinations of the five elements — Vata is Air + Space, Pitta is Fire + Water, Kapha is Earth + Water. A Vastu imbalance therefore manifests as both a physical health symptom and a directional defect in the home.</p>
-<div className="mt-4 overflow-hidden rounded-2xl border border-prakash-gold/15">
-<table className="w-full text-sm"><thead><tr className="bg-gradient-to-r from-sacred-saffron/10 to-kumkuma-red/10"><th className="py-3 px-4 text-left font-serif text-nidra-indigo">Home Zone</th><th className="py-3 px-4 text-left font-serif text-nidra-indigo">Element</th><th className="py-3 px-4 text-left font-serif text-nidra-indigo">Body System</th><th className="py-3 px-4 text-left font-serif text-nidra-indigo">Imbalance Symptom</th></tr></thead><tbody>
-{[['Northeast','Water','Brain, nervous system, emotions','Anxiety, confusion, poor decision‑making'],['Southeast','Fire','Digestive system, eyes, metabolism','Acidity, ulcers, low energy'],['Southwest','Earth','Bones, muscles, immune system','Joint pain, fatigue, insecurity'],['Northwest','Air','Lungs, respiratory, social connection','Breathing issues, isolation, communication blocks'],['Center','Space','Heart, consciousness, overall vitality','Chronic fatigue, sense of being stuck'],].map((r,i)=>(<tr key={i} className={`border-t border-prakash-gold/10 ${i%2===0?'bg-white/40':'bg-vastu-stone/20'}`}><td className="py-3 px-4 font-medium text-nidra-indigo/80">{r[0]}</td><td className="py-3 px-4 text-prakash-gold font-medium">{r[1]}</td><td className="py-3 px-4 text-nidra-indigo/60">{r[2]}</td><td className="py-3 px-4 text-nidra-indigo/50">{r[3]}</td></tr>))}</tbody></table></div>
-<p className="mt-3 text-xs text-nidra-indigo/40">Sources: Sharecare Health Portal; JyotishGram, "Effects of Elemental Imbalance," 2026; AJPRI Panchamahabhuta Siddhanta Review, 2025; MahaVastu 5,000+ Case Studies.</p></div>
-
-{/* SECTION 9 */}
-<div className="mt-12 mb-8"><div className="flex items-center gap-3 mb-6"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-amber-400 to-gold-500" /><h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">Daily Rituals to Balance All Five Elements</h2></div>
-<div className="mt-4 grid sm:grid-cols-2 gap-4">
-{[{element:'Earth',ritual:'Place a ceramic bowl of uncrushed sea salt in the SW corner. Replace weekly — discard outside the home. Walk barefoot on natural ground for 10 minutes daily.'},{element:'Water',ritual:'Change the water in your NE copper vessel every morning before 9 AM. Add a few drops of Gangajal and fresh rose petals. Drink from this vessel throughout the day.'},{element:'Fire',ritual:'Light a ghee lamp (diya) in the SE at sunrise (around 6‑7 AM). Adding two cloves to the ghee is a traditional remedy for family health and digestive wellness.'},{element:'Air',ritual:'Open all windows for at least 15 minutes every morning. A brass or copper wind chime in the NW, sounded gently once daily, activates the air element.'},{element:'Space',ritual:'Spend 5 minutes daily in silence at the center of your home. Visualise golden light filling the Brahmasthan and radiating outward to all corners.'},{element:'All Five',ritual:'Practice the Pancha Bhuta Stuti (prayer to the five elements) each morning. Declutter one zone per day — Monday SW, Tuesday NW, Wednesday NE, Thursday SE, Friday Center.'},].map((r,i)=>(<div key={i} className="p-4 bg-white/70 rounded-2xl border border-prakash-gold/15"><div className="flex items-center gap-2 mb-2"><div className="w-2 h-2 rounded-full bg-prakash-gold" /><h3 className="font-serif text-base text-nidra-indigo font-bold">{r.element}</h3></div><p className="text-sm text-nidra-indigo/70 leading-relaxed">{r.ritual}</p></div>))}</div></div>
-
-{/* CONCLUSION */}
-<div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-white rounded-3xl border border-prakash-gold/20"><div className="flex items-center gap-3 mb-4"><div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-sacred-saffron" /><h2 className="font-serif text-2xl text-nidra-indigo">Conclusion — Balance the Five, Balance Your Life</h2></div>
-<p>The Pancha Mahabhutas are not abstract philosophy. They are the operating system of the universe — the same five forces that shape galaxies, govern human physiology, and determine whether you sleep peacefully or fitfully in your own bedroom. The peer‑reviewed Panchamahabhuta Siddhanta study (2025) confirms that these five elements form the bridge between ancient Vedic wisdom and modern biochemistry, anatomy, and pharmacology. The Sanatana &amp; Science portal demonstrates their alignment with quantum field theory. The JyotishGram research (2026) catalogues precisely what happens — in measurable life terms — when each element is imbalanced. And the MahaVastu institute, drawing on over 5,000 case studies, has documented the health transformations that occur when Vastu elements are restored to equilibrium. The question is not whether your home has five‑element imbalances. Every home does. The question is whether you choose to correct them.</p>
-<p className="font-medium">AstroVastu Expert K.K. Nagaich provides comprehensive Pancha Mahabhuta analysis as part of every residential and commercial Vastu consultation — identifying elemental imbalances, mapping them to specific health and life outcomes, and prescribing precise, non‑invasive remedies refined over two decades of clinical practice.</p></div>
-
-</div>
-<div className="mt-12 p-6 bg-white/60 backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-<div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-prakash-gold flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-<div><p className="font-serif text-lg text-nidra-indigo font-bold">AstroVastu Expert KK Nagaich</p><p className="text-sm text-nidra-indigo/60">4th Generation Vastu Guru | MBA | Ex‑CEO | 20+ Years Clinical Practice | 2 Lakh+ Clients Worldwide</p></div>
-</div></div></article></>);}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd(seo)) }} />
+      <Client />
+    </>
+  );
+}

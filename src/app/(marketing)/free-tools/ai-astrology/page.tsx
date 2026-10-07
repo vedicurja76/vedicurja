@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AstroReadClient from "@/features/astrology/AstroReadClient";
+import ServiceFaq from "@/features/shared/components/ServiceFaq";
 
 const BASE = "https://www.vedivastuurja.com";
 const URL = `${BASE}/free-tools/ai-astrology`;
@@ -71,6 +72,7 @@ export default function AiAstrologyPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <AstroReadClient />
+      <ServiceFaq faqs={faqs} />
     </>
   );
 }

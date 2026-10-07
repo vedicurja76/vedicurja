@@ -3,6 +3,10 @@ import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['vastu-main-entrance-door'];
 
 export default function BlogPage() {
   const bi = useBi();
@@ -58,7 +62,19 @@ export default function BlogPage() {
           </section>
 
           {/* ── Article Body ── */}
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <ArticleShell
+            readingMinutes={META.readingMinutes}
+            category={META.category}
+            categoryHi={META.categoryHi}
+            quickAnswer={META.quickAnswer}
+            quickAnswerHi={META.quickAnswerHi}
+            toc={META.toc}
+            references={META.references}
+            faqs={META.faqs}
+            related={META.related}
+            datePublished="2026-09-30"
+            dateModified="2026-10-06"
+          >
             <div className="prose prose-lg prose-stone max-w-none">
 
               <p className="lead text-xl text-nidra-indigo/70 leading-relaxed">
@@ -69,7 +85,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Four Auspicious Directions — What Ancient Texts and Modern Science Agree On', 'शुभ दिशाएँ — जिन पर प्राचीन ग्रंथ और आधुनिक विज्ञान एकमत हैं')}</h2>
+                  <h2 id="directions" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Four Auspicious Directions — What Ancient Texts and Modern Science Agree On', 'शुभ दिशाएँ — जिन पर प्राचीन ग्रंथ और आधुनिक विज्ञान एकमत हैं')}</h2>
                 </div>
                 <p>{bi('The Vastu Shastra and ancient architectural texts are precise about which directions bring specific benefits. The 2024 CFD study by Springer confirmed that door placement strongly influences indoor conditions, with certain configurations producing Predicted Mean Vote values between 1 and 2 — within the ISO 7730 comfort range. Below is a comprehensive guide to every direction and what it delivers.', 'वास्तु शास्त्र और प्राचीन वास्तुकला ग्रंथ इस बात में निश्चित हैं कि कौन-सी दिशाएँ विशिष्ट लाभ देती हैं। स्प्रिंजर के 2024 CFD अध्ययन ने पुष्टि की कि दरवाज़े का स्थान आंतरिक परिस्थितियों को प्रबल रूप से प्रभावित करता है; कुछ विन्यास Predicted Mean Vote मान 1 और 2 के बीच देते हैं — ISO 7730 आराम सीमा के भीतर। नीचे प्रत्येक दिशा और उसके लाभों का व्यापक मार्गदर्शन है।')}</p>
 
@@ -102,7 +118,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-cyan-400 to-blue-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Best Entrance Position According to Plot Facing', 'प्लॉट की दिशा के अनुसार सर्वोत्तम प्रवेश स्थान')}</h2>
+                  <h2 id="entrance-pada" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Best Entrance Position According to Plot Facing', 'प्लॉट की दिशा के अनुसार सर्वोत्तम प्रवेश स्थान')}</h2>
                 </div>
                 <p>{bi('Even within an auspiciously facing plot, the exact placement of the door on that face matters critically. Vastu divides each wall into nine equal segments (padas), and the prescribed pada for the entrance is non‑negotiable. The Times Property guide confirmed these exact positions through analysis of traditional Vastu texts.', 'शुभ दिशा वाले प्लॉट में भी उस फलक पर दरवाज़े का यथास्थान अत्यंत निर्णायक है। वास्तु प्रत्येक दीवार को नौ समान खंडों (पादों) में बाँटता है, और प्रवेश हेतु निर्दिष्ट पाद अनिवार्य है। टाइम्स प्रॉपर्टी गाइड ने पारंपरिक वास्तु ग्रंथों के विश्लेषण द्वारा इन्हीं स्थानों की पुष्टि की है।')}</p>
 
@@ -137,7 +153,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-emerald-400 to-green-600" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Door Design Specifications — Eight Rules You Must Follow', 'द्वार-डिज़ाइन विनिर्देश — आठ नियम जिनका पालन अनिवार्य है')}</h2>
+                  <h2 id="door-design" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Door Design Specifications — Eight Rules You Must Follow', 'द्वार-डिज़ाइन विनिर्देश — आठ नियम जिनका पालन अनिवार्य है')}</h2>
                 </div>
                 <p>{bi('Direction alone is insufficient. The door\'s physical attributes — size, material, threshold, color, opening direction — each carry specific energetic consequences. Housing.com and MagicBricks have cataloged these specifications from traditional texts.', 'केवल दिशा पर्याप्त नहीं है। द्वार के भौतिक गुण — आकार, सामग्री, दहलीज़, रंग, खुलने की दिशा — प्रत्येक विशिष्ट ऊर्जात्मक परिणाम रखते हैं। Housing.com और MagicBricks ने पारंपरिक ग्रंथों से इन विनिर्देशों का संग्रह प्रस्तुत किया है।')}</p>
 
@@ -164,7 +180,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-red-500 to-orange-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Common Main Door Doshas — And How to Fix Each One', 'मुख्य द्वार के सामान्य दोष — और प्रत्येक का समाधान')}</h2>
+                  <h2 id="common-doshas" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Common Main Door Doshas — And How to Fix Each One', 'मुख्य द्वार के सामान्य दोष — और प्रत्येक का समाधान')}</h2>
                 </div>
 
                 <div className="mt-4 space-y-4">
@@ -188,7 +204,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-pink-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Case Study — The South‑Facing Entrance That Doubled Revenue', 'केस स्टडी — दक्षिणमुखी प्रवेश जिसने राजस्व दोगुना कर दिया')}</h2>
+                  <h2 id="case-study" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Case Study — The South‑Facing Entrance That Doubled Revenue', 'केस स्टडी — दक्षिणमुखी प्रवेश जिसने राजस्व दोगुना कर दिया')}</h2>
                 </div>
                 <p>{bi('A family‑run textile business in Surat operated from a south‑facing shop for 12 years with consistently declining sales. The south entrance, receiving intense afternoon radiation, made the shop uncomfortably hot by 2 PM — driving customers away during peak shopping hours. AstroVastu Expert K.K. Nagaich was called in. Rather than relocating, he prescribed: a Vastu Purush Yantra buried at the threshold, the door colour changed from black to a warm dark brown, a water feature installed in the northeast corner, and a brass Swastik placed above the door frame.', 'सूरत में पारिवारिक संचालित एक कपड़ा व्यवसाय 12 वर्षों तक दक्षिणमुखी दुकान से चलता रहा, जहाँ बिक्री लगातार घट रही थी। दक्षिणी प्रवेश में तीव्र अपराह्न विकिरण के कारण दोपहर 2 बजे तक दुकान असहनीय रूप से गर्म हो जाती थी — भीड़भाड़ वाले खरीदारी के घंटों में ग्राहक लौट जाते थे। एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच को बुलाया गया। स्थान बदलने के बजाय उन्होंने निर्धारित किया: दहलीज़ पर वास्तु पुरुष यंत्र गाड़ा गया, द्वार का रंग काले से बदलकर उष्ण गहरा भूरा किया गया, उत्तर-पूर्व कोने में जल-स्रोत स्थापित किया गया, और द्वार के फ्रेम के ऊपर पीतल का स्वस्तिक रखवा दिया गया।')}</p>
                 <p>{bi('Within ', 'करीब ')}<strong>{bi('four months', 'चार माह')}</strong>{bi(', footfall increased by approximately 40%, and the average customer dwell time doubled — because the shop was now thermally comfortable during afternoon hours. The business, which had been considering closure, went on to open a second location within two years. This case demonstrates that even the most "inauspicious" entrance direction can be corrected without demolition — when the remedies are precise and the principles are understood.', 'में आगंतुकों की संख्या (footfall) लगभग 40% बढ़ी और औसत ग्राहक-ठहराई का समय दोगुना हो गया — क्योंकि दुकान अब अपराह्न काल में थर्मल रूप से सुखद थी। बंद करने पर विचार कर रहा यह व्यवसाय दो वर्षों के भीतर दूसरी शाखा खोल गया। यह केस दर्शाता है कि सर्वाधिक "अशुभ" मानी जाने वाली प्रवेश-दिशा भी बिना तोड़फोड़ के सुधारी जा सकती है — जब उपाय यथासूत्र हों और सिद्धांत समझे हों।')}
@@ -199,23 +215,14 @@ export default function BlogPage() {
               <div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-[var(--color-bg-elevated)] rounded-3xl border border-prakash-gold/20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Door Is Your Destiny', 'निष्कर्ष — आपका द्वार ही आपका भाग्य है')}</h2>
+                  <h2 id="conclusion" className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Door Is Your Destiny', 'निष्कर्ष — आपका द्वार ही आपका भाग्य है')}</h2>
                 </div>
                 <p>{bi('The main entrance is not merely the point where you enter your home. It is where opportunity enters your life. Every element — direction, size, material, colour, threshold, and surrounding environment — contributes to a cumulative energetic effect that shapes your family\'s prosperity, health, and harmony. The 2024 CFD study confirmed scientifically what Vedic architects encoded into scripture: door placement is not arbitrary. It is a measurable, optimisable variable in the physics of human habitation. Whether your door faces North, East, West, or South — there is always a correct configuration and a proven remedy. The question is not whether your entrance is perfect — it is whether you have applied the right corrections.', 'मुख्य प्रवेश केवल वह बिंदु नहीं जहाँ से आप घर में प्रवेश करते हैं। यह वह स्थान है जहाँ अवसर आपके जीवन में प्रवेश करते हैं। प्रत्येक अंग — दिशा, आकार, सामग्री, रंग, दहलीज़ और पारिस्थितिक वातावरण — एक संचयी ऊर्जात्मक प्रभाव में योगदान देता है जो आपके परिवार की समृद्धि, स्वास्थ्य और सौहार्द को ढालता है। 2024 के CFD अध्ययन ने वैज्ञानिक रूप से वही पुष्टि किया जो वैदिक वास्तुकारों ने शास्त्रों में अंकित किया: दरवाज़े का स्थान मनमानी नहीं है। यह मानव निवास के भौतिकी का एक मापनीय, अनुकूलनीय चर है। आपका द्वार उत्तर, पूर्व, पश्चिम या दक्षिण — किसी की ओर भी हो, सदैव एक यथाविधि विन्यास और सिद्ध उपाय मौजूद है। प्रश्न यह नहीं कि आपका प्रवेश पूर्ण है या नहीं — प्रश्न यह है कि आपने सही सुधार लागू किए हैं या नहीं।')}</p>
                 <p className="font-medium">{bi('AstroVastu Expert K.K. Nagaich provides comprehensive entrance Vastu analysis as part of every residential and commercial consultation — including exact pada measurement, dosha identification, and personalised remedy prescription.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच प्रत्येक आवासीय एवं वाणिज्यिक परामर्श के अंतर्गत व्यापक प्रवेश-वास्तु विश्लेषण प्रदान करते हैं — जिसमें यथासूत्र पाद-मापन, दोष-पहचान और व्यक्तिगत उपचार-निर्धारण शामिल है।')}</p>
               </div>
 
             </div>
-
-            {/* ── Author Bio ── */}
-            <div className="mt-12 p-6 bg-[var(--color-bg-glass)] backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-prakash-gold to-sacred-saffron flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-              <div>
-                <p className="font-serif text-lg text-nidra-indigo font-bold">AstroVastu Expert KK Nagaich</p>
-                <p className="text-sm text-nidra-indigo/60">{bi('4th Generation Vastu Guru | MBA | Ex‑CEO | 20+ Years Clinical Practice | 2 Lakh+ Clients Worldwide', '4थी पीढ़ी के वास्तु गुरु | MBA | पूर्व सीईओ | 20+ वर्षों का व्यावहारिक अनुभव | विश्वभर में 2 लाख+ क्लाइंट्स')}</p>
-              </div>
-            </div>
-          </div>
+          </ArticleShell>
         </article>
       
     </>

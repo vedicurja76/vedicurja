@@ -104,7 +104,7 @@ const orgJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="hi" className={`${fontSerif.variable} ${fontSans.variable} ${fontHindi.variable} ${fontMono.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${fontSerif.variable} ${fontSans.variable} ${fontHindi.variable} ${fontMono.variable}`} suppressHydrationWarning>
       <head>
         <link rel="preload" as="image" href="/images/home/acharya-portrait.webp" fetchPriority="high" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

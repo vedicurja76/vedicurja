@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   description:
     "Reach AstroVastu Expert and Acharya KK Nagaich by WhatsApp, phone or email for Vastu, Kundali and numerology consultations across Lucknow, Mumbai, Delhi and worldwide. Bookings are confirmed personally within 12 hours.",
   alternates: { canonical: URL },
+  keywords: [
+    "vastu expert whatsapp", "kk nagaich contact", "astrologer consultation whatsapp",
+    "vastu consultant contact number", "talk to astrologer online",
+  ],
   openGraph: { title: "Contact AstroVastu Expert", description: "WhatsApp, call or email to book a Vastu or astrology consultation.", url: URL, type: "website", siteName: "AstroVastu Expert" },
   twitter: { card: "summary_large_image", title: "Contact AstroVastu Expert", description: "Book a Vastu or astrology consultation." },
 };

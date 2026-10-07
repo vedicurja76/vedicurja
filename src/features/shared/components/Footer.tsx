@@ -147,7 +147,7 @@ export default function Footer() {
           <div className="flex gap-5 text-xs text-nidra-indigo/50">
             <Link href="/privacy" className="hover:text-prakash-gold transition">{t('footer.privacy')}</Link>
             <Link href="/terms" className="hover:text-prakash-gold transition">{t('footer.terms')}</Link>
-            <Link href="/collaborate" className="hover:text-prakash-gold transition">{t('nav.collaborate')}</Link>
+            <Link href="/contact" className="hover:text-prakash-gold transition">{t('nav.collaborate')}</Link>
           </div>
         </div>
       </div>

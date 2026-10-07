@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { articleMetadata, articleJsonLd, type ArticleSeo } from "@/lib/seo/articlePage";
 import Client from "./ClientPage";
+import { ARTICLE_SEO_META } from "@/features/blog/data/articleSeoMetadata";
+
+const meta = ARTICLE_SEO_META["nakshatra-name-suggestions-guide"];
 
 const seo: ArticleSeo = {
   slug: "nakshatra-name-suggestions-guide",
@@ -9,6 +12,9 @@ const seo: ArticleSeo = {
     "How the 27 Nakshatras and their auspicious starting syllables guide naming a child or correcting a name in Vedic tradition — a clear guide to birth-star syllables, meaning and numerology by AstroVastu Expert KK Nagaich.",
   headline: "Nakshatra and Name Suggestion Guide",
   keywords: ["nakshatra name suggestion", "name by birth star", "vedic naming", "namakaran guide", "auspicious syllables"],
+  datePublished: "2026-09-30",
+  dateModified: "2026-10-06",
+  faqs: meta.faqs,
 };
 
 export const metadata: Metadata = articleMetadata(seo);

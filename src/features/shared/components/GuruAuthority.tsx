@@ -7,7 +7,7 @@ const logos = [
   { src: '/images/trust/tcs.webp', alt: 'TCS' },
   { src: '/images/trust/adani.webp', alt: 'Adani' },
   { src: '/images/trust/reliance.webp', alt: 'Reliance' },
-  { src: '/images/trust/times-of-india.webp', alt: 'Times of India' },
+  { src: '/images/trust/toi.webp', alt: 'Times of India' },
   { src: '/images/trust/bajaj.webp', alt: 'Bajaj' },
 ];
 

@@ -3,6 +3,10 @@ import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['bedroom-vastu-marital-harmony'];
 
 export default function BlogPage() {
   const bi = useBi();
@@ -57,7 +61,19 @@ export default function BlogPage() {
           </section>
 
           {/* ── Article Body ── */}
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <ArticleShell
+            readingMinutes={META.readingMinutes}
+            category={META.category}
+            categoryHi={META.categoryHi}
+            quickAnswer={META.quickAnswer}
+            quickAnswerHi={META.quickAnswerHi}
+            toc={META.toc}
+            references={META.references}
+            faqs={META.faqs}
+            related={META.related}
+            datePublished="2026-09-30"
+            dateModified="2026-10-06"
+          >
             <div className="prose prose-lg prose-stone max-w-none">
 
               <p className="lead text-xl text-nidra-indigo/70 leading-relaxed">
@@ -68,7 +84,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-blue-400 to-indigo-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Master Bedroom — South‑West, the Anchor of Stability', 'मुख्य शयनकक्ष — दक्षिण-पश्चिम, स्थिरता की लंगर')}</h2>
+                  <h2 id="master-bedroom" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Master Bedroom — South‑West, the Anchor of Stability', 'मुख्य शयनकक्ष — दक्षिण-पश्चिम, स्थिरता की लंगर')}</h2>
                 </div>
                 <p>{bi('Vastu Shastra prescribes the ', 'वास्तु शास्त्र मुख्य शयनकक्ष हेतु ')}<strong>{bi('South‑West (Nairutya) corner', 'दक्षिण-पश्चिम (नैर्ऋत्य) कोण')}</strong>{bi(' as the unequivocally ideal location for the master bedroom. This direction is governed by the Earth element (Prithvi) — the heaviest, most stable of the five elements — and is associated with Lord Nairutya, the deity of strength, protection, and rootedness. The master bedroom in the SW provides the adults of the household with the energetic grounding they need to make sound decisions, maintain emotional equilibrium, and sustain a stable marriage.', ' को निर्विवाद रूप से आदर्श स्थान निर्दिष्ट करता है। यह दिशा पृथ्वी तत्व (Prithvi) के अधीन है — पाँचों तत्वों में सर्वाधिक भारी, सर्वाधिक स्थिर — और नैर्ऋत्य देव से जुड़ी है, जो शक्ति, संरक्षा और दृढ़ मूलता के देवता हैं। दक्षिण-पश्चिम में मुख्य शयनकक्ष घर के वयस्कों को वह ऊर्जात्मक भू-संस्पर्श (grounding) प्रदान करता है जो समीचीन निर्णय लेने, भावनात्मक संतुलन बनाए रखने और स्थिर दाम्पत्यजीवन जीने हेतु आवश्यक है।')}</p>
                 <p>{bi('Modern building science concurs: the SW quadrant receives the most stable, cumulative solar radiation in the northern hemisphere. Walls in this direction act as thermal mass, absorbing heat slowly by day and releasing it gradually at night. The resulting temperature stability — fewer temperature fluctuations through the night — is a known contributor to uninterrupted, restorative sleep. Multiple studies have demonstrated that stable thermal environments improve sleep efficiency and reduce nocturnal awakenings.', 'आधुनिक बिल्डिंग विज्ञान भी सहमत है: उत्तरी गोलार्ध में दक्षिण-पश्चिम चतुर्थांश सर्वाधिक स्थिर, संचित सौर विकिरण पाता है। इस दिशा की दीवारें थर्मल मास का कार्य करती हैं — दिन में मंदगति से गर्मी सोखती हैं और रात में क्रमशः छोड़ती हैं। इससे उत्पन्न तापमान-स्थिरता — रात भर कम उतार-चढ़ाव — अखंड, पुनर्ताजाकारीणी नींद का ज्ञात कारक है। अनेक अध्ययनों में दर्शाया गया है कि स्थिर ऊष्मीय वातावरण नींद-क्षमता बढ़ाते हैं और रात्रि-जागरण घटाते हैं।')}</p>
@@ -89,7 +105,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-cyan-400 to-blue-600" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Sleeping Direction — The Science of Magnetic Alignment', 'सोने की दिशा — चुंबकीय संरेखण का विज्ञान')}</h2>
+                  <h2 id="sleep-direction" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Sleeping Direction — The Science of Magnetic Alignment', 'सोने की दिशा — चुंबकीय संरेखण का विज्ञान')}</h2>
                 </div>
                 <p>{bi('The direction in which you place your head while sleeping is, arguably, the single most important Vastu decision in the bedroom. The human body is not electrically neutral — it contains iron‑rich blood (haemoglobin), and the brain and heart generate measurable electromagnetic fields. The Earth itself is a giant magnet, with field lines running from the geographic South Pole to the geographic North Pole.', 'सोते समय सिर की जिस दिशा को आप चुनते हैं, वह कहें तो निर्विवाद रूप से शयनकक्ष का सर्वाधिक महत्वपूर्ण वास्तु निर्णय है। मानव शरीर विद्युतीय दृष्टि से उदासीन नहीं — इसमें लोह-समृद्ध रक्त (हीमोग्लोबिन) होता है, और मस्तिष्क तथा हृदय मापनीय विद्युतचुंबकीय क्षेत्र रचते हैं। पृथ्वी स्वयं एक विशाल चुंबक है, जिसकी क्षेत्र-रेखाएँ भौगोलिक दक्षिण ध्रुव से भौगोलिक उत्तर ध्रुव तक चलती हैं।')}</p>
                 <p>{bi('Sleeping with the ', 'सिर ')}<strong>{bi('head towards the South', 'दक्षिण की ओर रखकर सोना')}</strong>{bi(' aligns the body\'s own magnetic polarity with the Earth\'s natural field. The head (positive pole) faces South (magnetic positive); the feet (negative pole) face North (magnetic negative). This alignment places the body in electromagnetic harmony with the planet — reducing stress on the cardiovascular system, lowering blood pressure, and promoting the deepest possible sleep.', ' शरीर की अपनी चुंबकीय ध्रुवीयता को पृथ्वी के प्राकृतिक क्षेत्र के साथ संरेखित करता है। सिर (धन ध्रुव) दक्षिण (चुंबकीय धन) की ओर रहता है; पैर (ऋण ध्रुव) उत्तर (चुंबकीय ऋण) की ओर। यह संरेखण शरीर को ग्रह के साथ विद्युतचुंबकीय सौहार्द में स्थापित करता है — हृदय-संवहन तंत्र पर तनाव घटाता है, रक्तचाप कम करता है और यथासंभव गहरी नींद प्रदान करता है।')}</p>
@@ -109,7 +125,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-pink-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Mirror Dosha — Why It\'s the #1 Cause of Marital Discord', 'दर्पण दोष — दाम्पत्य कलह का प्रथम कारण क्यों')}</h2>
+                  <h2 id="mirror-dosha" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Mirror Dosha — Why It\'s the #1 Cause of Marital Discord', 'दर्पण दोष — दाम्पत्य कलह का प्रथम कारण क्यों')}</h2>
                 </div>
                 <p>{bi('If there is one Vastu rule that even sceptics acknowledge after personal experience, it is this: ', 'यदि कोई एक वास्तु नियम है जिसे संदेहवादी भी व्यक्तिगत अनुभव के बाद स्वीकार करते हैं, तो वह यह है: ')}<strong>{bi('never place a mirror directly opposite the bed', 'दर्पण को कभी बिछौने के ठीक सम्मुख न रखें')}</strong>{bi('. The mirror acts as an energy reflector — it bounces the couple\'s own energy back at them, creating a feedback loop that amplifies disagreements, creates a sense of being watched (a third entity in the relationship), and — in documented cases — has been linked to infidelity and separation.', '। दर्पण ऊर्जा-परावर्तक का कार्य करता है — यह दंपति की अपनी ऊर्जा को लौटाकर उनके ही ऊपर फेंकता है, एक प्रतिपुष्टि-चक्र रचता है जो मतभेदों को बढ़ाता है, देखे जाने का अनुभव (संबंध में एक तृतीय सत्ता) उत्पन्न करता है, और — प्रलेखित मामलों में — व्यभिचार और पृथक्करण से जोड़ा गया है।')}</p>
 
@@ -129,7 +145,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-emerald-400 to-green-600" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Electronics and EMF — The Invisible Sleep Disruptor', 'इलेक्ट्रॉनिक्स और EMF — अदृश्य नींद-भंग')}</h2>
+                  <h2 id="emf" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Electronics and EMF — The Invisible Sleep Disruptor', 'इलेक्ट्रॉनिक्स और EMF — अदृश्य नींद-भंग')}</h2>
                 </div>
                 <p>{bi('Televisions, laptops, mobile phones, Wi‑Fi routers, and even digital alarm clocks emit electromagnetic radiation (EMF) that is now scientifically linked to disrupted sleep architecture. The National Sleep Foundation\'s 2022 Sleep in America Poll found that ', 'टेलीविजन, लैपटॉप, मोबाइल फोन, वाई-फाई राउटर और यहाँ तक कि डिजिटल अलार्म घड़ियाँ विद्युतचुंबकीय विकिरण (EMF) उत्सर्जित करती हैं, जिसे अब वैज्ञानिक रूप से भंग नींद-संरचना से जोड़ा गया है। नेशनल स्लीप फाउंडेशन के 2022 के स्लीप इन अमेरिका पोल में पाया गया कि ')}<strong>{bi('57% of adults who keep electronic devices in the bedroom report significantly poorer sleep quality', 'शयनकक्ष में इलेक्ट्रॉनिक उपकरण रखने वाले 57% वयस्कों ने उल्लेखनीय रूप से खराब नींद की गुणवत्ता बताई')}</strong>{bi(' than those who do not. Nearly 60% of adults sleep with their phones next to their beds — a habit that exposes the brain to EMF and blue light during the critical hours of melatonin production.', '। उपकरण न रखने वालों की तुलना में यह आंकड़ा काफी बड़ा है। लगभग 60% वयस्क अपने बिछौने के बगल में फोन रखकर सोते हैं — यह आदत मेलेटोनिन-उत्पादन के निर्णायक घंटों में मस्तिष्क को EMF और नीली किरणों के संपर्क में लाती है।')}</p>
 
@@ -149,7 +165,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-pink-400 to-rose-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Colour Therapy for the Bedroom', 'शयनकक्ष हेतु रंग-थेरेपी')}</h2>
+                  <h2 id="colour-therapy" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Colour Therapy for the Bedroom', 'शयनकक्ष हेतु रंग-थेरेपी')}</h2>
                 </div>
                 <p>{bi('The bedroom requires colours that soothe the nervous system and promote intimacy. Bright, activating colours (reds, oranges, neons) that work well in kitchens and living rooms are disastrous in bedrooms. The Times of India and A360 Architects converge on the same Vastu recommendations:', 'शयनकक्ष को ऐसे रंग चाहिए जो तंत्रिका-तंत्र को शांत करें और सामीप्य को बढ़ावा दें। रसोई और बैठक में उत्तम लगने वाले उज्ज्वल, सक्रिय रंग (लाल, नारंगी, नियॉन) शयनकक्ष में विनाशकारी सिद्ध होते हैं। द टाइम्स ऑफ इंडिया और A360 Architects एक ही वास्तु सिफारिशों पर आकर मिलते हैं:')}</p>
 
@@ -169,7 +185,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-sacred-saffron to-kumkuma-red" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Case Study — The Couple Who Removed a Mirror and Saved Their Marriage', 'केस स्टडी — दंपति जिसने दर्पण हटाया और विवाह बचाया')}</h2>
+                  <h2 id="case-study" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Case Study — The Couple Who Removed a Mirror and Saved Their Marriage', 'केस स्टडी — दंपति जिसने दर्पण हटाया और विवाह बचाया')}</h2>
                 </div>
                 <p>{bi('A couple in their early 40s, married 15 years, consulted AstroVastu Expert K.K. Nagaich after three years of escalating conflict that neither could explain. They had a successful business, healthy children, and no external stressors. The Vastu audit revealed three bedroom doshas: a full‑length mirror directly opposite the bed, an SE‑corner master bedroom (fire zone, inducing nightly agitation), and both partners sleeping head‑north.', 'पंद्रह वर्ष विवाहित, चालीस के आसपास के एक दंपति ने तीन वर्षों तक बढ़ते उस संघर्ष के बाद, जिसे कोई समझा नहीं पा रहा था, एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच से परामर्श किया। उनका व्यवसाय सफल था, बच्चे स्वस्थ थे, और कोई बाहरी तनावकारक नहीं था। वास्तु ऑडिट में शयनकक्ष के तीन दोष प्रकट हुए: बिछौने के ठीक सम्मुख फुल-लेंथ दर्पण, दक्षिण-पूर्व कोण का मुख्य शयनकक्ष (अग्नि-क्षेत्र, जो प्रति रात्रि आंदोलन उत्प्रेरित करता था), और दोनों जीवनसाथियों का सिर उत्तर रखकर सोना।')}</p>
                 <p>{bi('The remedies were applied in a single day: the mirror was covered with a curtain, the bed was rotated 180 degrees (head‑south), and a heavy earth‑element crystal grid was placed in the SW of the room to stabilise the fire energy. Within ', 'उपाय एक ही दिन में लागू किए गए: दर्पण को पर्दे से ढका गया, बिछौने को 180 डिग्री घुमाया गया (सिर दक्षिण), और अग्नि ऊर्जा को स्थिर करने हेतु कमरे के दक्षिण-पश्चिम में भारी पार्थिव-तत्व क्रिस्टल ग्रिड रखा गया। करीब ')}<strong>{bi('two weeks', 'दो सप्ताह')}</strong>{bi(', the couple reported that their nightly arguments — which had become a predictable ritual — simply stopped. Within three months, they described their marriage as stronger than it had been in a decade. The husband\'s chronic insomnia, which he had treated with medication for five years, resolved completely within the first month.', ' में दंपति ने रिपोर्ट किया कि उनकी रात्रिकालीन बहस — जो एक पूर्वानुमेय अनुष्ठान बन चुकी थी — बिल्कुल रुक गईं। तीन माह में उन्होंने अपने विवाह को दशक भर में सर्वाधिक मजबूत बताया। पति की पुरानी अनिद्रा, जिसका उन्हें पाँच वर्षों से दवा से उपचार चल रहा था, प्रथम माह में पूर्णतः दूर हो गई।')}</p>
@@ -179,23 +195,14 @@ export default function BlogPage() {
               <div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-[var(--color-bg-elevated)] rounded-3xl border border-prakash-gold/20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-blue-400 to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Bedroom Is Your Sanctuary', 'निष्कर्ष — आपका शयनकक्ष ही आपकी शरणभूमि है')}</h2>
+                  <h2 id="conclusion" className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Bedroom Is Your Sanctuary', 'निष्कर्ष — आपका शयनकक्ष ही आपकी शरणभूमि है')}</h2>
                 </div>
                 <p>{bi('The bedroom is where your body heals, your marriage deepens, and your subconscious processes the emotional residue of the day. Every element — the direction of the room, the orientation of your head, the presence or absence of mirrors, the colours on the walls, the devices on your nightstand — contributes to a cumulative energetic effect that either supports or sabotages your most fundamental needs. The remedies are simple, the science is clear, and the results — as thousands of clients have discovered — are often immediate.', 'शयनकक्ष वह स्थान है जहाँ आपका शरीर स्वस्थ होता है, आपका विवाह गहरा होता है, और आपका अवचेतन मन दिन के भावनात्मक अवशेषों को संसाधित करता है। प्रत्येक अंग — कक्ष की दिशा, सिर का विन्यास, दर्पण की उपस्थिति या अनुपस्थिति, दीवारों के रंग, नाइटस्टैंड पर रखे उपकरण — एक संचयी ऊर्जात्मक प्रभाव में योगदान देता है जो आपकी अत्यंत मूलभूत आवश्यकताओं का या तो समर्थन करता है या उन्हें नुकसान पहुँचाता है। उपाय सरल हैं, विज्ञान स्पष्ट है, और परिणाम — जैसा हजारों क्लाइंट्स ने अनुभवा — अक्सर तत्काल होते हैं।')}</p>
                 <p className="font-medium">{bi('AstroVastu Expert K.K. Nagaich provides comprehensive bedroom Vastu audits as part of every residential consultation — including directional analysis, dosha identification, mirror placement correction, and personalised remedy prescriptions.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच प्रत्येक आवासीय परामर्श के अंतर्गत व्यापक शयनकक्ष-वास्तु ऑडिट प्रदान करते हैं — जिसमें दिशा-विश्लेषण, दोष-पहचान, दर्पण-विन्यास सुधार और व्यक्तिगत उपचार-निर्धारण शामिल है।')}</p>
               </div>
 
             </div>
-
-            {/* ── Author Bio ── */}
-            <div className="mt-12 p-6 bg-[var(--color-bg-glass)] backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-sacred-saffron flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-              <div>
-                <p className="font-serif text-lg text-nidra-indigo font-bold">AstroVastu Expert KK Nagaich</p>
-                <p className="text-sm text-nidra-indigo/60">{bi('4th Generation Vastu Guru | MBA | Ex‑CEO | 20+ Years Clinical Practice | 2 Lakh+ Clients Worldwide', '4थी पीढ़ी के वास्तु गुरु | MBA | पूर्व सीईओ | 20+ वर्षों का व्यावहारिक अनुभव | विश्वभर में 2 लाख+ क्लाइंट्स')}</p>
-              </div>
-            </div>
-          </div>
+          </ArticleShell>
         </article>
       
     </>

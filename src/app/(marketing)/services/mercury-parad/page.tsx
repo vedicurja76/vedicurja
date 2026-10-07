@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { serviceMetadata, serviceJsonLd, type ServicePageSeo } from "@/lib/seo/servicePage";
+import ServiceFaq from "@/features/shared/components/ServiceFaq";
 import MercuryParadClient from "./ClientPage";
 
 const seo: ServicePageSeo = {
@@ -25,6 +26,7 @@ export default function MercuryParadPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd(seo)) }} />
       <MercuryParadClient />
+      <ServiceFaq faqs={seo.faqs} />
     </>
   );
 }

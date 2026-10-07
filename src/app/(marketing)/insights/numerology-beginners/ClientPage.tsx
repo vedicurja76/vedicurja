@@ -3,6 +3,10 @@ import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['numerology-beginners'];
 
 export default function BlogPage() {
   const bi = useBi();
@@ -59,8 +63,21 @@ export default function BlogPage() {
           </section>
 
           {/* ── Article Body ── */}
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
-            <div className="prose prose-lg prose-stone max-w-none">
+          <ArticleShell
+            readingMinutes={META.readingMinutes}
+            category={META.category}
+            categoryHi={META.categoryHi}
+            quickAnswer={META.quickAnswer}
+            quickAnswerHi={META.quickAnswerHi}
+            toc={META.toc}
+            references={META.references}
+            faqs={META.faqs}
+            related={META.related}
+            datePublished="2026-09-30"
+            dateModified="2026-10-06"
+          >
+            <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+              <div className="prose prose-lg prose-stone max-w-none">
 
               <p className="lead text-xl text-nidra-indigo/70 leading-relaxed">
                 {bi('Vedic Numerology is an ancient Indian science of numbers — a system that traces its roots back over 5,000 years to the earliest Vedic texts. Unlike modern Western numerology, which evolved separately through Pythagorean and Chaldean traditions, Vedic numerology connects each number to a specific planet (graha) and divine energy, offering a uniquely holistic framework for understanding personality, destiny, relationships, and career.', 'वैदिक अंक शास्त्र संख्याओं की प्राचीन भारतीय विद्या है — जिसकी जड़ें 5,000 से अधिक वर्ष पुराने आदिम वैदिक ग्रंथों तक जाती हैं। आधुनिक पाश्चात्य अंक शास्त्र से भिन्न, जो Pythagorean और Chaldean परंपराओं में स्वतंत्र रूप से विकसित हुआ, वैदिक अंक शास्त्र हर संख्या को एक निश्चित ग्रह (graha) और दैवीय ऊर्जा से जोड़ता है — व्यक्तित्व, नियति, संबंधों और करियर को समझने की अद्वितीय समग्र दृष्टि देता है।')}
@@ -70,7 +87,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-prakash-gold" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Three Core Numbers in Vedic Numerology', 'वैदिक अंक शास्त्र की तीन मुख्य संख्याएँ')}</h2>
+                  <h2 id="basics" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Three Core Numbers in Vedic Numerology', 'वैदिक अंक शास्त्र की तीन मुख्य संख्याएँ')}</h2>
                 </div>
                 <p>{bi('In Vedic numerology, every individual is defined by three primary numbers — the ', 'वैदिक अंक शास्त्र में हर व्यक्ति तीन मुख्य संख्याओं से परिभाषित होता है — ')}<strong>{bi('Psychic Number', 'मूलांक')}</strong>{bi(' (Mulank or Driver), the ', ' (Psychic Number या Driver), ')}<strong>{bi('Destiny Number', 'भाग्यांक')}</strong>{bi(' (Bhagyank or Conductor), and the ', ' (Destiny Number या Conductor), और ')}<strong>{bi('Name Number', 'नामांक')}</strong>{bi(' (Namank). Each serves a distinct purpose, and together they form a complete numerological blueprint.', ' (Namank)। इनमें से हर एक का भिन्न प्रयोजन है, और तीनों मिलकर एक पूर्ण अंक-शास्त्रीय ब्लूप्रिंट बनाते हैं।')}</p>
 
@@ -205,25 +222,17 @@ export default function BlogPage() {
               <div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-[var(--color-bg-elevated)] rounded-3xl border border-prakash-gold/20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-prakash-gold" />
-                  <h2 className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Numbers Are a Language, Not Superstition', 'निष्कर्ष — संख्याएँ एक भाषा हैं, अंधविश्वास नहीं')}</h2>
+                  <h2 id="conclusion" className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Numbers Are a Language, Not Superstition', 'निष्कर्ष — संख्याएँ एक भाषा हैं, अंधविश्वास नहीं')}</h2>
                 </div>
                 <p>{bi('Vedic numerology is not fortune‑telling — it is a system of profound self‑awareness. The numbers derived from your birth date and name are not random. They form a code that, when properly understood, reveals your strengths, illuminates your challenges, and guides your most important life decisions. From JC Chaudhry\u2019s ₹7,300 crore success to Radhika Jain\u2019s boutique transformation, the evidence is compelling: when humans align their identity with their numerical blueprint, remarkable things happen.', 'वैदिक अंक शास्त्र भविष्यवाणी नहीं — गहरे आत्म-बोध की एक प्रणाली। आपकी जन्म-तिथि और नाम से बनी संख्याएँ संयोगवश नहीं हैं। ये एक कोड रचती हैं, जो यथायोग्य समझे जाने पर आपकी शक्तियाँ प्रकट, चुनौतियों को रोशन और जीवन के निर्णायक मोड़ों पर मार्गदर्शन करती। JC Chaudhry की ₹7,300 करोड़ की सफलता हो या Radhika Jain का बुटीक-रूपांतरण — प्रमाण प्रत्याभ हैं: जब मनुष्य अपनी पहचान को अपनी अंक-रूपरेखा के साथ संरेखित करता, तो अद्भुत घटित।')}</p>
                 <p className="font-medium">{bi('AstroVastu Expert K.K. Nagaich provides comprehensive numerological analysis as part of his Vedic consultation services — combining Driver Number, Destiny Number, Name Number, and Nakshatra analysis into a complete personal blueprint.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच अपनी वैदिक परामर्श सेवाओं के अंतर्गत समग्र अंक-शास्त्रीय विश्लेषण प्रदान करते हैं — ड्राइवर अंक, डिस्टिनी अंक, नामांक और नक्षत्र-विश्लेषण को जोड़कर एक पूर्ण व्यक्तिगत ब्लूप्रिंट।')}</p>
               </div>
 
-            </div>
-
-            {/* ── Author Bio ── */}
-            <div className="mt-12 p-6 bg-[var(--color-bg-glass)] backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-prakash-gold flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-              <div>
-                <p className="font-serif text-lg text-nidra-indigo font-bold">{bi('AstroVastu Expert KK Nagaich', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच')}</p>
-                <p className="text-sm text-nidra-indigo/60">{bi('4th Generation Vastu Guru | MBA | Ex‑CEO | Numerologist | Served 2 Lakh+ Clients Worldwide', '4 पीढ़ियों की वास्तु गुरु परंपरा | MBA | पूर्व सीईओ | अंक शास्त्री | विश्वभर में 2 लाख+ क्लाइंट्स को सेवा')}</p>
               </div>
             </div>
-          </div>
+          </ArticleShell>
         </article>
-      
+
     </>
   );
 }

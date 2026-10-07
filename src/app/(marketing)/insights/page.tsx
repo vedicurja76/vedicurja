@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   description:
     "Free Vastu Shastra and astrology knowledge: the science of Vastu, Panch Mahabhutas, main entrance, kitchen and bedroom Vastu, remedies without demolition, numerology and Nakshatra name guides by AstroVastu Expert KK Nagaich.",
   alternates: { canonical: URL },
+  keywords: [
+    "vastu shastra guide", "vastu tips for home", "main entrance vastu", "bedroom vastu",
+    "kitchen vastu direction", "numerology for beginners", "nakshatra name suggestions",
+    "science of vastu shastra", "vastu upay", "remedies without demolition",
+  ],
   openGraph: {
     title: "Vastu & Astrology Insights",
     description: "Practical Vedic Vastu and astrology guides written by Acharya KK Nagaich.",

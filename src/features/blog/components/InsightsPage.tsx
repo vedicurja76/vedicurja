@@ -31,9 +31,10 @@ export default function InsightsPage() {
             >
               Wisdom from the Vedic Tradition
             </motion.span>
-            <AnimatedText 
-              text="Sacred Archives" 
-              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-nidra-indigo mt-4 mb-4" 
+            <AnimatedText
+              as="h1"
+              text="Vastu Shastra & Astrology Guides"
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-nidra-indigo mt-4 mb-4"
             />
             <GradientText 
               text="Ancient Knowledge for Modern Living" 

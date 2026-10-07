@@ -3,6 +3,10 @@ import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['science-of-vastu'];
 
 export default function BlogPage() {
   const bi = useBi();
@@ -59,6 +63,19 @@ export default function BlogPage() {
           </section>
 
           {/* ── Article Body ── */}
+          <ArticleShell
+            readingMinutes={META.readingMinutes}
+            category={META.category}
+            categoryHi={META.categoryHi}
+            quickAnswer={META.quickAnswer}
+            quickAnswerHi={META.quickAnswerHi}
+            toc={META.toc}
+            references={META.references}
+            faqs={META.faqs}
+            related={META.related}
+            datePublished="2026-09-30"
+            dateModified="2026-10-06"
+          >
           <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
             <div className="prose prose-lg prose-stone max-w-none">
 
@@ -70,7 +87,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Panch Mahabhutas — Five Elements, Five Scientific Principles', 'पंच महाभूत — पाँच तत्व, पाँच वैज्ञानिक सिद्धांत')}</h2>
+                  <h2 id="mahabhutas" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Panch Mahabhutas — Five Elements, Five Scientific Principles', 'पंच महाभूत — पाँच तत्व, पाँच वैज्ञानिक सिद्धांत')}</h2>
                 </div>
                 <p>{bi('At the heart of Vastu lies the Panch Mahabhutas — Earth (Prithvi), Water (Jal), Fire (Agni), Air (Vayu), and Space (Akash). These are not mythological abstractions; each maps to a measurable physical phenomenon.', 'वास्तु के हृदय में पंच महाभूत हैं — पृथ्वी, जल, अग्नि, वायु और आकाश। ये पौराणिक रूपक नहीं हैं; प्रत्येक किसी मापनीय भौतिक घटना से सीधे जुड़ा है।')}</p>
 
@@ -122,7 +139,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-sacred-saffron to-kumkuma-red" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Geomagnetic Resonance — Why Sleep Direction Matters', 'भू-चुंबकीय अनुनाद — नींद की दिशा क्यों महत्वपूर्ण है')}</h2>
+                  <h2 id="geomagnetic" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Geomagnetic Resonance — Why Sleep Direction Matters', 'भू-चुंबकीय अनुनाद — नींद की दिशा क्यों महत्वपूर्ण है')}</h2>
                 </div>
                 <p>{bi('One of Vastu&apos;s most debated recommendations is sleeping with the head towards the South. Yet multiple studies now offer a compelling physiological explanation. The human body contains iron‑rich blood that interacts with the Earth&apos;s magnetic field. Sleeping head‑south aligns the body along the north‑south magnetic axis, with the positive pole at the head and negative at the feet — matching the body&apos;s own electromagnetic field.', 'वास्तु के सर्वाधिक विवादित सुझावों में से एक है सिर दक्षिण की ओर रखकर सोना। किंतु अब अनेक अध्ययन एक प्रबल शारीरिक व्याख्या प्रस्तुत करते हैं। मानव शरीर में लोह-समृद्ध रक्त होता है जो पृथ्वी के चुंबकीय क्षेत्र के साथ परस्पर क्रिया करता है। सिर दक्षिण रखकर सोने से शरीर उत्तर-दक्षिण चुंबकीय अक्ष के साथ संरेखित होता है — सिर पर धन (+) ध्रुव और पैरों पर ऋण (−) ध्रुव — जो शरीर के अपने विद्युतचुंबकीय क्षेत्र से मेल खाता है।')}<sup>[reference:6]</sup></p>
                 <p>{bi('A seminal study published in the Journal of Alternative and Complementary Medicine found that participants who slept head‑south experienced a 25% improvement in sleep quality and significantly reduced blood pressure fluctuations compared to those sleeping head‑north. The National Sleep Foundation now acknowledges this alignment as beneficial, noting it &quot;mirrors the natural flow of the Earth&apos;s magnetic field, helping promote calm, restorative sleep.&quot;', 'Journal of Alternative and Complementary Medicine में प्रकाशित एक युग-निर्धारक अध्ययन में पाया गया कि सिर दक्षिण रखकर सोने वाले सहभागियों की नींद की गुणवत्ता में 25% सुधार हुआ और सिर उत्तर रखकर सोने वालों की तुलना में रक्तचाप के उतार-चढ़ाव उल्लेखनीय रूप से घटे। नेशनल स्लीप फाउंडेशन अब इस संरेखण को लाभकारी स्वीकार करती है और कहती है कि यह "पृथ्वी के चुंबकीय क्षेत्र की प्राकृतिक धारा का प्रतिबिंब है, जो शांत, पुनर्ताज़ाकारिणी नींद को बढ़ावा देने में सहायक है।"')}<sup>[reference:7]</sup></p>
@@ -133,7 +150,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-kumkuma-red to-[var(--color-hero-2)]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Solar Geometry — How Vastu Anticipated Passive Solar Design', 'सौर ज्यामिति — वास्तु ने सहस्रों वर्ष पूर्व पैसिव सोलर डिज़ाइन की भविष्यवाणी कैसे की')}</h2>
+                  <h2 id="solar" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Solar Geometry — How Vastu Anticipated Passive Solar Design', 'सौर ज्यामिति — वास्तु ने सहस्रों वर्ष पूर्व पैसिव सोलर डिज़ाइन की भविष्यवाणी कैसे की')}</h2>
                 </div>
                 <p>{bi('Vastu&apos;s directional rules are fundamentally a sophisticated solar geometry system. In the Indian subcontinent, the sun&apos;s path arcs from southeast to southwest. The southern and western facades therefore receive the harshest, most prolonged solar radiation — while the northern and eastern facades receive gentler, indirect light.', 'वास्तु की दिशात्मक परंपराएँ मूलतः एक परिष्कृत सौर ज्यामिति प्रणाली हैं। भारतीय उपमहाद्वीप में सूर्य का पथ दक्षिण-पूर्व से दक्षिण-पश्चिम की ओर वक्र बनाता है। अतः दक्षिणी और पश्चिमी अग्रभाग सबसे कठोर, सर्वाधिक दीर्घ सौर विकिरण पाते हैं — जबकि उत्तरी और पूर्वी अग्रभाग कोमल, अप्रत्यक्ष प्रकाश पाते हैं।')}<sup>[reference:8]</sup></p>
                 <p>{bi('This explains virtually every major Vastu rule: larger windows in the North and East capture soft, diffuse daylight without heat gain. The South and West have smaller openings and thicker walls to block the intense afternoon sun. Taller structures are recommended in the South and West to cast protective shadows. Lower, open spaces in the North and East allow morning light to penetrate deeply. These are the ', 'यह लगभग हर प्रमुख वास्तु नियम की व्याख्या करता है: उत्तर और पूर्व में बड़ी खिड़कियाँ बिना गर्मी वृद्धि के कोमल, प्रकीर्ण दिवप्रकाश भीतर लाती हैं। दक्षिण और पश्चिम में छोटे प्रावरण और मोटी दीवारें रखी जाती हैं ताकि तीव्र दोपहर की धूप रुके। दक्षिण और पश्चिम में ऊँची संरचनाएँ सुझाई जाती हैं ताकि रक्षक छायाएँ बनें। उत्तर और पूर्व में निम्न, खुले स्थान प्रातः प्रकाश को गहराई तक प्रवेश करने देते हैं। ये ')}<em>{bi('exact same principles', 'बिलकुल वही सिद्धांत')}</em>{bi(' taught in modern passive solar design courses.', ' हैं जो आधुनिक पैसिव सोलर डिज़ाइन के पाठ्यक्रमों में पढ़ाए जाते हैं।')}<sup>[reference:9]</sup></p>
@@ -143,7 +160,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-[var(--color-hero-2)]" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Computational Validation — The 2024 CFD Study', 'कम्प्यूटेशनल प्रमाणिकरण — 2024 का CFD अध्ययन')}</h2>
+                  <h2 id="biophilic" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Computational Validation — The 2024 CFD Study', 'कम्प्यूटेशनल प्रमाणिकरण — 2024 का CFD अध्ययन')}</h2>
                 </div>
                 <p>{bi('The most significant recent scientific validation of Vastu comes from a 2024 study titled ', 'वास्तु का सामकालीन सर्वाधिक महत्वपूर्ण वैज्ञानिक प्रमाणिकरण 2024 के उस अध्ययन से आता है, जिसका शीर्षक है ')}<em>&quot;{bi('Investigate the Effectiveness of Vastu Features Using Computational Fluid Dynamics', 'कम्प्यूटेशनल फ्लूइड डायनैमिक्स का उपयोग करके वास्तु विशेषताओं की प्रभावकारिता का अध्ययन')}&quot;</em>{bi(' published by Springer. Researchers simulated favorable and unfavorable door configurations across various directions during Colombo&apos;s warmest period.', ' जो स्प्रिंजर (Springer) ने प्रकाशित किया। शोधकर्ताओं ने कोलंबो की सर्वाधिक उष्ण अवधि में विभिन्न दिशाओं के अनुकूल और प्रतिकूल दरवाज़ा विन्यासों का अनुकरण किया।')}<sup>[reference:10]</sup></p>
                 <p>{bi('The study&apos;s results were striking: Vastu‑recommended configurations produced PMV values of 1–2, indicating &quot;correct indoor conditions.&quot; The authors concluded that ', 'अध्ययन के परिणाम विस्मयकारी थे: वास्तु-अनुशंसित विन्यासों से PMV मान 1–2 प्राप्त हुए, जो "सही आंतरिक परिस्थितियों" को दर्शाते हैं। लेखकों ने निष्कर्ष निकाला कि ')}<strong>&quot;{bi('Vastu Shastra&apos;s recommendations are beneficial to the inhabitants', 'वास्तु शास्त्र की अनुशंसाएँ निवासियों के लिए लाभकारी हैं')}&quot;</strong>{bi(' — a rare instance of ancient architectural guidelines being empirically validated through advanced engineering simulation.', ' — यह प्राचीन वास्तुकला दिशानिर्देशों के उन्नत इंजीनियरिंग अनुकरण द्वारा व्यावहारिक रूप से प्रमाणित होने का दुर्लभ उदाहरण है।')}<sup>[reference:11]</sup></p>
@@ -153,7 +170,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-cyan-400 to-blue-600" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Sustainability Alignment — Vastu as a Green Building Framework', 'सततता संरेखण — ग्रीन बिल्डिंग ढाँचे के रूप में वास्तु')}</h2>
+                  <h2 id="biophilic" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Sustainability Alignment — Vastu as a Green Building Framework', 'सततता संरेखण — ग्रीन बिल्डिंग ढाँचे के रूप में वास्तु')}</h2>
                 </div>
                 <p>{bi('A 2024 paper from QUT (Queensland University of Technology) presented at the Architectural Science Association conference examined Vastu Shastra as a holistic framework for sustainable design. The researchers concluded that Vastu &quot;produces congenial settings for living and working, including increased creativity and workforce development, and enhanced harmony, stability, defence and well‑being.&quot;', 'QUT (क्वींसलैंड यूनिवर्सिटी ऑफ टेक्नोलॉजी) का 2024 का एक शोध-पत्र आर्किटेक्चुरल साइंस एसोसिएशन सम्मेलन में प्रस्तुत किया गया, जिसने सतत डिज़ाइन के समग्र ढाँचे के रूप में वास्तु शास्त्र का अध्ययन किया। शोधकर्ताओं ने निष्कर्ष निकाला कि वास्तु "निवास और कार्य के लिए अनुकूल परिस्थितियाँ रचता है — जिसमें रचनात्मकता व कार्यबल विकास की वृद्धि तथा सौहार्द, स्थिरता, संरक्षा और सुस्थिति का उत्कर्ष शामिल है।"')}<sup>[reference:12]</sup></p>
                 <p>{bi('Key alignments between Vastu and modern sustainability include: natural ventilation (Vastu&apos;s door/window placement mirrors CFD‑optimised airflows), solar radiation management (directional rules map precisely to sun‑path analysis), thermal mass utilisation (the southwest earth‑element zone doubles as thermal storage), and water‑body microclimate regulation (Northeast water features cool prevailing winds).', 'वास्तु और आधुनिक सततता के बीच प्रमुख संरेखण हैं: प्राकृतिक वातन (वास्तु का दरवाज़ा/खिड़की विन्यास CFD-अनुकूलित वायुप्रवाहों का प्रतिबिंब है), सौर विकिरण प्रबंधन (दिशात्मक नियम सूर्य-पथ विश्लेषण से यथासूत्र मेल खाते हैं), थर्मल मास का उपयोग (दक्षिण-पश्चिम पृथ्वी-तत्व क्षेत्र थर्मल भंडारण भी का कार्य करता है), और जल-स्रोतों द्वारा सूक्ष्मजलवायु नियमन (उत्तर-पूर्व के जल स्रोत प्रचलित हवाओं को ठंडा करते हैं।')}<sup>[reference:13]</sup></p>
@@ -163,7 +180,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-green-400 to-emerald-600" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Empirical Evidence — Client Outcomes', 'व्यावहारिक प्रमाण — क्लाइंट के परिणाम')}</h2>
+                  <h2 id="biophilic" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('The Empirical Evidence — Client Outcomes', 'व्यावहारिक प्रमाण — क्लाइंट के परिणाम')}</h2>
                 </div>
                 <p>{bi('Beyond theoretical validation, real‑world data supports Vastu&apos;s effectiveness. Across over 500 clients in 15+ countries, AstroVastu Expert K.K. Nagaich has documented that Vastu corrections lead to a 20–30% improvement in self‑reported well‑being, measured through standardised health questionnaires. Commercial spaces aligned with Vastu principles report a 15% increase in footfall and a 10% reduction in employee absenteeism.', 'सैद्धांतिक प्रमाणिकरण के परे, वास्तविक दुनिया का डेटा वास्तु की प्रभावकारिता का समर्थन करता है। 15+ देशों के 500 से अधिक क्लाइंट्स में एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच ने प्रलेखित किया है कि वास्तु सुधारों से मानकीकृत स्वास्थ्य प्रश्नावलियों द्वारा मापे गए स्व-प्रकटित सुस्थिति (well-being) में 20–30% सुधार होता है। वास्तु सिद्धांतों के अनुरूप वाणिज्यिक स्थानों में आगंतुकों की संख्या (footfall) 15% बढ़ी और कर्मचारियों की अनुपस्थिति 10% घटी।')}<sup>[reference:14]</sup></p>
               </div>
@@ -172,23 +189,15 @@ export default function BlogPage() {
               <div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-[var(--color-bg-elevated)] rounded-3xl border border-prakash-gold/20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Ancient Wisdom, Modern Proof', 'निष्कर्ष — प्राचीन ज्ञान, आधुनिक प्रमाण')}</h2>
+                  <h2 id="conclusion" className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Ancient Wisdom, Modern Proof', 'निष्कर्ष — प्राचीन ज्ञान, आधुनिक प्रमाण')}</h2>
                 </div>
                 <p>{bi('The science is converging. Vastu Shastra is not a collection of random superstitions — it is an empirically grounded system of environmental design that anticipated by millennia what modern building physics is now confirming. From CFD‑validated ventilation patterns to geomagnetic sleep alignment, from passive solar geometry to thermal mass placement, each principle finds its echo in peer‑reviewed research.', 'विज्ञान उसी ओर आ रहा है। वास्तु शास्त्र अंधविश्वासों का बेतरतीब ढेर नहीं — यह पर्यावरणीय डिज़ाइन की एक व्यावहारिक रूप से आधारित प्रणाली है, जिसने सहस्रों वर्ष पूर्व वह पहले ही भाँप लिया था जिसे आधुनिक बिल्डिंग फिजिक्स अब पुष्टि कर रहा है। CFD-प्रमाणित वातन पैटर्न से भू-चुंबकीय नींद-संरेखण तक, पैसिव सौर ज्यामिति से थर्मल मास विन्यास तक — प्रत्येक सिद्धांत की गूँज समीक्षित-शोध (peer-reviewed research) में मिलती है।')}</p>
                 <p className="font-medium">{bi('AstroVastu Expert K.K. Nagaich combines this ancient wisdom with modern diagnostics — EMF meters, geomagnetic compasses, and thermal imaging — to provide a holistic, scientifically grounded Vastu analysis for every client.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच इस प्राचीन ज्ञान को आधुनिक निदान उपकरणों — EMF मीटर, भू-चुंबकीय दिशासूचक यंत्र और थर्मल इमेजिंग — के साथ जोड़ते हैं, ताकि प्रत्येक क्लाइंट को समग्र, वैज्ञानिक दृष्टि से आधारित वास्तु विश्लेषण मिल सके।')}</p>
               </div>
 
             </div>
-
-            {/* ── Author Bio ── */}
-            <div className="mt-12 p-6 bg-[var(--color-bg-glass)] backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-prakash-gold to-sacred-saffron flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-              <div>
-                <p className="font-serif text-lg text-nidra-indigo font-bold">AstroVastu Expert KK Nagaich</p>
-                <p className="text-sm text-nidra-indigo/60">{bi('4th Generation Vastu Guru | MBA | Ex‑CEO | Served 2 Lakh+ Clients Worldwide | Researcher & Author', '4थी पीढ़ी के वास्तु गुरु | MBA | पूर्व सीईओ | विश्वभर में 2 लाख+ क्लाइंट्स को सेवा | शोधकर्ता एवं लेखक')}</p>
-              </div>
-            </div>
           </div>
+          </ArticleShell>
         </article>
       
     </>

@@ -31,13 +31,25 @@ export class MockPaymentProvider implements PaymentProvider {
   }
 }
 
+// Next.js only inlines process.env.X for *literal* member access at build
+// time — a dynamic `process.env[key]` would be undefined in the browser.
+const RAZORPAY_LINKS: Record<string, string | undefined> = {
+  BASIC: process.env.NEXT_PUBLIC_RAZORPAY_LINK_BASIC,
+  SILVER: process.env.NEXT_PUBLIC_RAZORPAY_LINK_SILVER,
+  GOLD: process.env.NEXT_PUBLIC_RAZORPAY_LINK_GOLD,
+  LUXURY: process.env.NEXT_PUBLIC_RAZORPAY_LINK_LUXURY,
+  PREMIUM: process.env.NEXT_PUBLIC_RAZORPAY_LINK_PREMIUM,
+  REPORT: process.env.NEXT_PUBLIC_RAZORPAY_LINK_REPORT,
+  SESSION: process.env.NEXT_PUBLIC_RAZORPAY_LINK_SESSION,
+  FAMILY: process.env.NEXT_PUBLIC_RAZORPAY_LINK_FAMILY,
+};
+
 export class RazorpayPaymentLinksProvider implements PaymentProvider {
   readonly name = 'razorpay';
   readonly testMode = false;
 
   async startPayment(session: PaymentSession): Promise<PaymentResult> {
-    const key = `NEXT_PUBLIC_RAZORPAY_LINK_${session.plan.id.toUpperCase()}`;
-    const link = process.env[key];
+    const link = RAZORPAY_LINKS[session.plan.id.toUpperCase()];
     if (!link) {
       return {
         status: 'failed',

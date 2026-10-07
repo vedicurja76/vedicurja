@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "Consult KK Nagaich — 4th generation Vastu Guru, Tantra Sadhak, MBA & ex-CEO. Vastu for home, office & land, remedies without demolition, Kundali & Numerology, plus a free AI Astrology & Kundli reading and free Vastu tools. 2 Lakh+ clients across 50+ countries.",
   alternates: { canonical: "https://www.vedivastuurja.com/" },
+  keywords: [
+    "vastu shastra consultant", "vastu consultant near me", "acharya kk nagaich",
+    "vastu for home", "kundli online", "daily rashi bhavishya 2026", "naam sujhav",
+    "vastu lucknow", "vastu mumbai", "vastu delhi", "astrology consultation online",
+    "ghar ka vastu", "kundli analysis", "vaastu shastra",
+  ],
 };
 
 const homeJsonLd = {

@@ -3,6 +3,10 @@ import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['kitchen-vastu-health-wealth'];
 
 export default function BlogPage() {
   const bi = useBi();
@@ -58,7 +62,19 @@ export default function BlogPage() {
           </section>
 
           {/* ── Article Body ── */}
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <ArticleShell
+            readingMinutes={META.readingMinutes}
+            category={META.category}
+            categoryHi={META.categoryHi}
+            quickAnswer={META.quickAnswer}
+            quickAnswerHi={META.quickAnswerHi}
+            toc={META.toc}
+            references={META.references}
+            faqs={META.faqs}
+            related={META.related}
+            datePublished="2026-09-30"
+            dateModified="2026-10-06"
+          >
             <div className="prose prose-lg prose-stone max-w-none">
 
               <p className="lead text-xl text-nidra-indigo/70 leading-relaxed">
@@ -240,23 +256,14 @@ export default function BlogPage() {
               <div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-[var(--color-bg-elevated)] rounded-3xl border border-prakash-gold/20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-orange-400 to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Kitchen Is Your Family\'s Engine', 'निष्कर्ष — आपकी रसोई ही आपके परिवार का इंजन है')}</h2>
+                  <h2 id="conclusion" className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Kitchen Is Your Family\'s Engine', 'निष्कर्ष — आपकी रसोई ही आपके परिवार का इंजन है')}</h2>
                 </div>
                 <p>{bi('The kitchen is not merely where food is prepared — it is where the fire element that drives your family\'s metabolism, ambition, and financial vitality is generated and sustained. The 325‑household survey provides undeniable data: when the SE fire zone is compromised, acidity (85%), unproductive expenses (74%), and work obstacles (83%) follow with statistical predictability. The remedies exist, the colours are available, the rituals are simple. Aligning your kitchen with Vastu principles is not a matter of superstition — it is a matter of family health and financial prudence.', 'रसोई केवल भोजन पकाने का स्थान नहीं — यह वह स्थान है जहाँ आपके परिवार की चयापचय, महत्वाकांक्षा और आर्थिक उर्जाशीलता को चलाने वाला अग्नि तत्व उत्पन्न और पोषित होता है। 325 घरों के सर्वेक्षण का अकाट्य डेटा है: जब दक्षिण-पूर्व अग्नि-क्षेत्र बाधित होता है, तो अम्लता (85%), अनुत्पादक खर्च (74%) और कार्य-बाधाएं (83%) सांख्यिकीय निश्चितता के साथ आती हैं। उपाय विद्यमान हैं, रंग उपलब्ध हैं, अनुष्ठान सरल हैं। रसोई को वास्तु सिद्धांतों के अनुसरूप ढालना अंधविश्वास का विषय नहीं — यह पारिवारिक स्वास्थ्य और आर्थिक विवेक का विषय है।')}</p>
                 <p className="font-medium">{bi('AstroVastu Expert K.K. Nagaich provides comprehensive kitchen Vastu audits — including directional analysis, elemental balancing, and personalised remedy prescriptions — as part of every residential consultation.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच प्रत्येक आवासीय परामर्श के अंतर्गत व्यापक रसोई-वास्तु ऑडिट प्रदान करते हैं — जिसमें दिशा-विश्लेषण, तत्व-संतुलन और व्यक्तिगत उपचार-निर्धारण शामिल है।')}</p>
               </div>
 
             </div>
-
-            {/* ── Author Bio ── */}
-            <div className="mt-12 p-6 bg-[var(--color-bg-glass)] backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-orange-500 to-sacred-saffron flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-              <div>
-                <p className="font-serif text-lg text-nidra-indigo font-bold">AstroVastu Expert KK Nagaich</p>
-                <p className="text-sm text-nidra-indigo/60">{bi('4th Generation Vastu Guru | MBA | Ex‑CEO | 20+ Years Clinical Practice | 2 Lakh+ Clients Worldwide', '4थी पीढ़ी के वास्तु गुरु | MBA | पूर्व सीईओ | 20+ वर्षों का व्यावहारिक अनुभव | विश्वभर में 2 लाख+ क्लाइंट्स')}</p>
-              </div>
-            </div>
-          </div>
+          </ArticleShell>
         </article>
       
     </>

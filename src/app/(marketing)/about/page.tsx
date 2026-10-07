@@ -9,6 +9,10 @@ export const metadata: Metadata = {
   description:
     "Meet Acharya KK Nagaich — 4th generation Vastu Guru, Tantra Sadhak, MBA and ex-CEO behind AstroVastu Expert. Blending authentic Vedic wisdom with modern science, he has guided 2 lakh+ clients across 50+ countries.",
   alternates: { canonical: URL },
+  keywords: [
+    "acharya kk nagaich", "kk nagaich vastu guru", "best vastu astrologer in india",
+    "4th generation vastu guru", "vastu expert near me", "nagaich vastu consultant",
+  ],
   openGraph: { title: "About AstroVastu Expert & Acharya KK Nagaich", description: "4th generation Vastu Guru, MBA & ex-CEO — 2 lakh+ clients across 50+ countries.", url: URL, type: "profile", siteName: "AstroVastu Expert" },
   twitter: { card: "summary_large_image", title: "About AstroVastu Expert", description: "The lineage, method and credentials behind AstroVastu Expert." },
 };

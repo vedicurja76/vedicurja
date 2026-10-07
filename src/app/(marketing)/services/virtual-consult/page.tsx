@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { serviceMetadata, serviceJsonLd, type ServicePageSeo } from "@/lib/seo/servicePage";
+import ServiceFaq from "@/features/shared/components/ServiceFaq";
 import VirtualConsultClient from "./ClientPage";
 
 const seo: ServicePageSeo = {
@@ -25,6 +26,7 @@ export default function VirtualConsultPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd(seo)) }} />
       <VirtualConsultClient />
+      <ServiceFaq faqs={seo.faqs} />
     </>
   );
 }

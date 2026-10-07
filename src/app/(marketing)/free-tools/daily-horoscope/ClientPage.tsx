@@ -44,8 +44,8 @@ export function DailyHoroscopeTool() {
   const rashi = h.rashi;
 
   const shareMsg = useMemo(() => {
-    const en = `🌌 ${rashi.en} (${rashi.symbol}) — Daily Horoscope · ${dateLabel(dateStr, (a) => a)}\n\n${h.headline.en}\n\n💞 Love: ${h.love.en}\n💼 Career: ${h.career.en}\n🌿 Health: ${h.health.en}\n💰 Finance: ${h.finance.en}\n🛠️ Remedy: ${h.remedy.en}\n\n🍀 Lucky colour ${h.luckyColor.en} · number ${h.luckyNumber} · direction ${h.luckyDirection.en}\n\nFree daily rashi phal from AstroVastu Expert (Acharya KK Nagaich) — https://vedivastuurja.com/free-tools/daily-horoscope`;
-    const hi = `🌌 ${rashi.hi} (${rashi.symbol}) — दैनिक राशिफल · ${dateLabel(dateStr, (_a, b) => b)}\n\n${h.headline.hi}\n\n💞 प्रेम: ${h.love.hi}\n💼 करियर: ${h.career.hi}\n🌿 स्वास्थ्य: ${h.health.hi}\n💰 धन: ${h.finance.hi}\n🛠️ उपाय: ${h.remedy.hi}\n\n🍀 शुभ रंग ${h.luckyColor.hi} · अंक ${h.luckyNumber} · दिशा ${h.luckyDirection.hi}\n\nआचार्य के. के. नगाईच (AstroVastu Expert) का निःशुल्क दैनिक राशिफल — https://vedivastuurja.com/free-tools/daily-horoscope`;
+    const en = `🌌 ${rashi.en} (${rashi.symbol}) — Daily Horoscope · ${dateLabel(dateStr, (a) => a)}\n\n${h.headline.en}\n\n💞 Love: ${h.love.en}\n💼 Career: ${h.career.en}\n🌿 Health: ${h.health.en}\n💰 Finance: ${h.finance.en}\n🛠️ Remedy: ${h.remedy.en}\n\n🍀 Lucky colour ${h.luckyColor.en} · number ${h.luckyNumber} · direction ${h.luckyDirection.en}\n\nFree daily rashi phal from AstroVastu Expert (Acharya KK Nagaich) — https://www.vedivastuurja.com/free-tools/daily-horoscope`;
+    const hi = `🌌 ${rashi.hi} (${rashi.symbol}) — दैनिक राशिफल · ${dateLabel(dateStr, (_a, b) => b)}\n\n${h.headline.hi}\n\n💞 प्रेम: ${h.love.hi}\n💼 करियर: ${h.career.hi}\n🌿 स्वास्थ्य: ${h.health.hi}\n💰 धन: ${h.finance.hi}\n🛠️ उपाय: ${h.remedy.hi}\n\n🍀 शुभ रंग ${h.luckyColor.hi} · अंक ${h.luckyNumber} · दिशा ${h.luckyDirection.hi}\n\nआचार्य के. के. नगाईच (AstroVastu Expert) का निःशुल्क दैनिक राशिफल — https://www.vedivastuurja.com/free-tools/daily-horoscope`;
     return bi(en, hi);
   }, [h, rashi, dateStr, bi]);
 

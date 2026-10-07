@@ -1,3 +1,22 @@
 User-agent: *
 Allow: /
-Sitemap: https://vedivastuurja.com/sitemap.xml
+
+# Keep non-content / auth routes out of the index
+Disallow: /signin
+Disallow: /signup
+
+# AI / answer-engine crawlers are explicitly welcome (AEO + GEO)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.vedivastuurja.com/sitemap.xml

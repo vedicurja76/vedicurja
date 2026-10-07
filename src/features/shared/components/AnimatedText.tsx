@@ -5,18 +5,20 @@ interface AnimatedTextProps {
   text: string;
   className?: string;
   delay?: number;
+  as?: 'div' | 'h1' | 'h2';
 }
 
-export default function AnimatedText({ text, className = '', delay = 0 }: AnimatedTextProps) {
+export default function AnimatedText({ text, className = '', delay = 0, as = 'div' }: AnimatedTextProps) {
+  const Tag = motion[as] as unknown as typeof motion.div;
   return (
-    <motion.div
+    <Tag
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay, ease: 'easeOut' }}
       className={className}
     >
       {text}
-    </motion.div>
+    </Tag>
   );
 }
 

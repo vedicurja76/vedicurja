@@ -50,8 +50,8 @@ export function NameSuggestionTool() {
     const boys = result.boys.slice(0, 6).map(n => bi(n.en, n.hi)).join(', ');
     const girls = result.girls.slice(0, 6).map(n => bi(n.en, n.hi)).join(', ');
     return bi(
-      `✨ Name Suggestion — ${nak.en} (Pada ${result.pada + 1}) · starting with “${result.syllable.sa}”\n\nLord: ${nak.lord} · Deity: ${nak.deity}\n\n👦 Boys: ${boys}\n👧 Girls: ${girls}\n\nFree Nakshatra-based names from AstroVastu Expert (Acharya KK Nagaich) — https://vedivastuurja.com/free-tools/name-suggestion`,
-      `✨ नाम सुझाव — ${nak.hi} (पाद ${result.pada + 1}) · शुभ आदि-अक्षर “${result.syllable.hi}”\n\nस्वामी: ${nak.lordHi} · आराध्य: ${nak.deityHi}\n\n👦 बालक: ${boys}\n👧 बालिका: ${girls}\n\nआचार्य के. के. नगाईच (AstroVastu Expert) का निःशुल्क नक्षत्र-आधारित नाम चयन — https://vedivastuurja.com/free-tools/name-suggestion`
+      `✨ Name Suggestion — ${nak.en} (Pada ${result.pada + 1}) · starting with “${result.syllable.sa}”\n\nLord: ${nak.lord} · Deity: ${nak.deity}\n\n👦 Boys: ${boys}\n👧 Girls: ${girls}\n\nFree Nakshatra-based names from AstroVastu Expert (Acharya KK Nagaich) — https://www.vedivastuurja.com/free-tools/name-suggestion`,
+      `✨ नाम सुझाव — ${nak.hi} (पाद ${result.pada + 1}) · शुभ आदि-अक्षर “${result.syllable.hi}”\n\nस्वामी: ${nak.lordHi} · आराध्य: ${nak.deityHi}\n\n👦 बालक: ${boys}\n👧 बालिका: ${girls}\n\nआचार्य के. के. नगाईच (AstroVastu Expert) का निःशुल्क नक्षत्र-आधारित नाम चयन — https://www.vedivastuurja.com/free-tools/name-suggestion`
     );
   }, [nak, result, bi]);
 

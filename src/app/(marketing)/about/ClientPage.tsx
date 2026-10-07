@@ -39,7 +39,7 @@ function HeroSection() {
         <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-prakash-gold uppercase tracking-[0.3em] text-sm mb-6 block font-bold">
           {bi('India’s Most‑Viewed Vastu Authority', 'भारत के सबसे अधिक देखे जाने वाले वास्तु अधिकार')}
         </motion.span>
-        <AnimatedText text="AstroVastu Expert K.K. Nagaich" className="font-serif text-6xl md:text-8xl lg:text-9xl mb-6 text-[var(--color-hero-fg)] drop-shadow-2xl" />
+        <AnimatedText as="h1" text="AstroVastu Expert K.K. Nagaich" className="font-serif text-6xl md:text-8xl lg:text-9xl mb-6 text-[var(--color-hero-fg)] drop-shadow-2xl" />
         <GradientText text={bi('4th Generation · MBA · Ex‑CEO · Tantra Sadhak', '4 पीढ़ियों की परंपरा · MBA · पूर्व सीईओ · तंत्र साधक')} className="font-serif text-2xl md:text-4xl mb-8 block" />
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-xl md:text-2xl text-[var(--color-hero-fg)]/80 max-w-3xl mx-auto mb-12">
           {bi('The only Vastu master who performs every ritual himself — and has', 'एकमात्र वास्तु गुरु जो हर अनुष्ठान स्वयं संपन्न करते हैं — और जिनके')}{' '}<span className="font-bold">{bi('100 million+ views', '10 करोड़+ व्यूज़')}</span>{' '}{bi('across platforms.', 'विभिन्न प्लेटफॉर्म पर हैं।')}

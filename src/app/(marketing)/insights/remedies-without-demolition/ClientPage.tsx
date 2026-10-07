@@ -3,6 +3,10 @@ import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['remedies-without-demolition'];
 
 export default function BlogPage() {
   const bi = useBi();
@@ -57,6 +61,19 @@ export default function BlogPage() {
           </section>
 
           {/* ── Article Body ── */}
+          <ArticleShell
+            readingMinutes={META.readingMinutes}
+            category={META.category}
+            categoryHi={META.categoryHi}
+            quickAnswer={META.quickAnswer}
+            quickAnswerHi={META.quickAnswerHi}
+            toc={META.toc}
+            references={META.references}
+            faqs={META.faqs}
+            related={META.related}
+            datePublished="2026-09-30"
+            dateModified="2026-10-06"
+          >
           <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
             <div className="prose prose-lg prose-stone max-w-none">
 
@@ -68,7 +85,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Why Remedies Work: The Energy‑Flow Principle', 'उपचार काम क्यों करते हैं: ऊर्जा-प्रवाह सिद्धांत')}</h2>
+                  <h2 id="philosophy" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Why Remedies Work: The Energy‑Flow Principle', 'उपचार काम क्यों करते हैं: ऊर्जा-प्रवाह सिद्धांत')}</h2>
                 </div>
                 <p>{bi('Vastu Shastra maps your home like a living organism — each direction, element, and zone has a defined function. The North governs wealth (Kuber), the Northeast clarity and spiritual energy (Ishanya), the Southeast fire and metabolism (Agneya), the Southwest stability and relationships (Nairutya). When real‑world constraints force a misalignment — a kitchen in the North, a toilet in the Northeast — the energy flow is disrupted. Remedies work by ', 'वास्तु शास्त्र आपके घर को एक जीवित प्राणी की तरह मानचित्रित करता है — हर दिशा, तत्व और क्षेत्र का एक निश्चित कार्य है। उत्तर धन का स्वामी है (कुबेर), उत्तर-पूर्व स्पष्टता और आध्यात्मिक ऊर्जा का (ईशान्य), दक्षिण-पूर्व अग्नि और चयापचय का (अग्नेय), दक्षिण-पश्चिम स्थिरता और संबंधों का (नैर्ऋत्य)। जब वास्तविक बाधाओं के कारण असंतुलन हो — उत्तर में रसोई, उत्तर-पूर्व में टॉयलेट — तो ऊर्जा-प्रवाह बाधित होता है। उपचार ')}<strong>{bi('redirecting, balancing, or amplifying energy', 'ऊर्जा को दिशा देने, संतुलित करने या प्रबल करने')}</strong>{bi(' using colours, symbols, mirrors, metals, plants, crystals, and light — so that the intended elemental energy is strengthened, and what is not helping is softened. A 2024 computational‑fluid‑dynamics study published by Springer confirmed that Vastu‑recommended door configurations measurably improve indoor thermal comfort — proving that energy‑flow principles translate to physical outcomes.', ' के लिए रंगों, प्रतीकों, दर्पणों, धातुओं, पौधों, क्रिस्टल और प्रकाश का प्रयोग करते हैं — ताकि अभीष्ट तत्वीय ऊर्जा प्रबल हो और जो सहायक नहीं है वह शिथिल पड़े। 2024 में Springer द्वारा प्रकाशित एक कम्प्यूटेशनल फ़्लुइड डायनामिक्स अध्ययन ने पुष्टि की कि वास्तु-अनुशंसित द्वार-विन्यास इनडोर थर्मल आराम को मापनीय रूप से बेहतर बनाते हैं — यह सिद्ध करते हुए कि ऊर्जा-प्रवाह सिद्धांत भौतिक परिणामों में बदलते हैं।')}</p>
               </div>
@@ -134,7 +151,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-purple-400 to-fuchsia-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Yantra Remedies: Sacred Geometry as Energy Correction', 'यंत्र उपचार: ऊर्जा-सुधार के रूप में पवित्र ज्यामिति')}</h2>
+                  <h2 id="yantras" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Yantra Remedies: Sacred Geometry as Energy Correction', 'यंत्र उपचार: ऊर्जा-सुधार के रूप में पवित्र ज्यामिति')}</h2>
                 </div>
                 <p>{bi('Yantras are sacred geometric diagrams energised through specific mantras. They are not decorative — they are precision energy tools. Diviniti\u2019s comprehensive Vastu Yantra guide recommends placing them on clean altars, facing the correct direction, and maintaining regular prayer or meditation practice for sustained effect.', 'यंत्र विशिष्ट मंत्रों से प्राण-प्रतिष्ठित पवित्र ज्यामितीय आकृतियाँ हैं। ये सजावट नहीं — सूक्ष्म-सटीक ऊर्जा-उपकरण हैं। Diviniti की समग्र वास्तु यंत्र गाइड सिफारिश करती है इन्हें स्वच्छ वेदी पर, सही दिशा की ओर मुँह करके स्थापित करें और निरंतर प्रभाव हेतु नियमित प्रार्थना या ध्यान-अभ्यास बनाए रखें।')}</p>
 
@@ -159,7 +176,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-amber-400 to-orange-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Crystals and Pyramids: Precision Energy Tools', 'क्रिस्टल और पिरामिड: परिशुद्ध ऊर्जा-उपकरण')}</h2>
+                  <h2 id="plants" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Crystals and Pyramids: Precision Energy Tools', 'क्रिस्टल और पिरामिड: परिशुद्ध ऊर्जा-उपकरण')}</h2>
                 </div>
                 <p>{bi('Housing.com\u2019s definitive guide on Vastu pyramids and crystals catalogs the specific energy properties of each mineral. These are not decorative items — they are precision instruments that must be placed at exact angles and directions for measurable effect.', 'Housing.com की निर्णायक वास्तु पिरामिड और क्रिस्टल गाइड हर खनिज की विशिष्ट ऊर्जा-विशेषताएँ दर्ज करती है। ये सजावटी वस्तुएँ नहीं — परिशुद्ध उपकरण हैं जिन्हें मापनीय प्रभाव हेतु सटीक कोणों और दिशाओं में ही स्थापित करना चाहिए।')}</p>
 
@@ -196,7 +213,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-pink-400 to-rose-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Salt Therapy, Camphor, and Colour Balancing', 'नमक थेरेपी, कपूर और रंग-संतुलन')}</h2>
+                  <h2 id="colours" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Salt Therapy, Camphor, and Colour Balancing', 'नमक थेरेपी, कपूर और रंग-संतुलन')}</h2>
                 </div>
 
                 <div className="mt-4 space-y-5">
@@ -231,7 +248,7 @@ export default function BlogPage() {
               <div className="mt-12 mb-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-red-500 to-orange-500" />
-                  <h2 className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Documented Case Studies — Remedies in Action', 'प्रलेखित केस स्टडीज़ — क्रियारत उपचार')}</h2>
+                  <h2 id="case-study" className="font-serif text-2xl sm:text-3xl text-nidra-indigo">{bi('Documented Case Studies — Remedies in Action', 'प्रलेखित केस स्टडीज़ — क्रियारत उपचार')}</h2>
                 </div>
 
                 <div className="mt-4 space-y-5">
@@ -256,25 +273,17 @@ export default function BlogPage() {
               <div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-[var(--color-bg-elevated)] rounded-3xl border border-prakash-gold/20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Home Does Not Need to Be Torn Down', 'निष्कर्ष — आपके घर को तोड़ने की ज़रूरत नहीं')}</h2>
+                  <h2 id="conclusion" className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Home Does Not Need to Be Torn Down', 'निष्कर्ष — आपके घर को तोड़ने की ज़रूरत नहीं')}</h2>
                 </div>
                 <p>{bi('Every Vastu dosha — from a toilet in the Northeast to a kitchen in the North, from a South‑facing entrance to a cluttered Brahmasthan — has a documented, effective, and non‑destructive remedy. The ancient science of Vastu Shastra never demanded demolition. It demanded understanding. When you know which element to strengthen, which direction to activate, and which tool to deploy — a salt bowl, a copper pyramid, a red bulb, a crystal, a yantra, or simply decluttering — you can transform your living space without ever lifting a hammer.', 'हर वास्तु दोष — उत्तर-पूर्व के टॉयलेट से उत्तर में रसोई, दक्षिण की ओर खुले द्वार से अव्यवस्थित ब्रह्मस्थान तक — का प्रलेखित, कारगर और अविनाशी उपचार मौजूद है। वास्तु शास्त्र की प्राचीन विद्या ने कभी तोड़फोड़ नहीं माँगी — केवल समझ माँगी। जब आप जानते हैं कि कौन-सा तत्व प्रबल करना है, कौन-सी दिशा सक्रिय करनी है और कौन-सा उपचार लगाना है — नमक का कटोरा, ताँबे का पिरामिड, लाल बल्ब, क्रिस्टल, यंत्र या केवल अव्यवस्था-मुक्ति — तो हथौड़ा उठाए बिना भी अपना निवास-स्थान पूर्णतः बदल सकते हैं।')}</p>
                 <p className="font-medium">{bi('AstroVastu Expert K.K. Nagaich has spent over 20 years applying these precise, non‑invasive remedies for over 2 lakh clients across 50+ countries — proving every day that the most powerful Vastu corrections are also the simplest.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच ने 50+ देशों में 2 लाख से अधिक क्लाइंट्स के लिए ये परिशुद्ध, गैर-आक्रामक उपचार 20 से अधिक वर्षों तक लगाए हैं — हर दिन यह सिद्ध करते हुए कि सबसे शक्तिशाली वास्तु सुधार सरलतम भी होते हैं।')}</p>
               </div>
 
             </div>
-
-            {/* ── Author Bio ── */}
-            <div className="mt-12 p-6 bg-[var(--color-bg-glass)] backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-prakash-gold to-sacred-saffron flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-              <div>
-                <p className="font-serif text-lg text-nidra-indigo font-bold">{bi('AstroVastu Expert KK Nagaich', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच')}</p>
-                <p className="text-sm text-nidra-indigo/60">{bi('4th Generation Vastu Guru | MBA | Ex‑CEO | 20+ Years Clinical Practice | 2 Lakh+ Clients Worldwide', '4 पीढ़ियों की वास्तु गुरु परंपरा | MBA | पूर्व सीईओ | 20+ वर्षों का क्लीनिकल अनुभव | विश्वभर में 2 लाख+ क्लाइंट्स')}</p>
-              </div>
-            </div>
           </div>
-        </article>
-      
+        </ArticleShell>
+      </article>
+
     </>
   );
 }

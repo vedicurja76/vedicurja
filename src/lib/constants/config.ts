@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   name: 'AstroVastu Expert',
-  domain: 'vedivastuurja.com',
-  baseUrl: 'https://vedivastuurja.com',
+  domain: 'www.vedivastuurja.com',
+  baseUrl: 'https://www.vedivastuurja.com',
   tagline: 'Ancient Wisdom. Modern Precision.',
   founder: 'KK Nagaich',
 } as const;

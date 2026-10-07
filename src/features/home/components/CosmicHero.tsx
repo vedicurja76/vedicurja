@@ -57,17 +57,8 @@ export function CosmicHero() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [1, 1, 0, 0]);
 
-  const { items, loading } = useRealtimeContent<HeroSection>('home_sections', 'order_index');
+  const { items } = useRealtimeContent<HeroSection>('home_sections', 'order_index');
   const heroData = items.find(item => item.section_key === 'hero' && item.is_published) || fallbackHero;
-
-  if (loading) {
-    return (
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[var(--color-hero-1)] via-[var(--color-hero-2)] to-[var(--color-hero-3)]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-hero-2)] via-sacred-saffron/10 to-kumkuma-red/20" />
-        <div className="text-[var(--color-hero-fg)]/70 text-center">{bi('Loading...', 'लोड हो रहा है...')}</div>
-      </section>
-    );
-  }
 
   if (!heroData.is_published) return null;
 

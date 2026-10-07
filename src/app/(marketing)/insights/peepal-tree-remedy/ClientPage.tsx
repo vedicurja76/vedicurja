@@ -4,6 +4,10 @@ import SmoothScroll from '@/features/shared/components/global/ScrollSmoother';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['peepal-tree-remedy'];
 
 const EN_PRAYER = '"O Tree Deity and all the deities residing in this tree, this building is for my livelihood. It is difficult to maintain your purity here. I request that all deities residing in this tree kindly leave this tree and depart elsewhere. With your permission, I will transplant this plant to another place. Respecting you, I offer this coconut at your feet; please accept it."';
 const HI_PRAYER = 'हे वृक्ष देव, और इस वृक्ष में निवासरत सभी देव गणों से प्रार्थना है कि यह भवन मेरे जीवन यापन हेतु है, यहां आपकी सुचिता बनाए रखना कठिन है, आपसे निवेदन है कि इस वृक्ष पर निवासरत सभी देवता यह वृक्ष छोड़कर अन्यत्र प्रस्थान करने की कृपा करें, आपकी आज्ञा से मैं इस पौधे किसी अन्य जगह स्थापित कर दूंगा। आपका सम्मान करते हुए आपके श्री चरणों में यह श्री फल समर्पित कर रहा हु इसे स्वीकार करें।';
@@ -14,8 +18,8 @@ export default function PeepalTreeRemedyPage() {
     <>
       <Header />
       <SmoothScroll>
-        <main className="pt-32 pb-20 px-6 min-h-screen bg-vastu-parchment">
-          <article className="max-w-4xl mx-auto">
+        <main className="bg-vastu-parchment">
+          <article className="pt-28 pb-20 min-h-screen">
             <Link href="/insights" className="inline-flex items-center text-prakash-gold hover:underline mb-6">
               {bi('← Back to Insights', '← अंतर्दृष्टि संग्रह में वापस')}
             </Link>
@@ -47,7 +51,20 @@ export default function PeepalTreeRemedyPage() {
               />
             </div>
 
-            <div className="prose prose-lg prose-stone max-w-none">
+            <ArticleShell
+              readingMinutes={META.readingMinutes}
+              category={META.category}
+              categoryHi={META.categoryHi}
+              quickAnswer={META.quickAnswer}
+              quickAnswerHi={META.quickAnswerHi}
+              toc={META.toc}
+              references={META.references}
+              faqs={META.faqs}
+              related={META.related}
+              datePublished="2026-09-30"
+              dateModified="2026-10-06"
+            >
+              <div className="prose prose-lg prose-stone max-w-none">
               <p>{bi('Small Peepal trees spontaneously growing on the walls of a house are a sign. Usually, birds drop seeds here and there, causing them to sprout. But it is noteworthy that they do not grow in every building; sometimes they even sprout on walls that have cement, etc.', 'घर की दीवारों पर स्वतः निकल पीपल के छोटे वृक्ष, एक संकेत होते है। वैसे तो यह चिड़ियाँ अपने मुंह में बीज लेकर इधर उधर डाल देती है इससे उग सकते है। लेकिन गौर करने वाली बात यह है कि यह हर भवन में नहीं उगते, कभी कभी तो दीवारों पर सीमेंट इत्यादि होता है वहां उग आते है।')}</p>
               <p className="text-nidra-indigo/70">{bi('घर की दीवारों पर स्वतः निकल पीपल के छोटे वृक्ष, एक संकेत होते है। वैसे तो यह चिड़ियाँ अपने मुंह में बीज लेकर इधर उधर डाल देती है इससे उग सकते है। लेकिन गौर करने वाली बात यह है कि यह हर भवन में नहीं उगते, कभी कभी तो दीवारों पर सीमेंट इत्यादि होता है वहां उग आते है।', 'Small Peepal trees spontaneously growing on the walls of a house are a sign. Usually, birds drop seeds here and there, causing them to sprout. But it is noteworthy that they do not grow in every building; sometimes they even sprout on walls that have cement, etc.')}</p>
 
@@ -57,7 +74,7 @@ export default function PeepalTreeRemedyPage() {
               <p>{bi('The appearance of a Peepal tree on the walls of a house indicates both ', 'किसी घर इस तरह दीवारों पर पीपल का वृक्ष आने का संकेत ')}<strong>{bi('Pitru Dosha', 'पितृ दोष')}</strong>{bi(' and ', ' के साथ ')}<strong>{bi('Vastu Dosha', 'वास्तु दोष')}</strong>{bi('.', ' को भी इंगित करता है।')}</p>
               <p className="text-nidra-indigo/70">{bi('किसी घर इस तरह दीवारों पर पीपल का वृक्ष आने का संकेत पितृ दोष के साथ वास्तु दोष को भी इंगित करता है।', 'The appearance of a Peepal tree on the walls of a house indicates both Pitru Dosha and Vastu Dosha.')}</p>
 
-              <h2>{bi('Remedies / उपाय', 'उपाय / Remedies')}</h2>
+              <h2 id="remedies">{bi('Remedies / उपाय', 'उपाय / Remedies')}</h2>
 
               <p>{bi('First, according to Hindu beliefs, you should perform the prescribed rituals for the liberation and salvation of your ancestors.', 'सबसे पहले तो आपको हिंदू मान्यताओं के अनुसार अपने पूर्वजों की मोक्ष, मुक्ति हेतु जो विधि विधान बताएं गये हैं वो करना चाहिए।')}</p>
               <p className="text-nidra-indigo/70">{bi('सबसे पहले तो आपको हिंदू मान्यताओं के अनुसार अपने पूर्वजों की मोक्ष, मुक्ति हेतु जो विधि विधान बताएं गये हैं वो करना चाहिए।', 'First, according to Hindu beliefs, you should perform the prescribed rituals for the liberation and salvation of your ancestors.')}</p>
@@ -81,7 +98,7 @@ export default function PeepalTreeRemedyPage() {
               <p className="text-nidra-indigo/70">{bi('शनिवार, अमावस्या को एक कटोरी में जल लें उसमें थोड़े काले तिल डालें और यह मंत्र बोलते हुए 21 बार एक खाली पात्र में पितृ गण हेतु अर्पित करें।', 'On Saturday, Amavasya, take water in a bowl, add a few black sesame seeds, and while chanting the following mantra 21 times, offer it into an empty vessel for the Pitrs:')}</p>
               <pre className="bg-[var(--color-bg-secondary)] p-4 rounded-lg">ॐ सर्व पितृभ्यो नमः तर्पयामी</pre>
 
-              <h2>{bi('Method to remove the Peepal plant / पीपल के पौधे को हटाने की विधि', 'पीपल के पौधे को हटाने की विधि / Method to remove the Peepal plant')}</h2>
+              <h2 id="signs">{bi('Method to remove the Peepal plant / पीपल के पौधे को हटाने की विधि', 'पीपल के पौधे को हटाने की विधि / Method to remove the Peepal plant')}</h2>
 
               <p>{bi('First, apologise to your ancestors through at least one of the methods given above, and offer them worship or tarpanam.', 'सबसे पहले ऊपर दी गई कम से कम कोई एक विधि के माध्यम से अपने पूर्वजों से क्षमा मांगते हुए उन्हें पूजन या तर्पण अर्पित करें।')}</p>
               <p className="text-nidra-indigo/70">{bi('सबसे पहले ऊपर दी गई कम से कम कोई एक विधि के माध्यम से अपने पूर्वजों से क्षमा मांगते हुए उन्हें पूजन या तर्पण अर्पित करें।', 'First, apologise to your ancestors through at least one of the methods given above, and offer them worship or tarpanam.')}</p>
@@ -109,12 +126,7 @@ export default function PeepalTreeRemedyPage() {
               <p className="text-nidra-indigo/70">{bi('पौधे को निकालते समय इस मंत्र का उच्चारण करें।', 'While removing the plant, chant this mantra:')}</p>
               <pre className="bg-[var(--color-bg-secondary)] p-4 rounded-lg">ॐ ह्रीं क्षौं फट् स्वाहा</pre>
             </div>
-
-            <div className="mt-12 p-6 bg-vastu-stone/20 rounded-2xl border border-prakash-gold/20">
-              <h3 className="font-serif text-xl text-nidra-indigo mb-2">{bi('Need personal guidance?', 'व्यक्तिगत मार्गदर्शन चाहिए?')}</h3>
-              <p className="text-nidra-indigo/70 mb-4">{bi('Book a consultation with AstroVastu Expert KK Nagaich for a detailed analysis and personalised remedies.', 'विस्तृत विश्लेषण और व्यक्तिगत उपाय हेतु एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच से परामर्श बुक करें।')}</p>
-              <Link href="/bookings" className="luxury-button inline-block">{bi('Book Consultation →', 'परामर्श बुक करें →')}</Link>
-            </div>
+            </ArticleShell>
           </article>
         </main>
       </SmoothScroll>

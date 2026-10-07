@@ -3,6 +3,10 @@ import Header from '@/features/shared/components/Header';
 import { SoundController } from '@/features/shared/components/SoundController';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import ArticleShell from '@/features/blog/components/ArticleShell';
+import { ARTICLE_SEO_META } from '@/features/blog/data/articleSeoMetadata';
+
+const META = ARTICLE_SEO_META['commercial-vastu-office-layout'];
 
 export default function BlogPage() {
   const bi = useBi();
@@ -58,7 +62,19 @@ export default function BlogPage() {
           </section>
 
           {/* ── Article Body ── */}
-          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+          <ArticleShell
+            readingMinutes={META.readingMinutes}
+            category={META.category}
+            categoryHi={META.categoryHi}
+            quickAnswer={META.quickAnswer}
+            quickAnswerHi={META.quickAnswerHi}
+            toc={META.toc}
+            references={META.references}
+            faqs={META.faqs}
+            related={META.related}
+            datePublished="2026-09-30"
+            dateModified="2026-10-06"
+          >
             <div className="prose prose-lg prose-stone max-w-none">
 
               <p className="lead text-xl text-nidra-indigo/70 leading-relaxed">
@@ -167,22 +183,14 @@ export default function BlogPage() {
               <div className="mt-12 p-8 bg-gradient-to-br from-vastu-stone/30 to-[var(--color-bg-elevated)] rounded-3xl border border-prakash-gold/20">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="h-10 w-1.5 rounded-full bg-gradient-to-b from-prakash-gold to-sacred-saffron" />
-                  <h2 className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Office Is Your Profit Engine', 'निष्कर्ष — आपका कार्यालय ही आपका लाभ-इंजन है')}</h2>
+                  <h2 id="conclusion" className="font-serif text-2xl text-nidra-indigo">{bi('Conclusion — Your Office Is Your Profit Engine', 'निष्कर्ष — आपका कार्यालय ही आपका लाभ-इंजन है')}</h2>
                 </div>
                 <p>{bi('Every element of commercial Vastu — from the direction your entrance faces, to the zone your CEO occupies, to the wall against which your cash locker rests — contributes to a cumulative energetic effect that either attracts or repels business success. The Bengaluru study showing up to 30% higher productivity in Vastu‑compliant firms is not an anomaly — it is the predictable result of aligning workspace energy with cosmic principles that have been empirically validated for over 5,000 years. Whether you run a small consultancy, a mid‑sized agency, or a large factory, the principles are the same: North for wealth, East for growth, Southwest for stability, and Northeast for clarity. The remedies exist for every dosha — often without structural demolition. The question is not whether your office has Vastu defects — it is whether you are ready to correct them.', 'वाणिज्यिक वास्तु का हर तत्व — प्रवेश द्वार की दिशा से लेकर सीईओ के अधिकार-क्षेत्र तक, कैश लॉकर की दीवार तक — एक संचयी ऊर्जात्मक प्रभाव में योगदान देता है, जो या तो व्यवसाय की सफलता को आकर्षित करता है या उसे दूर धकेलता है। बेंगलुरु का वह अध्ययन, जो वास्तु-अनुपालक फर्मों में 30% तक अधिक उत्पादकता दिखाता है, कोई संयोग नहीं — यह कार्य-स्थान की ऊर्जा को ब्रह्मांडीय सिद्धांतों के साथ संरेखित करने का पूर्वानुमानित परिणाम है, जो पिछले 5,000 वर्षों से व्यावहारिक रूप से सिद्ध होते आए हैं। आप छोटा परामर्श फर्म चलाएँ, मध्यम आकार की एजेंसी या बड़ा कारखाना — सिद्धांत वही हैं: धन के लिए उत्तर, विकास के लिए पूर्व, स्थिरता के लिए दक्षिण-पश्चिम, और स्पष्टता के लिए उत्तर-पूर्व। हर दोष का उपचार मौजूद है — अक्सर बिना संरचनात्मक तोड़-फोड़ के। प्रश्न यह नहीं कि आपके कार्यालय में वास्तु दोष हैं या नहीं — प्रश्न यह है कि क्या आप उन्हें सुधारने के लिए तैयार हैं।')}</p>
                 <p className="font-medium">{bi('AstroVastu Expert K.K. Nagaich provides comprehensive commercial Vastu audits — entrance analysis, department zoning, CEO cabin optimisation, cash‑counter energy correction, and industrial workflow alignment — for businesses across India and 50+ countries worldwide.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच समग्र वाणिज्यिक वास्तु ऑडिट प्रदान करते हैं — प्रवेश द्वार विश्लेषण, विभाग ज़ोनिंग, सीईओ केबिन अनुकूलन, कैश काउंटर ऊर्जा सुधार और औद्योगिक वर्कफ़्लो संरेखण — भारत भर और विश्व के 50+ देशों के व्यवसायों के लिए।')}</p>
               </div>
 
             </div>
-
-            <div className="mt-12 p-6 bg-[var(--color-bg-glass)] backdrop-blur-md rounded-2xl border border-prakash-gold/20 flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-green-600 to-prakash-gold flex items-center justify-center text-white text-xl font-bold shadow-lg">KK</div>
-              <div>
-                <p className="font-serif text-lg text-nidra-indigo font-bold">{bi('AstroVastu Expert KK Nagaich', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच')}</p>
-                <p className="text-sm text-nidra-indigo/60">{bi('4th Generation Vastu Guru | MBA | Ex‑CEO | 20+ Years Clinical Practice | 2 Lakh+ Clients Worldwide', '4 पीढ़ियों की वास्तु गुरु परंपरा | MBA | पूर्व सीईओ | 20+ वर्षों का क्लीनिकल अनुभव | विश्वभर में 2 लाख+ क्लाइंट्स')}</p>
-              </div>
-            </div>
-          </div>
+          </ArticleShell>
         </article>
       
     </>

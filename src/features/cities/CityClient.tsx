@@ -39,7 +39,7 @@ export default function CityClient({ city }: { city: City }) {
               <span className="bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red bg-clip-text text-transparent">{bi(city.taglineEn, city.taglineHi)}</span>
             </h1>
             <p className="text-lg sm:text-xl text-[var(--color-hero-fg)]/75 max-w-3xl mx-auto mb-4">{bi(city.introEn, city.introHi)}</p>
-            <p className="text-sm text-[var(--color-hero-fg)]/55 max-w-2xl mx-auto mb-10">{bi('4th-generation Vedic Vastu · Tantra-trained · MBA & Ex-CEO · 100M+ views · 2 Lakh+ clients across 50+ countries', '4थी पीढ़ी की वैदिक वास्तु · तंत्र-प्रशिक्षित · MBA व पूर्व सीईओ · 10 करोड़+ दर्शक · 50+ देशों में 2 लाख+ ग्राहक')}</p>
+            <p className="text-sm text-[var(--color-hero-fg)]/55 max-w-2xl mx-auto mb-10">{bi('4th-generation Vedic Vastu · Tantra-trained · MBA & Ex-CEO · 10M+ views · 2 Lakh+ clients across 50+ countries', '4थी पीढ़ी की वैदिक वास्तु · तंत्र-प्रशिक्षित · MBA व पूर्व सीईओ · 1 करोड़+ दर्शक · 50+ देशों में 2 लाख+ ग्राहक')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href={getWhatsAppLink(waMsg)} target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_30px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_45px_rgba(255,153,51,0.5)] transition-all text-lg">{bi('Book on WhatsApp', 'WhatsApp पर बुक करें')}</a>
               <Link href="/bookings" className="bg-transparent border-2 border-white text-white hover:bg-white/10 px-10 py-5 rounded-full text-lg font-medium transition-all">{bi('View Pricing & Plans', 'मूल्य व योजनाएँ देखें')}</Link>

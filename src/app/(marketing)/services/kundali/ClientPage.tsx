@@ -236,8 +236,8 @@ function WhyChooseAstroVastu() {
       ),
     },
     {
-      title: '100M+ Viral Views',
-      titleHi: '100M+ वायरल दर्शक',
+      title: '10M+ Viral Views',
+      titleHi: '10M+ वायरल दर्शक',
       desc: 'India’s most‑watched Vedic astrologer – trusted by millions.',
       descHi: 'भारत के सर्वाधिक देखा जाने वाले वैदिक ज्योतिषी — करोड़ों का विश्वास।',
       svg: (
@@ -358,7 +358,7 @@ function FinalCTA() {
       <div className="container mx-auto px-4 relative z-10 text-center">
         <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--color-hero-fg)] mb-4">{bi('Discover Your Cosmic Blueprint', 'अपना ब्रह्मांडीय नक्शा जानें')}</h2>
         <p className="text-[var(--color-hero-fg)]/70 text-lg max-w-2xl mx-auto mb-8">
-          {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के.के. नगाईच –')} <strong className="text-prakash-gold">{bi('100M+ views, 80K+ followers, MBA, Ex‑CEO, 4th‑generation Tantra‑trained Vastu Guru & Nadi Jyotish', '100M+ दर्शक, 80K+ फॉलोअर, MBA, पूर्व सीईओ, 4थी पीढ़ी के तंत्र-प्रशिक्षित वास्तु गुरु एवं नाड़ी ज्योतिष')}</strong> {bi('– personally analyses every Kundali. No software‑generated generic reports.', '– स्वयं प्रत्येक कुंडली का विश्लेषण करते हैं। कोई सॉफ्टवेयर-जनित सामान्य रिपोर्ट नहीं।')}
+          {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के.के. नगाईच –')} <strong className="text-prakash-gold">{bi('10M+ views, 107K+ followers, MBA, Ex‑CEO, 4th‑generation Tantra‑trained Vastu Guru & Nadi Jyotish', '10M+ दर्शक, 107K+ फॉलोअर, MBA, पूर्व सीईओ, 4थी पीढ़ी के तंत्र-प्रशिक्षित वास्तु गुरु एवं नाड़ी ज्योतिष')}</strong> {bi('– personally analyses every Kundali. No software‑generated generic reports.', '– स्वयं प्रत्येक कुंडली का विश्लेषण करते हैं। कोई सॉफ्टवेयर-जनित सामान्य रिपोर्ट नहीं।')}
         </p>
         <a href={whatsappLink} target="_self" rel="noopener" className="inline-block px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_40px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_50px_rgba(255,153,51,0.5)] transition-all text-lg">
           {bi('Book & Pay Online →', 'अभी बुक करें व भुगतान करें →')}
@@ -387,7 +387,7 @@ export default function KundaliAnalysisPage() {
               <span className="bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red bg-clip-text text-transparent">{bi('Kundali Analysis', 'कुंडली विश्लेषण')}</span>
             </h1>
             <p className="text-lg sm:text-xl text-[var(--color-hero-fg)]/70 max-w-3xl mx-auto mb-4">{bi('Vedic Nadi Jyotish · 120‑year Dasha · Shadbala · Gemstone & Rudraksha', 'वैदिक नाड़ी ज्योतिष · 120‑वर्षीय दशा · षड्बल · रत्न एवं रुद्राख')}</p>
-            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('Trained in Nadi Jyotish under direct Guru‑Shishya Parampara — 100M+ views, 80K+ followers.', 'प्रत्यक्ष गुरु-शिष्य परंपरा में नाड़ी ज्योतिष में प्रशिक्षित — 100M+ दर्शक, 80K+ फॉलोअर।')}</p>
+            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('Trained in Nadi Jyotish under direct Guru‑Shishya Parampara — 10M+ views, 107K+ followers.', 'प्रत्यक्ष गुरु-शिष्य परंपरा में नाड़ी ज्योतिष में प्रशिक्षित — 10M+ दर्शक, 107K+ फॉलोअर।')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/bookings?service=kundali" className="px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_30px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_45px_rgba(255,153,51,0.5)] transition-all text-lg">
                 {bi('Book & Pay Online', 'अभी बुक करें व भुगतान करें')}

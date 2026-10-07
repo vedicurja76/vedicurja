@@ -13,6 +13,7 @@
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.6;
+  will-change: transform;
 }
 .vedic-ambient-bg::before {
   width: 600px;
@@ -21,6 +22,23 @@
   right: -5%;
   background: var(--color-blob-1);
   animation: blob-morph 15s ease-in-out infinite, float-gentle 10s ease-in-out infinite;
+  /* Scroll-driven parallax: blob drifts up as you scroll */
+  animation-timeline: scroll(root);
+  animation-range: 0 100vh;
+}
+@supports (animation-timeline: scroll()) {
+  .vedic-ambient-bg::before {
+    animation: blob-morph 15s ease-in-out infinite, float-gentle 10s ease-in-out infinite,
+               blob-parallax-1 linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+  }
+  .vedic-ambient-bg::after {
+    animation: blob-morph 18s ease-in-out infinite reverse, float-deep 12s ease-in-out infinite,
+               blob-parallax-2 linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100vh;
+  }
 }
 .vedic-ambient-bg::after {
   width: 500px;
@@ -29,6 +47,15 @@
   left: -8%;
   background: var(--color-blob-2);
   animation: blob-morph 18s ease-in-out infinite reverse, float-deep 12s ease-in-out infinite;
+}
+
+@keyframes blob-parallax-1 {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(40px, -120px, 0); }
+}
+@keyframes blob-parallax-2 {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-30px, 140px, 0); }
 }
 
 /* === ISOMETRIC SOCIAL BUTTONS === */

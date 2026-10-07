@@ -119,11 +119,7 @@ export default function ArticleShell({
         aria-label={bi('Quick Answer', 'शीघ्र उत्तर')}
         className="container mx-auto px-4 sm:px-6 max-w-4xl mb-10"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.5 }}
+        <div
           className="relative overflow-hidden rounded-3xl border border-prakash-gold/30 bg-gradient-to-br from-prakash-gold/10 via-[var(--color-bg-elevated)] to-sacred-saffron/10 backdrop-blur-md p-6 sm:p-8"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-prakash-gold/10 rounded-full -translate-y-12 translate-x-12 blur-2xl" aria-hidden />
@@ -136,7 +132,7 @@ export default function ArticleShell({
               {bi(quickAnswer, quickAnswerHi)}
             </p>
           </div>
-        </motion.div>
+        </div>
       </aside>
 
       {/* Desktop sticky Table of Contents */}

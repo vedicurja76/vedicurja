@@ -121,8 +121,8 @@ function WhyChooseAstroVastu() {
       ),
     },
     {
-      title: '100M+ Viral Views',
-      titleHi: '10 करोड़+ वायरल व्यूज़',
+      title: '10M+ Viral Views',
+      titleHi: '1 करोड़+ वायरल व्यूज़',
       desc: 'India’s most‑watched Vastu & numerology expert – trusted by millions.',
       descHi: 'भारत के सबसे अधिक देखे जाने वाले वास्तु व अंकशास्त्र विशेषज्ञ — लाखों का भरोसा।',
       svg: (
@@ -319,7 +319,7 @@ export default function NumerologyNamakaranPage() {
               <span className="bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red bg-clip-text text-transparent">{bi('Numerology & Namakaran', 'अंकशास्त्र एवं नामकरण')}</span>
             </h1>
             <p className="text-lg sm:text-xl text-[var(--color-hero-fg)]/70 max-w-3xl mx-auto mb-4">{bi('108‑Syllable Nakshatra Naming · Business Numerology · Mobile Number Analysis — All in One', '108-अक्षर नक्षत्र नामकरण · व्यावसायिक अंकशास्त्र · मोबाइल नंबर विश्लेषण — सब एक साथ')}</p>
-            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi("100M+ views, 80K+ followers — India's most‑viewed naming & numerology expert.", '10 करोड़+ व्यूज़, 80 हज़ार+ फॉलोअर्स — भारत के सबसे अधिक देखे जाने वाले नामकरण व अंकशास्त्र विशेषज्ञ।')}</p>
+            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi("10M+ views, 107K+ followers — India's most‑viewed naming & numerology expert.", '1 करोड़+ व्यूज़, 1.07 लाख+ फॉलोअर्स — भारत के सबसे अधिक देखे जाने वाले नामकरण व अंकशास्त्र विशेषज्ञ।')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/bookings?service=numerology-namakaran" className="px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_30px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_45px_rgba(255,153,51,0.5)] transition-all text-lg">
                 {bi('Book & Pay Online', 'अभी बुक करें व भुगतान करें')}
@@ -461,7 +461,7 @@ export default function NumerologyNamakaranPage() {
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--color-hero-fg)] mb-4">{bi('Discover Your Auspicious Name & Number', 'अपना शुभ नाम एवं संख्या जानें')}</h2>
             <p className="text-[var(--color-hero-fg)]/70 text-lg max-w-2xl mx-auto mb-8">
-              {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच –')} <strong className="text-prakash-gold">{bi('100M+ views, 80K+ followers, 4th‑generation Guru, Nakshatra & Numerology Expert', '10 करोड़+ व्यूज़, 80 हज़ार+ फॉलोअर्स, 4 पीढ़ियों की गुरु, नक्षत्र व अंकशास्त्र विशेषज्ञ')}</strong> {bi('– personally analyses every name and number. No generic reports.', '– स्वयं हर नाम और संख्या का विश्लेषण करते हैं। कोई सामान्य रिपोर्ट नहीं।')}
+              {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच –')} <strong className="text-prakash-gold">{bi('10M+ views, 107K+ followers, 4th‑generation Guru, Nakshatra & Numerology Expert', '1 करोड़+ व्यूज़, 1.07 लाख+ फॉलोअर्स, 4 पीढ़ियों की गुरु, नक्षत्र व अंकशास्त्र विशेषज्ञ')}</strong> {bi('– personally analyses every name and number. No generic reports.', '– स्वयं हर नाम और संख्या का विश्लेषण करते हैं। कोई सामान्य रिपोर्ट नहीं।')}
             </p>
             <a href="/bookings?service=numerology-namakaran" className="inline-block px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_40px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_50px_rgba(255,153,51,0.5)] transition-all text-lg">
               {bi('Schedule Your Consultation →', 'अपना परामर्श शेड्यूल करें →')}

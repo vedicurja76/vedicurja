@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { getWhatsAppLink } from '@/lib/constants/config';
 import { useBi } from '@/lib/i18n/Bilingual';
+import Reveal from '@/features/shared/components/ui/Reveal';
+import { useMagnet } from '@/features/shared/hooks/useMagnet';
 
 const allServices = [
   { id:'residential', title:'Residential Vastu', titleHi:'आवासीय वास्तु', tagline:'Homes, Flats & Quarters', taglineHi:'मकान, फ्लैट व क्वार्टर', desc:'Silver · Gold · Luxury plans', descHi:'सिल्वर · गोल्ड · लक्ज़री प्लान', features:'Computerized layout audit, Remedies with/without demolition', featuresHi:'कम्प्यूटेड लेआउट ऑडिट, बिना तोड़-फोड़ उपाय', href:'/services/residential', image:'/images/services/residential.webp', accent:'#E8B960' },
@@ -56,6 +58,7 @@ export function SacredServices() {
   const ref = useRef<HTMLElement>(null);
   const [isMounted, setIsMounted] = useState(false);
   const bi = useBi();
+  const [waRef, waStyle] = useMagnet<HTMLAnchorElement>({ radius: 110, strength: 0.22 });
   useEffect(() => setIsMounted(true), []);
   const { scrollYProgress } = useScroll(isMounted && ref.current ? { target: ref, offset: ['start end', 'end start'] } : undefined);
   const y = useTransform(scrollYProgress, [0, 1], [40, -40]);
@@ -69,30 +72,39 @@ export function SacredServices() {
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-nidra-indigo mt-4 mb-4 leading-tight">
             {bi('Holistic Vastu Solutions for', 'संपूर्ण वास्तु समाधान —')} <span className="bg-gradient-to-r from-sacred-saffron via-prakash-gold to-kumkuma-red bg-clip-text text-transparent">{bi('Every Aspect of Life', 'जीवन के हर पहलू के लिए')}</span>
           </h2>
-          <p className="text-nidra-indigo/60 max-w-xl mx-auto text-sm sm:text-base">{bi('Rooted in authentic Vedic lineage – 100M+ views, 80K+ followers.', 'प्रामाणिक वैदिक परंपरा से जुड़े — 100M+ दर्शक, 80K+ फ़ॉलोअर्स।')}</p>
+          <p className="text-nidra-indigo/60 max-w-xl mx-auto text-sm sm:text-base">{bi('Rooted in authentic Vedic lineage – 10M+ views, 107K+ followers.', 'प्रामाणिक वैदिक परंपरा से जुड़े — 10M+ दर्शक, 107K+ फ़ॉलोअर्स।')}</p>
         </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 max-w-7xl mx-auto place-items-center">
-          {allServices.map(service => (
-            <motion.div key={service.id} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="w-full flex justify-center">
+          {allServices.map((service, idx) => (
+            <Reveal key={service.id} delay={idx * 60} y={28} className="w-full flex justify-center">
               <FlipCard service={service} />
-            </motion.div>
+            </Reveal>
           ))}
         </div>
         <div className="mt-12 text-center">
-          <div className="inline-block max-w-md w-full rounded-[40px] p-[2px] bg-gradient-to-br from-prakash-gold/40 via-sacred-saffron/30 to-kumkuma-red/30 shadow-[0_15px_40px_rgba(0,0,0,0.15)]">
-            <div className="rounded-[38px] bg-gradient-to-br from-[var(--color-hero-1)] to-[var(--color-accent-red)]/60 p-8 text-[var(--color-hero-fg)]">
-              <svg className="w-12 h-12 mx-auto mb-4 text-prakash-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              <h3 className="font-serif text-2xl mb-2">{bi('Full Kundali Analysis', 'संपूर्ण कुंडली विश्लेषण')}</h3>
-              <p className="text-sm text-[var(--color-hero-fg)]/70 mb-2">{bi('100-Page Detailed Report by AstroVastu Expert K.K. Nagaich', 'एस्ट्रोवास्तु एक्सपर्ट के.के. नागाइच द्वारा 100-पेज विस्तृत रिपोर्ट')}</p>
-              <div className="text-center mb-4">
-                <span className="line-through text-[var(--color-hero-fg)]/50 text-xl mr-2"><span className="line-through text-[var(--color-hero-fg)]/50 text-xl mr-2">₹5,999</span> <span className="text-3xl font-bold text-prakash-gold"></span></span>
-                <span className="text-prakash-gold text-4xl font-bold">₹999</span>
+          <Reveal y={24}>
+            <div className="inline-block max-w-md w-full rounded-[40px] p-[2px] bg-gradient-to-br from-prakash-gold/40 via-sacred-saffron/30 to-kumkuma-red/30 shadow-[0_15px_40px_rgba(0,0,0,0.15)]">
+              <div className="rounded-[38px] bg-gradient-to-br from-[var(--color-hero-1)] to-[var(--color-accent-red)]/60 p-8 text-[var(--color-hero-fg)]">
+                <svg className="w-12 h-12 mx-auto mb-4 text-prakash-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <h3 className="font-serif text-2xl mb-2">{bi('Full Kundali Analysis', 'संपूर्ण कुंडली विश्लेषण')}</h3>
+                <p className="text-sm text-[var(--color-hero-fg)]/70 mb-2">{bi('100-Page Detailed Report by AstroVastu Expert K.K. Nagaich', 'एस्ट्रोवास्तु एक्सपर्ट के.के. नागाइच द्वारा 100-पेज विस्तृत रिपोर्ट')}</p>
+                <div className="text-center mb-4">
+                  <span className="line-through text-[var(--color-hero-fg)]/50 text-xl mr-2"><span className="line-through text-[var(--color-hero-fg)]/50 text-xl mr-2">₹5,999</span> <span className="text-3xl font-bold text-prakash-gold"></span></span>
+                  <span className="text-prakash-gold text-4xl font-bold">₹999</span>
+                </div>
+                <a
+                  href={getWhatsAppLink('I want the full Kundali analysis report (₹999)')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ref={waRef}
+                  style={waStyle}
+                  className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-prakash-gold to-sacred-saffron text-[#1A2A3A] font-bold rounded-full shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  {bi('Get Report on WhatsApp →', 'रिपोर्ट WhatsApp पर पाएं →')}
+                </a>
               </div>
-              <a href={getWhatsAppLink('I want the full Kundali analysis report (₹999)')} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-prakash-gold to-sacred-saffron text-[#1A2A3A] font-bold rounded-full shadow-lg hover:shadow-xl transition-shadow">
-                {bi('Get Report on WhatsApp →', 'रिपोर्ट WhatsApp पर पाएं →')}
-              </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </motion.section>

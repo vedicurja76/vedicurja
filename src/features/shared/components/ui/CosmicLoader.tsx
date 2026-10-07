@@ -2,14 +2,13 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function CosmicLoader() {
+export default function CosmicLoader({ maxMs = 1200 }: { maxMs?: number }) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    // Minimum display time: 1.7 seconds
-    const timer = setTimeout(() => setVisible(false), 1700);
+    const timer = setTimeout(() => setVisible(false), maxMs);
     return () => clearTimeout(timer);
-  }, []);
+  }, [maxMs]);
 
   const fullText = "AstroVastu Expert";
   const [displayText, setDisplayText] = useState("");
@@ -17,13 +16,15 @@ export default function CosmicLoader() {
 
   useEffect(() => {
     if (index < fullText.length) {
+      // budget the typewriter so it finishes inside maxMs
+      const perLetter = Math.max(35, Math.floor(maxMs / Math.max(8, fullText.length)));
       const timeout = setTimeout(() => {
         setDisplayText(prev => prev + fullText[index]);
         setIndex(index + 1);
-      }, 80); // smooth letter‑by‑letter
+      }, perLetter);
       return () => clearTimeout(timeout);
     }
-  }, [index, fullText]);
+  }, [index, fullText, maxMs]);
 
   return (
     <AnimatePresence>

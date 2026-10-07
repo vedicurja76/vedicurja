@@ -42,7 +42,7 @@ function HeroSection() {
         <AnimatedText as="h1" text="AstroVastu Expert K.K. Nagaich" className="font-serif text-6xl md:text-8xl lg:text-9xl mb-6 text-[var(--color-hero-fg)] drop-shadow-2xl" />
         <GradientText text={bi('4th Generation · MBA · Ex‑CEO · Tantra Sadhak', '4 पीढ़ियों की परंपरा · MBA · पूर्व सीईओ · तंत्र साधक')} className="font-serif text-2xl md:text-4xl mb-8 block" />
         <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-xl md:text-2xl text-[var(--color-hero-fg)]/80 max-w-3xl mx-auto mb-12">
-          {bi('The only Vastu master who performs every ritual himself — and has', 'एकमात्र वास्तु गुरु जो हर अनुष्ठान स्वयं संपन्न करते हैं — और जिनके')}{' '}<span className="font-bold">{bi('100 million+ views', '10 करोड़+ व्यूज़')}</span>{' '}{bi('across platforms.', 'विभिन्न प्लेटफॉर्म पर हैं।')}
+          {bi('The only Vastu master who performs every ritual himself — and has', 'एकमात्र वास्तु गुरु जो हर अनुष्ठान स्वयं संपन्न करते हैं — और जिनके')}{' '}<span className="font-bold">{bi('100 million+ views', '1 करोड़+ व्यूज़')}</span>{' '}{bi('across platforms.', 'विभिन्न प्लेटफॉर्म पर हैं।')}
         </motion.p>
         {/* Stat buttons have been removed as requested */}
         <div className="flex flex-wrap justify-center gap-6">
@@ -62,8 +62,8 @@ function HeroSection() {
 function StatsBanner() {
   const bi = useBi();
   const stats = [
-    { value: '100M+', label: 'Views Across Platforms', labelHi: 'विभिन्न प्लेटफॉर्म पर व्यूज़' },
-    { value: '80K+', label: 'Instagram Followers', labelHi: 'Instagram फॉलोअर्स' },
+    { value: '10M+', label: 'Views Across Platforms', labelHi: 'विभिन्न प्लेटफॉर्म पर व्यूज़' },
+    { value: '107K+', label: 'Instagram Followers', labelHi: 'Instagram फॉलोअर्स' },
     { value: '2 Lakh+', label: 'Clients Served', labelHi: 'सेवा प्राप्त क्लाइंट्स' },
     { value: '20+', label: 'Years of Experience', labelHi: 'वर्षों का अनुभव' },
   ];
@@ -118,7 +118,7 @@ function WhyChooseSection() {
   const reasons = [
     { title: 'He Performs Every Ritual', titleHi: 'वे हर अनुष्ठान स्वयं करते हैं', desc: 'Unlike consultants who only give remedies, AstroVastu Expert ji personally conducts each Havan, Yantra energisation, and Pooja – the true secret behind lasting transformations.', descHi: 'केवल उपचार बताने वाले सलाहकारों के विपरीत, एस्ट्रोवास्तु एक्सपर्ट जी प्रत्येक हवन, यंत्र प्राण प्रतिष्ठा और पूजा स्वयं संपन्न करते हैं — स्थायी परिवर्तन का असली राज़।', icon: '🔥' },
     { title: 'Business Mind, Vedic Soul', titleHi: 'व्यावसायिक दिमाग, वैदिक आत्मा', desc: 'MBA + ex‑CEO who understands P&L statements. He identifies Vastu defects that directly impact your revenue, employee retention, and client acquisition.', descHi: 'MBA + पूर्व सीईओ जो P&L रिपोर्ट समझते हैं। वे वास्तु दोष पहचानते हैं जो सीधे आपके राजस्व, कर्मचारी प्रतिधारण और क्लाइंट प्राप्ति को प्रभावित करते हैं।', icon: '💼' },
-    { title: '100 Million+ Organic Views', titleHi: '10 करोड़+ ऑर्गैनिक व्यूज़', desc: 'His viral Instagram reels have reached over 100M views, making him the most‑watched Vastu expert in the world. His wisdom is trusted globally.', descHi: 'उनकी वायरल Instagram रील्स 10 करोड़+ व्यूज़ पार कर चुकी हैं — वे विश्व के सबसे अधिक देखे जाने वाले वास्तु विशेषज्ञ हैं। उनका ज्ञान वैश्विक स्तर पर विश्वसनीय है।', icon: '📈' },
+    { title: '10 Million+ Organic Views', titleHi: '10M+ ऑर्गैनिक व्यूज़', desc: 'His viral Instagram reels have reached over 10M views, making him the most‑watched Vastu expert in the world. His wisdom is trusted globally.', descHi: 'उनकी वायरल Instagram रील्स 10M+ व्यूज़ पार कर चुकी हैं — वे विश्व के सबसे अधिक देखे जाने वाले वास्तु विशेषज्ञ हैं। उनका ज्ञान वैश्विक स्तर पर विश्वसनीय है।', icon: '📈' },
   ];
   return (
     <section className="py-28 bg-[var(--color-bg-elevated)]">
@@ -147,7 +147,7 @@ function TimelineSection() {
     { year: '2008', title: 'The Inner Calling', titleHi: 'अंतरात्मा की पुकार', desc: 'Began deep personal experimentation, meditation, and study of Vastu, Nadi Jyotish, and Numerology.', descHi: 'गहरे व्यक्तिगत प्रयोग, ध्यान और वास्तु, नाड़ी ज्योतिश तथा अंकशास्त्र के अध्ययन की शुरुआत।' },
     { year: '2018', title: 'Public Service Begins', titleHi: 'लोक सेवा की शुरुआत', desc: 'After a decade of rigorous inner preparation, formally started offering professional guidance.', descHi: 'दशक भर की कठोर आंतरिक तैयारी के बाद औपचारिक रूप से व्यावसायिक मार्गदर्शन प्रदान करना आरंभ किया।' },
     { year: '2020', title: 'Digital Legacy Launched', titleHi: 'डिजिटल विरासत की शुरुआत', desc: 'vedivastuurja.com founded – a global digital sanctuary for Vedic wisdom.', descHi: 'vedivastuurja.com की स्थापना — वैदिक ज्ञान के लिए एक वैश्विक डिजिटल धाम।' },
-    { year: '2024', title: '100M+ Viral Views', titleHi: '10 करोड़+ वायरल व्यूज़', desc: 'Instagram reels went viral, bringing authentic Vastu to millions worldwide.', descHi: 'Instagram रील्स वायरल हुईं, जिसने लाखों लोगों तक प्रामाणिक वास्तु पहुंचाई।' },
+    { year: '2024', title: '10M+ Viral Views', titleHi: '1 करोड़+ वायरल व्यूज़', desc: 'Instagram reels went viral, bringing authentic Vastu to millions worldwide.', descHi: 'Instagram रील्स वायरल हुईं, जिसने लाखों लोगों तक प्रामाणिक वास्तु पहुंचाई।' },
     { year: '2026', title: 'Global Authority', titleHi: 'वैश्विक अधिकार', desc: '2 Lakh+ clients across 50+ countries, trusted by individuals and corporations alike.', descHi: '50+ देशों में 2 लाख+ क्लाइंट्स — व्यक्तियों और कंपनियों दोनों का भरोसा।' },
   ];
   return (
@@ -186,7 +186,7 @@ function ReelsSection() {
   return (
     <section className="py-28 bg-gradient-to-b from-[var(--color-bg-elevated)] to-vastu-parchment overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
-        <AnimatedText text={bi('Viral Reels – 100M+ Views', 'वायरल रील्स – 10 करोड़+ व्यूज़')} className="font-serif text-5xl md:text-6xl text-center text-nidra-indigo mb-6" />
+        <AnimatedText text={bi('Viral Reels – 10M+ Views', 'वायरल रील्स – 1 करोड़+ व्यूज़')} className="font-serif text-5xl md:text-6xl text-center text-nidra-indigo mb-6" />
         <p className="text-center text-nidra-indigo/60 mb-12 max-w-2xl mx-auto">{bi('Witness the real AstroVastu Expert in action – rituals, remedies, and wisdom that millions watch daily.', 'असली एस्ट्रोवास्तु एक्सपर्ट को कार्यरत देखें — अनुष्ठान, उपचार और ज्ञान जो लाखों लोग रोज़ देखते हैं।')}</p>
         <div className="flex gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
           {REELS.map((reel, i) => (

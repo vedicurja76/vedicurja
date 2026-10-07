@@ -3,11 +3,14 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import { useMagnet } from '@/features/shared/hooks/useMagnet';
 
 export function VirtualConsultCTA() {
   const ref = useRef(null);
   const [isMounted, setIsMounted] = useState(false);
   const bi = useBi();
+  const [primaryRef, primaryStyle] = useMagnet<HTMLAnchorElement>({ radius: 100, strength: 0.22 });
+  const [secondaryRef, secondaryStyle] = useMagnet<HTMLAnchorElement>({ radius: 100, strength: 0.18 });
   useEffect(() => setIsMounted(true), []);
 
   const { scrollYProgress } = useScroll(
@@ -107,12 +110,16 @@ export function VirtualConsultCTA() {
               >
                 <Link
                   href="/bookings"
+                  ref={primaryRef}
+                  style={primaryStyle}
                   className="luxury-button text-base sm:text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-shadow"
                 >
                   {bi('Book Virtual Consultation', 'वर्चुअल परामर्श बुक करें')}
                 </Link>
                 <Link
                   href="/contact"
+                  ref={secondaryRef}
+                  style={secondaryStyle}
                   className="border-2 border-prakash-gold text-nidra-indigo px-8 py-4 rounded-full text-base sm:text-lg font-medium hover:bg-prakash-gold/10 transition"
                 >
                   {bi('Contact Acharya', 'आचार्य से संपर्क करें')}

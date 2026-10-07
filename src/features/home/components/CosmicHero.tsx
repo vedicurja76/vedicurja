@@ -24,7 +24,7 @@ const fallbackHero: HeroSection = {
   id: 'fallback',
   section_key: 'hero',
   title: "India's Most-Viewed Vastu Authority",
-  subtitle: '100M+ Views. 2 Lakh+ Clients. 50+ Countries.',
+  subtitle: '10M+ Views. 2 Lakh+ Clients. 50+ Countries.',
   description: 'AstroVastu Expert KK Nagaich — the only Vastu Guru who is a 4th-generation lineage holder, Tantra Sadhak, MBA, and former CEO. His personal rituals and deep business acumen have transformed thousands of lives worldwide.',
   button_text: 'Consult the Master',
   button_link: '/contact',
@@ -35,7 +35,7 @@ const fallbackHero: HeroSection = {
 
 const fallbackHeroHi = {
   title: 'भारत का सबसे अधिक देखा गया वास्तु अधिकारी',
-  subtitle: '100M+ दर्शक। 2 लाख+ ग्राहक। 50+ देश।',
+  subtitle: '10M+ दर्शक। 2 लाख+ ग्राहक। 50+ देश।',
   button_text: 'गुरु से परामर्श करें',
   secondary_button_text: 'मुफ्त उपकरण देखें',
 };

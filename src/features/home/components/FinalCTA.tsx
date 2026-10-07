@@ -3,11 +3,13 @@ import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { useBi } from '@/lib/i18n/Bilingual';
+import { useMagnet } from '@/features/shared/hooks/useMagnet';
 
 export function FinalCTA() {
   const ref = useRef<HTMLElement>(null);
   const [isMounted, setIsMounted] = useState(false);
   const bi = useBi();
+  const [ctaRef, ctaStyle] = useMagnet<HTMLAnchorElement>({ radius: 90, strength: 0.2 });
   useEffect(() => setIsMounted(true), []);
 
   const { scrollYProgress } = useScroll(
@@ -93,7 +95,7 @@ export function FinalCTA() {
                 transition={{ delay: 0.4 }}
                 className="inline-block"
               >
-                <Link href="/bookings">
+                <Link href="/bookings" ref={ctaRef} style={ctaStyle}>
                   <motion.div
                     whileHover={{ scale: 1.08, rotateX: 5, rotateY: -3, translateZ: 20 }}
                     whileTap={{ scale: 0.97 }}

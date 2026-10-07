@@ -6,11 +6,11 @@ export default function AuthorityBar() {
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 lg:gap-16 items-center text-[var(--color-hero-fg)]">
           <div className="flex items-center gap-3">
             <svg className="w-6 h-6 text-prakash-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-1.48 1.48l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.505 4.505 0 019.5 14z"/></svg>
-            <div><p className="font-serif text-xl font-bold text-prakash-gold">100M+</p><p className="text-xs uppercase tracking-wider text-[var(--color-hero-fg)]/80">Views</p></div>
+            <div><p className="font-serif text-xl font-bold text-prakash-gold">10M+</p><p className="text-xs uppercase tracking-wider text-[var(--color-hero-fg)]/80">Views</p></div>
           </div>
           <div className="flex items-center gap-3">
             <svg className="w-6 h-6 text-prakash-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-            <div><p className="font-serif text-xl font-bold text-prakash-gold">80K+</p><p className="text-xs uppercase tracking-wider text-[var(--color-hero-fg)]/80">Followers</p></div>
+            <div><p className="font-serif text-xl font-bold text-prakash-gold">107K+</p><p className="text-xs uppercase tracking-wider text-[var(--color-hero-fg)]/80">Followers</p></div>
           </div>
           <div className="flex items-center gap-3">
             <svg className="w-6 h-6 text-prakash-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>

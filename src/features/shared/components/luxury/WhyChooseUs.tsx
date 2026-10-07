@@ -7,8 +7,8 @@ const reasons = [
   { icon: '🔮', title: 'Tantra + Vastu', titleHi: 'तंत्र + वास्तु', desc: 'Not just diagnosis — personally performed rituals, Yantra energisation, and Havan by a trained Tantra Sadhak.', descHi: 'केवल निदान नहीं — प्रशिक्षित तंत्र साधक द्वारा स्वयं संपन्न अनुष्ठान, यंत्र एनर्जीकरण और हवन।' },
   { icon: '📊', title: 'MBA + Ex‑CEO', titleHi: 'MBA + पूर्व सीईओ', desc: 'Every Vastu defect mapped to a business metric. Boardroom precision meets ancient wisdom.', descHi: 'हर वास्तु दोष व्यावसायिक मापदंड से जुड़ा। बोर्डरूम सटीकता और प्राचीन ज्ञान का संगम.' },
   { icon: '🕉️', title: '4th Gen Lineage', titleHi: '4 पीढ़ियों की परंपरा', desc: 'Inherited knowledge under Dr. Shiv Verma, Dr. Narendra Sahastrabuddhe, Dr. Rajendra Jain.', descHi: 'डॉ. शिव वर्मा, डॉ. नरेंद्र सहसत्रबुद्धे, डॉ. राजेंद्र जैन के मार्गदर्शन में विरासत में मिला ज्ञान।' },
-  { icon: '🌍', title: '100M+ Views', titleHi: '10 करोड़+ व्यूज़', desc: "India's most‑viewed digital Vastu expert across YouTube, Instagram, and Facebook.", descHi: 'YouTube, Instagram और Facebook पर भारत के सबसे अधिक देखे जाने वाले डिजिटल वास्तु विशेषज्ञ।' },
-  { icon: '👥', title: '80K+ Followers', titleHi: '80 हज़ार+ फॉलोअर्स', desc: 'Largest Instagram following for any Indian Vastu authority. Trusted community.', descHi: 'किसी भी भारतीय वास्तु विशेषज्ञ की सबसे बड़ी Instagram फॉलोइंग। विश्वसनीय समुदाय।' },
+  { icon: '🌍', title: '10M+ Views', titleHi: '1 करोड़+ व्यूज़', desc: "India's most‑viewed digital Vastu expert across YouTube, Instagram, and Facebook.", descHi: 'YouTube, Instagram और Facebook पर भारत के सबसे अधिक देखे जाने वाले डिजिटल वास्तु विशेषज्ञ।' },
+  { icon: '👥', title: '107K+ Followers', titleHi: '1.07 लाख+ फॉलोअर्स', desc: 'Largest Instagram following for any Indian Vastu authority. Trusted community.', descHi: 'किसी भी भारतीय वास्तु विशेषज्ञ की सबसे बड़ी Instagram फॉलोइंग। विश्वसनीय समुदाय।' },
   { icon: '✅', title: '2 Lakh+ Clients', titleHi: '2 लाख+ क्लाइंट्स', desc: 'Served across 50+ countries — from Ganga banks to Manhattan skyscrapers.', descHi: '50+ देशों में सेवा — गंगा किनारे से मैनहट्टन के गगनचुंबी इमारतों तक।' },
 ];
 

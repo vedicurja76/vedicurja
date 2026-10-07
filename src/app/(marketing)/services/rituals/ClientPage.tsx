@@ -170,7 +170,7 @@ export default function RitualsPage() {
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--color-hero-fg)] mb-4">{bi('Experience the Transformative Power of Vedic Rituals', 'वैदिक अनुष्ठानों की परिवर्तनकारी शक्ति का अनुभव करें')}</h2>
             <p className="text-[var(--color-hero-fg)]/70 text-lg max-w-2xl mx-auto mb-8">
-              {bi('Book a personal ritual with AstroVastu Expert K.K. Nagaich – 100M+ views, 80K+ followers.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच के साथ व्यक्तिगत अनुष्ठान बुक करें — 10 करोड़+ व्यूज़, 80 हज़ार+ फॉलोअर्स।')}
+              {bi('Book a personal ritual with AstroVastu Expert K.K. Nagaich – 10M+ views, 107K+ followers.', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच के साथ व्यक्तिगत अनुष्ठान बुक करें — 1 करोड़+ व्यूज़, 1.07 लाख+ फॉलोअर्स।')}
             </p>
             <Link href="/bookings" className="inline-block px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_40px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_50px_rgba(255,153,51,0.5)] transition-all text-lg">
               {bi('Schedule Your Ritual Session →', 'अपना अनुष्ठान सत्र शेड्यूल करें →')}

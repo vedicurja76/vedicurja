@@ -25,8 +25,8 @@ export function GlobalPresence() {
             <ul className="space-y-3 mb-8 text-[var(--color-hero-fg)]/80">
               <li className="flex items-center gap-2"><span className="text-prakash-gold">✦</span> {bi('50+ Countries Served', '50+ देशों में सेवा')}</li>
               <li className="flex items-center gap-2"><span className="text-prakash-gold">✦</span> {bi('2 Lakh+ Satisfied Clients', '2 लाख+ संतुष्ट ग्राहक')}</li>
-              <li className="flex items-center gap-2"><span className="text-prakash-gold">✦</span> {bi('100M+ Views Across Platforms', 'प्लेटफॉर्म पर 100M+ दर्शक')}</li>
-              <li className="flex items-center gap-2"><span className="text-prakash-gold">✦</span> {bi('80K+ Dedicated Followers', '80K+ समर्पित फॉलोअर')}</li>
+              <li className="flex items-center gap-2"><span className="text-prakash-gold">✦</span> {bi('10M+ Views Across Platforms', 'प्लेटफॉर्म पर 10M+ दर्शक')}</li>
+              <li className="flex items-center gap-2"><span className="text-prakash-gold">✦</span> {bi('107K+ Dedicated Followers', '107K+ समर्पित फॉलोअर')}</li>
             </ul>
             <Link href="/bookings" className="inline-flex items-center gap-2 px-8 py-4 bg-prakash-gold text-nidra-indigo font-bold rounded-full hover:bg-sacred-saffron transition-colors shadow-lg">
               {bi('Book a Consultation →', 'परामर्श बुक करें →')}

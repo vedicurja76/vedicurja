@@ -17,7 +17,7 @@ export default function VirtualConsultPage() {
           <span className="text-prakash-gold uppercase tracking-[0.3em] text-sm mb-4 block font-semibold">{bi('Vedic Application', 'वैदिक प्रयोग')}</span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-[var(--color-hero-fg)] mb-6 drop-shadow-2xl"><span className="bg-gradient-to-r from-cyan-300 via-prakash-gold to-sacred-saffron bg-clip-text text-transparent">{bi('Virtual Consult', 'वर्चुअल परामर्श')}</span></h1>
           <p className="text-lg text-[var(--color-hero-fg)]/70 max-w-3xl mx-auto mb-4">{bi('Live one‑on‑one video consultation — the full depth of Vastu guidance, from anywhere in the world.', 'लाइव एक-से-एक वीडियो परामर्श — दुनिया के किसी भी स्थान से वास्तु मार्गदर्शन की समग्र गहराई।')}</p>
-          <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('100M+ views, 80K+ followers — AstroVastu Expert KK Nagaich personally conducts every session.', '10 करोड़+ व्यूज़, 80 हज़ार+ फॉलोअर्स — एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच स्वयं हर सत्र संचालित करते हैं।')}</p>
+          <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('10M+ views, 107K+ followers — AstroVastu Expert KK Nagaich personally conducts every session.', '1 करोड़+ व्यूज़, 1.07 लाख+ फॉलोअर्स — एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच स्वयं हर सत्र संचालित करते हैं।')}</p>
           <Link href="/bookings" className="px-10 py-5 bg-gradient-to-r from-cyan-500 via-prakash-gold to-sacred-saffron text-nidra-indigo font-bold rounded-full shadow-[0_10px_30px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_45px_rgba(255,153,51,0.5)] transition-all text-lg">{bi('Book Virtual Session', 'वर्चुअल सत्र बुक करें')}</Link>
         </div>
       </section>
@@ -38,7 +38,7 @@ export default function VirtualConsultPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-hero-1)] via-[var(--color-hero-2)] to-[var(--color-hero-1)] bg-[length:400%_400%] animate-[heroLoop_12s_ease_infinite]" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="font-serif text-3xl sm:text-4xl text-[var(--color-hero-fg)] mb-4">Book Your Virtual Session</h2>
-          <p className="text-[var(--color-hero-fg)]/70 max-w-xl mx-auto mb-8">100M+ views, 80K+ followers — personally conducted by AstroVastu Expert KK Nagaich.</p>
+          <p className="text-[var(--color-hero-fg)]/70 max-w-xl mx-auto mb-8">10M+ views, 107K+ followers — personally conducted by AstroVastu Expert KK Nagaich.</p>
           <Link href="/bookings" className="luxury-button text-lg">Schedule Now →</Link>
         </div>
       </section>

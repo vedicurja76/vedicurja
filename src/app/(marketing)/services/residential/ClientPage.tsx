@@ -135,10 +135,10 @@ function WhyChooseAstroVastu() {
       ),
     },
     {
-      title: '100M+ Viral Views',
-      titleHi: '100M+ वायरल दर्शक',
+      title: '10M+ Viral Views',
+      titleHi: '10M+ वायरल दर्शक',
       desc: 'India’s most‑watched Vastu expert with over 100 million organic views across Instagram, YouTube, and Facebook.',
-      descHi: 'भारत के सर्वाधिक देखा जाने वाले वास्तु विशेषज्ञ — Instagram, YouTube और Facebook पर 10 करोड़ से अधिक प्राकृतिक दर्शक।',
+      descHi: 'भारत के सर्वाधिक देखा जाने वाले वास्तु विशेषज्ञ — Instagram, YouTube और Facebook पर 1 करोड़ से अधिक प्राकृतिक दर्शक।',
       svg: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <circle cx="12" cy="12" r="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -323,7 +323,7 @@ export default function ResidentialVastuPage() {
               <span className="bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red bg-clip-text text-transparent">{bi('Residential Vastu', 'आवासीय वास्तु')}</span>
             </h1>
             <p className="text-lg sm:text-xl text-[var(--color-hero-fg)]/70 max-w-3xl mx-auto mb-4">{bi('For flats, apartments, independent houses & government quarters.', 'फ्लैट, अपार्टमेंट, स्वतंत्र घर एवं सरकारी क्ार्टरों के लिए।')}</p>
-            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('100M+ views · 80K+ followers · AstroVastu Expert KK Nagaich — Tantra‑trained, MBA, Ex‑CEO, 4th‑gen Guru, Best Vastu Expert in Uttar Pradesh.', '100M+ दर्शक · 80K+ फॉलोअर · एस्ट्रोवास्तु एक्सपर्ट के.के. नगाईच — तंत्र-प्रशिक्षित, MBA, पूर्व सीईओ, 4थी पीढ़ी के गुरु, उत्तर प्रदेश के सर्वश्रेष्ठ वास्तु विशेषज्ञ।')}</p>
+            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('10M+ views · 107K+ followers · AstroVastu Expert KK Nagaich — Tantra‑trained, MBA, Ex‑CEO, 4th‑gen Guru, Best Vastu Expert in Uttar Pradesh.', '10M+ दर्शक · 107K+ फॉलोअर · एस्ट्रोवास्तु एक्सपर्ट के.के. नगाईच — तंत्र-प्रशिक्षित, MBA, पूर्व सीईओ, 4थी पीढ़ी के गुरु, उत्तर प्रदेश के सर्वश्रेष्ठ वास्तु विशेषज्ञ।')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/bookings?service=residential" className="px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_30px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_45px_rgba(255,153,51,0.5)] transition-all text-lg">
                 {bi('Book & Pay Online', 'अभी बुक करें व भुगतान करें')}
@@ -509,7 +509,7 @@ export default function ResidentialVastuPage() {
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--color-hero-fg)] mb-4">{bi('Experience the AstroVastu Expert Difference', 'एस्ट्रोवास्तु एक्सपर्ट का अंतर अनुभव करें')}</h2>
             <p className="text-[var(--color-hero-fg)]/70 text-lg max-w-2xl mx-auto mb-8">
-              {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के.के. नगाईच –')} <strong className="text-prakash-gold">{bi('100M+ views, 80K+ followers, MBA, Ex‑CEO, 4th‑generation Tantra‑trained Vastu Guru', '100M+ दर्शक, 80K+ फॉलोअर, MBA, पूर्व सीईओ, 4थी पीढ़ी के तंत्र-प्रशिक्षित वास्तु गुरु')}</strong> {bi('– personally performs every residential audit. No delegation. No generic reports.', '– स्वयं प्रत्येक आवासीय ऑडिट करते हैं। कोई अर्पण नहीं। कोई सामान्य रिपोर्ट नहीं।')}
+              {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के.के. नगाईच –')} <strong className="text-prakash-gold">{bi('10M+ views, 107K+ followers, MBA, Ex‑CEO, 4th‑generation Tantra‑trained Vastu Guru', '10M+ दर्शक, 107K+ फॉलोअर, MBA, पूर्व सीईओ, 4थी पीढ़ी के तंत्र-प्रशिक्षित वास्तु गुरु')}</strong> {bi('– personally performs every residential audit. No delegation. No generic reports.', '– स्वयं प्रत्येक आवासीय ऑडिट करते हैं। कोई अर्पण नहीं। कोई सामान्य रिपोर्ट नहीं।')}
             </p>
             <a href="/bookings?service=residential" className="inline-block px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_40px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_50px_rgba(255,153,51,0.5)] transition-all text-lg">
               {bi('Schedule Your Residential Audit →', 'अपना आवासीय ऑडिट शेड्यूल करें →')}

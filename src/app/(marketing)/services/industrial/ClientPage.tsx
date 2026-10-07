@@ -133,10 +133,10 @@ function WhyChooseAstroVastu() {
       ),
     },
     {
-      title: '100M+ Viral Views',
-      titleHi: '10 करोड़+ वायरल व्यूज़',
+      title: '10M+ Viral Views',
+      titleHi: '1 करोड़+ वायरल व्यूज़',
       desc: 'India’s most‑watched Vastu expert with over 100 million organic views across Instagram, YouTube, and Facebook.',
-      descHi: 'भारत के सबसे अधिक देखे जाने वाले वास्तु विशेषज्ञ — Instagram, YouTube और Facebook पर 10 करोड़+ ऑर्गैनिक व्यूज़।',
+      descHi: 'भारत के सबसे अधिक देखे जाने वाले वास्तु विशेषज्ञ — Instagram, YouTube और Facebook पर 1 करोड़+ ऑर्गैनिक व्यूज़।',
       svg: (
         <svg className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
           <circle cx="12" cy="12" r="10" strokeLinecap="round" strokeLinejoin="round"/>
@@ -321,7 +321,7 @@ export default function IndustrialVastuPage() {
               <span className="bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red bg-clip-text text-transparent">{bi('Industrial Vastu', 'औद्योगिक वास्तु')}</span>
             </h1>
             <p className="text-lg sm:text-xl text-[var(--color-hero-fg)]/70 max-w-3xl mx-auto mb-4">{bi('Factories · Plants · Warehouses · GIDC/MIDC Plots', 'कारखाने · प्लांट · वेयरहाउस · GIDC/MIDC प्लॉट')}</p>
-            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('MBA + Ex‑CEO — optimizing industrial operations through Vedic spatial science. 100M+ views, 80K+ followers.', 'MBA + पूर्व सीईओ — वैदिक स्थानिक विज्ञान से औद्योगिक संचालन को अनुकूलित करना। 10 करोड़+ व्यूज़, 80 हज़ार+ फॉलोअर्स।')}</p>
+            <p className="text-sm text-[var(--color-hero-fg)]/50 max-w-2xl mx-auto mb-10">{bi('MBA + Ex‑CEO — optimizing industrial operations through Vedic spatial science. 10M+ views, 107K+ followers.', 'MBA + पूर्व सीईओ — वैदिक स्थानिक विज्ञान से औद्योगिक संचालन को अनुकूलित करना। 1 करोड़+ व्यूज़, 1.07 लाख+ फॉलोअर्स।')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/bookings?service=industrial" className="px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_30px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_45px_rgba(255,153,51,0.5)] transition-all text-lg">
                 {bi('Book & Pay Online', 'अभी बुक करें व भुगतान करें')}
@@ -450,7 +450,7 @@ export default function IndustrialVastuPage() {
           <div className="container mx-auto px-4 relative z-10 text-center">
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-[var(--color-hero-fg)] mb-4">{bi('Optimize Your Industrial Operations', 'अपने औद्योगिक संचालन को अनुकूलित करें')}</h2>
             <p className="text-[var(--color-hero-fg)]/70 text-lg max-w-2xl mx-auto mb-8">
-              {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच –')} <strong className="text-prakash-gold">{bi('100M+ views, 80K+ followers, MBA, Ex‑CEO, 4th‑generation Tantra‑trained Vastu Guru', '10 करोड़+ व्यूज़, 80 हज़ार+ फॉलोअर्स, MBA, पूर्व सीईओ, 4 पीढ़ियों की तंत्र-प्रशिक्षित वास्तु गुरु')}</strong> {bi('personally audits every industrial space. No delegation. No generic reports.', 'हर औद्योगिक स्थान का स्वयं ऑडिट करते हैं। कोई डेलिगेशन नहीं। कोई सामान्य रिपोर्ट नहीं।')}
+              {bi('AstroVastu Expert KK Nagaich –', 'एस्ट्रोवास्तु एक्सपर्ट के. के. नागाइच –')} <strong className="text-prakash-gold">{bi('10M+ views, 107K+ followers, MBA, Ex‑CEO, 4th‑generation Tantra‑trained Vastu Guru', '1 करोड़+ व्यूज़, 1.07 लाख+ फॉलोअर्स, MBA, पूर्व सीईओ, 4 पीढ़ियों की तंत्र-प्रशिक्षित वास्तु गुरु')}</strong> {bi('personally audits every industrial space. No delegation. No generic reports.', 'हर औद्योगिक स्थान का स्वयं ऑडिट करते हैं। कोई डेलिगेशन नहीं। कोई सामान्य रिपोर्ट नहीं।')}
             </p>
             <a href="/bookings?service=industrial" className="inline-block px-10 py-5 bg-gradient-to-r from-prakash-gold via-sacred-saffron to-kumkuma-red text-white font-bold rounded-full shadow-[0_10px_40px_rgba(232,185,96,0.4)] hover:shadow-[0_20px_50px_rgba(255,153,51,0.5)] transition-all text-lg">
               {bi('Schedule Your Industrial Audit →', 'अपना औद्योगिक ऑडिट शेड्यूल करें →')}
